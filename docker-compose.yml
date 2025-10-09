@@ -1,0 +1,65 @@
+#Servicios a instalar
+
+services:
+  # Apache + PHP
+  blockbookster1:
+    build:
+      context: ../../Desktop/proyecto/BlockBookster/.docker
+      dockerfile: ../../Desktop/proyecto/BlockBookster/.docker/Dockerfile
+    container_name: containerblockbookster1
+    user: "root"
+
+    #Crear un volumen para almacenar mi página web
+    volumes:
+      - ./src:/var/www/html
+      - .docker/apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - .docker/php/php.ini:/usr/local/etc/php/php.ini-development
+      - .docker/xdebug/debug.ini:/usr/local/etc/php/conf.d/debug.ini
+
+    ports:
+      - 8080:80
+    expose:
+      - 80
+    networks:
+      - blockbookster1
+    links:
+      - mariadb
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  mariadb:
+    image: mariadb:latest
+    volumes:
+      - .docker/mariadb:/var/lib/mysql:Z
+    ports:
+      - 3307:3306
+    networks:
+      - blockbookster1
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: blockbookster1
+      MARIADB_USER: miguela
+      MARIADB_PASSWORD: aleugim
+    command:
+      --default-authentication-plugin=mysql_native_password
+
+  openldap:
+    image: bitnami/openldap:latest
+    ports:
+      - 1389:1389
+      - 1636:1636
+    environment:
+      - LDAP_ADMIN_USERNAME=root
+      - LDAP_ADMIN_PASSWORD=toor
+      - LDAP_USERS=miguel
+      - LDAP_PASSWORDS=leugim
+    networks:
+      - blockbookster1
+    volumes:
+      - .docker/openldap_data:/bitnami/openldap
+
+
+networks:
+  blockbookster1:
+    name: blockbookster1
+    driver: bridge
