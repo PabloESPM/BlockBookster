@@ -37,22 +37,22 @@
                     <div class="d-flex justify-content-end">
                         <div class="top-bar-item dropdown me-3">
                             <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-                                <i class="bi bi-translate me-2"></i>EN
+                                <i class="bi bi-translate me-2"></i>ES
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-check2 me-2 selected-icon"></i>English</a></li>
-                                <li><a class="dropdown-item" href="#">Español</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-check2 me-2 selected-icon"></i>Español</a></li>
+                                <li><a class="dropdown-item" href="#">English</a></li>
                                 <li><a class="dropdown-item" href="#">Français</a></li>
                                 <li><a class="dropdown-item" href="#">Deutsch</a></li>
                             </ul>
                         </div>
                         <div class="top-bar-item dropdown">
                             <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-                                <i class="bi bi-currency-dollar me-2"></i>USD
+                                <i class="bi bi-currency-dollar me-2"></i>EUR
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-check2 me-2 selected-icon"></i>USD</a></li>
-                                <li><a class="dropdown-item" href="#">EUR</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-check2 me-2 selected-icon"></i>EUR</a></li>
+                                <li><a class="dropdown-item" href="#">USD</a></li>
                                 <li><a class="dropdown-item" href="#">GBP</a></li>
                             </ul>
                         </div>
@@ -71,7 +71,7 @@
                 <a href="/inicio" class="logo d-flex align-items-center">
                     <!-- Uncomment the line below if you also wish to use an image logo -->
                     <!-- <img src="assets/img/logo.webp" alt=""> -->
-                    <h1 class="sitename">NiceShop</h1>
+                    <h1 class="sitename">BlockBookster</h1>
                 </a>
 
                 <!-- Search -->

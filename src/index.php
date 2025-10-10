@@ -97,6 +97,10 @@ $router->get('adminInicio', function() {
     include_once DIRECTORIO_ADMIN . 'admininicio.php';
 });
 
+$router->get('cargarProducto', function() {
+    include_once DIRECTORIO_ADMIN . 'cargarProductos.php';
+});
+
 # FUNCIONES
 
 $router->get('funciones', function() {
