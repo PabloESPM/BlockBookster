@@ -19,3 +19,7 @@
 ## Plantillas bootstrap
 - https://aulab.es/noticia/146/los-5-mejores-sitios-para-encontrar-plantillas-bootstrap
 - https://github.com/puikinsh/Bootstrap-Admin-Template
+
+## Estructura carpetas
+- src/template/images (fotos)
+- src/template/vendor (vendor de bootstrap)
