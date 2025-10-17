@@ -10,8 +10,8 @@ function generarContrasenaAleatoria(): string {
 
     return $contrasena;
 }
-/*
-echo '<h1>Contraseña</h1>';
+
+/*echo '<h1>Contraseña</h1>';
 $pass1 = generarContrasenaAleatoria();
 echo "<p><strong>$pass1</strong>";
 */

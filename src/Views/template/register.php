@@ -5,9 +5,8 @@ include_once DIRECTORIO_AUX . "funciones.php";
 
 $password = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['generar'])) {
     $password = generarContrasenaAleatoria();
-}
+
 ?>
 
     <!-- Page Title -->
