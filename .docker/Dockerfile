@@ -20,6 +20,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
       supervisor \
       cron \
       sudo \
+      openssl \
       libzip-dev \
       && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
       && docker-php-ext-configure mysqli \
@@ -39,11 +40,23 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 
 WORKDIR /var/www/html
 
+##Creamos un usuario no administrador que coincida con el usuario que tenemos en
+# en nuestro sistema para no tener problemas con los permisos
+
+ARG USERNAME=ciclost
+ARG USER_UID=1002
+ARG USER_GID=1002
+
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME
+
 #Instalación de Composer
 COPY --from=composer:2.8.11 /usr/bin/composer /usr/local/bin/composer
 
-#Instalación de Xdebug
+#Instalacion de Xdebug
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 
-#Instalacion de PHPUnit
+#Instalación de PHPUnit
 RUN composer global require phpunit/phpunit && ln -s /var/www/html/vendor/bin/phpunit /usr/local/bin/phpunit

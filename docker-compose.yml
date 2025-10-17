@@ -4,15 +4,16 @@ services:
   # Apache + PHP
   blockbookster1:
     build:
-      context: ../../Desktop/proyecto/BlockBookster/.docker
-      dockerfile: ../../Desktop/proyecto/BlockBookster/.docker/Dockerfile
+      context: ./.docker
+      dockerfile: Dockerfile
     container_name: containerblockbookster1
-    user: "root"
+    user: ciclost:ciclost
 
     #Crear un volumen para almacenar mi página web
     volumes:
       - ./src:/var/www/html
       - .docker/apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - .docker/apache/apache2.conf:/etc/apache2/apache2.conf
       - .docker/php/php.ini:/usr/local/etc/php/php.ini-development
       - .docker/xdebug/debug.ini:/usr/local/etc/php/conf.d/debug.ini
 
@@ -43,20 +44,20 @@ services:
     command:
       --default-authentication-plugin=mysql_native_password
 
-  openldap:
-    image: bitnami/openldap:latest
-    ports:
-      - 1389:1389
-      - 1636:1636
-    environment:
-      - LDAP_ADMIN_USERNAME=root
-      - LDAP_ADMIN_PASSWORD=toor
-      - LDAP_USERS=miguel
-      - LDAP_PASSWORDS=leugim
-    networks:
-      - blockbookster1
-    volumes:
-      - .docker/openldap_data:/bitnami/openldap
+#  openldap:
+#    image: bitnami/openldap:latest
+#    ports:
+#      - 1389:1389
+#      - 1636:1636
+#    environment:
+#      - LDAP_ADMIN_USERNAME=root
+#      - LDAP_ADMIN_PASSWORD=toor
+#      - LDAP_USERS=miguel
+#      - LDAP_PASSWORDS=leugim
+#    networks:
+#      - proyecto1
+#    volumes:
+#      - .docker/openldap_data:/bitnami/openldap/data
 
 
 networks:

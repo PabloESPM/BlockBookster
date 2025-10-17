@@ -12,6 +12,7 @@
 - composer require nombre/paquete → instala un nuevo paquete
 - chmod -R 777. → los putos permisos
 - composer paquete de routers composer → require phroute/phroute
+-  sudo chown ciclost:ciclost -R . (dar permisos)
 
 ## Crear generador de contraseñas
 - usar match
