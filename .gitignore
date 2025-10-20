@@ -3,4 +3,4 @@
 /.docker/mariadb/
 /src/Views/template/vendor/
 /src/Views/template/images/
-/src/composer.lock
+/src/composer.lock/
