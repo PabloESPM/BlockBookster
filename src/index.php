@@ -107,6 +107,70 @@ $router->get('funciones', function() {
     include_once DIRECTORIO_AUX . 'funciones.php';
 });
 
+
+# Crear libros
+$router->get('/admin/boocks/create', function (){
+    include_once DIRECTORIO_ADMIN . 'cargarProductos.php';
+});
+
+$router->get('admin/boocks/{$id}/edit', function($id) {
+    include_once DIRECTORIO_ADMIN . 'cargarProductos.php';
+});
+
+// Rutas de trabajo con libros
+$router->post('/boocks', function() {
+    var_dump($_POST);
+    var_dump($_FILES);
+
+    // Verificar que se haya enviado el título y el archivo
+    if(empty($_POST['titulo']) || empty($_FILES['portada']['name'])) {
+        die('Error: Faltan datos requeridos');
+    }
+
+    // Limpiar el título para usarlo como nombre de carpeta
+    $tituloLibro = $_POST['titulo'];
+    // Eliminar caracteres no permitidos en nombres de carpeta
+    $nombreCarpeta = preg_replace('/[^a-zA-Z0-9\s\-_]/', '', $tituloLibro);
+    // Reemplazar espacios por guiones bajos
+    $nombreCarpeta = str_replace(' ', '_', $nombreCarpeta);
+
+    $carpetas = scandir(DIRECTORIO_IMAGES); // Ver si el directorio uploaded está creado dentro de images
+
+    // Si no existe la carpeta uploaded, crearla
+    if(!array_search('uploaded', $carpetas)) {
+        mkdir(DIRECTORIO_IMAGES . "/uploaded");
+    }
+
+    // Ruta completa de la carpeta del libro
+    $rutaCarpetaLibro = DIRECTORIO_IMAGES . "/uploaded/" . $nombreCarpeta;
+
+    // Verificar si la carpeta del libro ya existe
+    if(!is_dir($rutaCarpetaLibro)) {
+        // Si no existe, crearla
+        mkdir($rutaCarpetaLibro);
+    }
+
+    // Mover el archivo a la carpeta del libro
+    $rutaDestino = $rutaCarpetaLibro . "/" . $_FILES['portada']['name'];
+
+    if(move_uploaded_file($_FILES['portada']['tmp_name'], $rutaDestino)) {
+        echo "Imagen subida correctamente a: " . $rutaDestino;
+    } else {
+        echo "Error al subir la imagen";
+    }
+});
+
+
+$router->delete('/boocks/{id}', function($id) {
+
+});
+$router->put('/boocks/{id}', function($id) {
+
+});
+$router->get('/boocks', function() {});
+$router->get('/boocks/{id}', function($id) {});
+
+
 # NB. You can cache the return value from $router->getData() so you don't have to create the routes each request - massive speed gains
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 

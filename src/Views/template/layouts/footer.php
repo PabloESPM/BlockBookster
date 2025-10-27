@@ -1,4 +1,3 @@
-
 </main>
 
 <footer id="footer" class="footer dark-background">
@@ -8,12 +7,12 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-widget footer-about">
                         <a href="/inicio" class="logo">
-                            <span class="sitename">NiceShop</span>
+                            <span class="sitename">BlockBookster</span>
                         </a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nibh vehicula, facilisis magna ut, consectetur lorem. Proin eget tortor risus.</p>
+                        <p>Tu librería digital para descubrir, comprar y disfrutar miles de libros electrónicos. En blockBookster creemos que la lectura debe estar al alcance de todos, en cualquier momento y lugar.</p>
 
                         <div class="social-links mt-4">
-                            <h5>Connect With Us</h5>
+                            <h5>Conéctate con nosotros</h5>
                             <div class="social-icons">
                                 <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
                                 <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
@@ -28,51 +27,51 @@
 
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="footer-widget">
-                        <h4>Shop</h4>
+                        <h4>Librería</h4>
                         <ul class="footer-links">
-                            <li><a href="/category">New Arrivals</a></li>
-                            <li><a href="/category">Bestsellers</a></li>
-                            <li><a href="/category">Women's Clothing</a></li>
-                            <li><a href="/category">Men's Clothing</a></li>
-                            <li><a href="/category">Accessories</a></li>
-                            <li><a href="/category">Sale</a></li>
+                            <li><a href="/category">Novedades</a></li>
+                            <li><a href="/category">Más vendidos</a></li>
+                            <li><a href="/category">Ficción</a></li>
+                            <li><a href="/category">No ficción</a></li>
+                            <li><a href="/category">Autores destacados</a></li>
+                            <li><a href="/category">Ofertas y descuentos</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="footer-widget">
-                        <h4>Support</h4>
+                        <h4>Soporte</h4>
                         <ul class="footer-links">
-                            <li><a href="/support">Help Center</a></li>
-                            <li><a href="/account">Order Status</a></li>
-                            <li><a href="/shipingInfo">Shipping Info</a></li>
-                            <li><a href="/returnPolicy">Returns &amp; Exchanges</a></li>
-                            <li><a href="#">Size Guide</a></li>
-                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/support">Centro de ayuda</a></li>
+                            <li><a href="/faq">Preguntas Frecuentes</a></li>
+                            <li><a href="/paymentMethods">Métodos de Pago</a></li>
+                            <li><a href="/returnPolicy">Política de Devoluciones</a></li>
+                            <li><a href="/privacy">Política de Privacidad</a></li>
+                            <li><a href="/contact">Contáctanos</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-widget">
-                        <h4>Contact Information</h4>
+                        <h4>Información de contacto</h4>
                         <div class="footer-contact">
                             <div class="contact-item">
                                 <i class="bi bi-geo-alt"></i>
-                                <span>123 Fashion Street, New York, NY 10001</span>
+                                <span>Calle de la Lectura 42, Madrid, España</span>
                             </div>
                             <div class="contact-item">
                                 <i class="bi bi-telephone"></i>
-                                <span>+1 (555) 123-4567</span>
+                                <span>+34 600 123 456</span>
                             </div>
                             <div class="contact-item">
                                 <i class="bi bi-envelope"></i>
-                                <span>hello@example.com</span>
+                                <span>soporte@blockbookster.com</span>
                             </div>
                             <div class="contact-item">
                                 <i class="bi bi-clock"></i>
-                                <span>Monday-Friday: 9am-6pm<br>Saturday: 10am-4pm<br>Sunday: Closed</span>
+                                <span>Lunes a Viernes: 9:00 - 18:00<br>Sábado: 10:00 - 14:00<br>Domingo: Cerrado</span>
                             </div>
                         </div>
 
@@ -97,14 +96,10 @@
             <div class="row gy-3 align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="copyright">
-                        <p>© <span>Copyright</span> <strong class="sitename">NiceShop</strong>. All Rights Reserved.</p>
+                        <p>© <span>Copyright</span> <strong class="sitename">BlockBookster</strong>. Todos los derechos reservados.</p>
                     </div>
                     <div class="credits mt-1">
-                        <!-- All the links in the footer should remain intact. -->
-                        <!-- You can delete the links only if you've purchased the pro version. -->
-                        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        Basado en diseño de <a href="https://bootstrapmade.com/">BootstrapMade</a>
                     </div>
                 </div>
 
@@ -112,19 +107,19 @@
                     <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
                         <div class="payment-methods">
                             <div class="payment-icons">
-                                <i class="bi bi-credit-card" aria-label="Credit Card"></i>
+                                <i class="bi bi-credit-card" aria-label="Tarjeta de crédito"></i>
                                 <i class="bi bi-paypal" aria-label="PayPal"></i>
                                 <i class="bi bi-apple" aria-label="Apple Pay"></i>
                                 <i class="bi bi-google" aria-label="Google Pay"></i>
                                 <i class="bi bi-shop" aria-label="Shop Pay"></i>
-                                <i class="bi bi-cash" aria-label="Cash on Delivery"></i>
+                                <i class="bi bi-cash" aria-label="Pago contra entrega"></i>
                             </div>
                         </div>
 
                         <div class="legal-links">
-                            <a href="/tos">Terms</a>
-                            <a href="/privacy">Privacy</a>
-                            <a href="/tos">Cookies</a>
+                            <a href="/tos">Términos</a>
+                            <a href="/privacy">Privacidad</a>
+                            <a href="/cookies">Cookies</a>
                         </div>
                     </div>
                 </div>
@@ -153,5 +148,4 @@
 <script src="Views/template/js/main.js"></script>
 
 </body>
-
 </html>

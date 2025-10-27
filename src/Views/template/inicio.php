@@ -3,733 +3,511 @@ include_once DIRECTORIO_LAYOUTS . "head.php";
 include_once DIRECTORIO_LAYOUTS . "header.php";
 ?>
 
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-
-      <div class="hero-container">
+<!-- Hero Section -->
+<section id="hero" class="hero section">
+    <div class="hero-container">
         <div class="hero-content">
-          <div class="content-wrapper" data-aos="fade-up" data-aos-delay="100">
-            <h1 class="hero-title">Discover Amazing Products</h1>
-            <p class="hero-description">Explore our curated collection of premium items designed to enhance your lifestyle. From fashion to tech, find everything you need with exclusive deals and fast shipping.</p>
-            <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
-              <a href="#products" class="btn-primary">Shop Now</a>
-              <a href="#categories" class="btn-secondary">Browse Categories</a>
+            <div class="content-wrapper" data-aos="fade-up" data-aos-delay="100">
+                <h1 class="hero-title">Descubre tu próxima gran lectura</h1>
+                <p class="hero-description">Explora nuestra colección curada de eBooks: desde los clásicos inmortales hasta los lanzamientos más esperados. Disfruta de tus libros favoritos al instante, en cualquier dispositivo.</p>
+                <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#products" class="btn-primary">Explorar libros</a>
+                    <a href="#categories" class="btn-secondary">Ver categorías</a>
+                </div>
+                <div class="features-list" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-item">
+                        <i class="bi bi-truck"></i>
+                        <span>Descarga inmediata</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="bi bi-award"></i>
+                        <span>Selección de calidad</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="bi bi-headset"></i>
+                        <span>Soporte 24/7</span>
+                    </div>
+                </div>
             </div>
-            <div class="features-list" data-aos="fade-up" data-aos-delay="300">
-              <div class="feature-item">
-                <i class="bi bi-truck"></i>
-                <span>Free Shipping</span>
-              </div>
-              <div class="feature-item">
-                <i class="bi bi-award"></i>
-                <span>Quality Guarantee</span>
-              </div>
-              <div class="feature-item">
-                <i class="bi bi-headset"></i>
-                <span>24/7 Support</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="hero-visuals">
-          <div class="product-showcase" data-aos="fade-left" data-aos-delay="200">
-            <div class="product-card featured">
-              <img src="Views/template/images/product/product-2.webp" alt="Featured Product" class="img-fluid">
-              <div class="product-badge">Best Seller</div>
-              <div class="product-info">
-                <h4>Premium Wireless Headphones</h4>
-                <div class="price">
-                  <span class="sale-price">$299</span>
-                  <span class="original-price">$399</span>
+            <div class="product-showcase" data-aos="fade-left" data-aos-delay="200">
+                <div class="product-card featured">
+                    <img src="Views/template/images/product/product-2.webp" alt="Featured Book" class="img-fluid">
+                    <div class="product-badge">Más vendido</div>
+                    <div class="product-info">
+                        <h4>El código del narrador</h4>
+                        <div class="price">
+                            <span class="sale-price">$12.99</span>
+                            <span class="original-price">$19.99</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
+
+                <div class="product-grid">
+                    <div class="product-mini" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="Views/template/images/product/product-3.webp" alt="Book" class="img-fluid">
+                        <span class="mini-price">$6.99</span>
+                    </div>
+                    <div class="product-mini" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="Views/template/images/product/product-5.webp" alt="Book" class="img-fluid">
+                        <span class="mini-price">$9.50</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="product-grid">
-              <div class="product-mini" data-aos="zoom-in" data-aos-delay="400">
-                <img src="Views/template/images/product/product-3.webp" alt="Product" class="img-fluid">
-                <span class="mini-price">$89</span>
-              </div>
-              <div class="product-mini" data-aos="zoom-in" data-aos-delay="500">
-                <img src="Views/template/images/product/product-5.webp" alt="Product" class="img-fluid">
-                <span class="mini-price">$149</span>
-              </div>
+            <div class="floating-elements">
+                <div class="floating-icon cart" data-aos="fade-up" data-aos-delay="600">
+                    <i class="bi bi-cart3"></i>
+                    <span class="notification-dot">3</span>
+                </div>
+                <div class="floating-icon wishlist" data-aos="fade-up" data-aos-delay="700">
+                    <i class="bi bi-heart"></i>
+                </div>
+                <div class="floating-icon search" data-aos="fade-up" data-aos-delay="800">
+                    <i class="bi bi-search"></i>
+                </div>
             </div>
-          </div>
-
-          <div class="floating-elements">
-            <div class="floating-icon cart" data-aos="fade-up" data-aos-delay="600">
-              <i class="bi bi-cart3"></i>
-              <span class="notification-dot">3</span>
-            </div>
-            <div class="floating-icon wishlist" data-aos="fade-up" data-aos-delay="700">
-              <i class="bi bi-heart"></i>
-            </div>
-            <div class="floating-icon search" data-aos="fade-up" data-aos-delay="800">
-              <i class="bi bi-search"></i>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
+</section>
+<!-- /Hero Section -->
 
-    </section><!-- /Hero Section -->
-
-    <!-- Promo Cards Section -->
-    <section id="promo-cards" class="promo-cards section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+<!-- Promo Cards Section -->
+<section id="promo-cards" class="promo-cards section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
 
-          <div class="col-lg-6">
-            <div class="category-featured" data-aos="fade-right" data-aos-delay="200">
-              <div class="category-image">
-                <img src="Views/template/images/product/product-f-2.webp" alt="Women's Collection" class="img-fluid">
-              </div>
-              <div class="category-content">
-                <span class="category-tag">Trending Now</span>
-                <h2>New Summer Collection</h2>
-                <p>Discover our latest arrivals designed for the modern lifestyle. Elegant, comfortable, and sustainable fashion for every occasion.</p>
-                <a href="#" class="btn-shop">Explore Collection <i class="bi bi-arrow-right"></i></a>
-              </div>
+            <div class="col-lg-6">
+                <div class="category-featured" data-aos="fade-right" data-aos-delay="200">
+                    <div class="category-image">
+                        <img src="Views/template/images/product/product-f-2.webp" alt="New Releases" class="img-fluid">
+                    </div>
+                    <div class="category-content">
+                        <span class="category-tag">Lo más leído</span>
+                        <h2>Nuevos lanzamientos</h2>
+                        <p>Descubre los libros digitales más recientes de tus autores favoritos. Historias cautivadoras que no podrás dejar de leer.</p>
+                        <a href="#" class="btn-shop">Ver novedades <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <div class="col-lg-6">
+            <div class="col-lg-6">
+                <div class="row gy-4">
 
-            <div class="row gy-4">
+                    <div class="col-xl-6">
+                        <div class="category-card cat-men" data-aos="fade-up" data-aos-delay="300">
+                            <div class="category-image">
+                                <img src="Views/template/images/product/product-m-5.webp" alt="Fiction" class="img-fluid">
+                            </div>
+                            <div class="category-content">
+                                <h4>Ficción</h4>
+                                <p>242 títulos</p>
+                                <a href="#" class="card-link">Ver libros <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
 
-              <div class="col-xl-6">
-                <div class="category-card cat-men" data-aos="fade-up" data-aos-delay="300">
-                  <div class="category-image">
-                    <img src="Views/template/images/product/product-m-5.webp" alt="Men's Fashion" class="img-fluid">
-                  </div>
-                  <div class="category-content">
-                    <h4>Men's Wear</h4>
-                    <p>242 products</p>
-                    <a href="#" class="card-link">Shop Now <i class="bi bi-arrow-right"></i></a>
-                  </div>
+                    <div class="col-xl-6">
+                        <div class="category-card cat-kids" data-aos="fade-up" data-aos-delay="400">
+                            <div class="category-image">
+                                <img src="Views/template/images/product/product-8.webp" alt="Children's Books" class="img-fluid">
+                            </div>
+                            <div class="category-content">
+                                <h4>Infantil y juvenil</h4>
+                                <p>185 títulos</p>
+                                <a href="#" class="card-link">Ver libros <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <div class="category-card cat-cosmetics" data-aos="fade-up" data-aos-delay="500">
+                            <div class="category-image">
+                                <img src="Views/template/images/product/product-3.webp" alt="Non-Fiction" class="img-fluid">
+                            </div>
+                            <div class="category-content">
+                                <h4>No ficción</h4>
+                                <p>127 títulos</p>
+                                <a href="#" class="card-link">Explorar <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <div class="category-card cat-accessories" data-aos="fade-up" data-aos-delay="600">
+                            <div class="category-image">
+                                <img src="Views/template/images/product/product-12.webp" alt="Academic" class="img-fluid">
+                            </div>
+                            <div class="category-content">
+                                <h4>Académicos</h4>
+                                <p>308 títulos</p>
+                                <a href="#" class="card-link">Ver colección <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-              </div>
-
-              <div class="col-xl-6">
-                <div class="category-card cat-kids" data-aos="fade-up" data-aos-delay="400">
-                  <div class="category-image">
-                    <img src="Views/template/images/product/product-8.webp" alt="Kid's Fashion" class="img-fluid">
-                  </div>
-                  <div class="category-content">
-                    <h4>Kid's Fashion</h4>
-                    <p>185 products</p>
-                    <a href="#" class="card-link">Shop Now <i class="bi bi-arrow-right"></i></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-xl-6">
-                <div class="category-card cat-cosmetics" data-aos="fade-up" data-aos-delay="500">
-                  <div class="category-image">
-                    <img src="Views/template/images/product/product-3.webp" alt="Cosmetics" class="img-fluid">
-                  </div>
-                  <div class="category-content">
-                    <h4>Beauty Products</h4>
-                    <p>127 products</p>
-                    <a href="#" class="card-link">Shop Now <i class="bi bi-arrow-right"></i></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-xl-6">
-                <div class="category-card cat-accessories" data-aos="fade-up" data-aos-delay="600">
-                  <div class="category-image">
-                    <img src="Views/template/images/product/product-12.webp" alt="Accessories" class="img-fluid">
-                  </div>
-                  <div class="category-content">
-                    <h4>Accessories</h4>
-                    <p>308 products</p>
-                    <a href="#" class="card-link">Shop Now <i class="bi bi-arrow-right"></i></a>
-                  </div>
-                </div>
-              </div>
-
             </div>
-          </div>
 
         </div>
+    </div>
+</section>
+<!-- /Promo Cards Section -->
 
-      </div>
-    </section><!-- /Promo Cards Section -->
+<!-- Best Sellers Section -->
+<section id="best-sellers" class="best-sellers section">
 
-    <!-- Best Sellers Section -->
-    <section id="best-sellers" class="best-sellers section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Más Vendidos</h2>
+        <p>Descubre los eBooks más leídos y recomendados por nuestra comunidad de lectores BlockBookster.</p>
+    </div><!-- End Section Title -->
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Best Sellers</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row g-5">
 
-          <!-- Product 1 -->
-          <div class="col-lg-3 col-md-6">
-            <div class="product-item">
-              <div class="product-image">
-                <div class="product-badge">Limited</div>
-                <img src="Views/template/images/product/product-1.webp" alt="Product Image" class="img-fluid" loading="lazy">
-                <div class="product-actions">
-                  <button class="action-btn wishlist-btn">
-                    <i class="bi bi-heart"></i>
-                  </button>
-                  <button class="action-btn compare-btn">
-                    <i class="bi bi-arrow-left-right"></i>
-                  </button>
-                  <button class="action-btn quickview-btn">
-                    <i class="bi bi-zoom-in"></i>
-                  </button>
+            <!-- Product 1 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="product-item">
+                    <div class="product-image">
+                        <div class="product-badge">Exclusivo</div>
+                        <img src="Views/template/images/product/product-1.webp" alt="Libro destacado" class="img-fluid" loading="lazy">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                            <button class="action-btn compare-btn">
+                                <i class="bi bi-arrow-left-right"></i>
+                            </button>
+                            <button class="action-btn quickview-btn">
+                                <i class="bi bi-zoom-in"></i>
+                            </button>
+                        </div>
+                        <button class="cart-btn">Ver Detalles</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Colección Premium</div>
+                        <h4 class="product-name"><a href="product-details.php">El Arte de Pensar en Digital</a></h4>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </div>
+                            <span class="rating-count">(24)</span>
+                        </div>
+                        <div class="product-price">$12.99</div>
+                    </div>
                 </div>
-                <button class="cart-btn">Select Options</button>
-              </div>
-              <div class="product-info">
-                <div class="product-category">Premium Collection</div>
-                <h4 class="product-name"><a href="product-details.php">Mauris blandit aliquet elit</a></h4>
-                <div class="product-rating">
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                  </div>
-                  <span class="rating-count">(24)</span>
-                </div>
-                <div class="product-price">$189.00</div>
-                <div class="color-swatches">
-                  <span class="swatch active" style="background-color: #2563eb;"></span>
-                  <span class="swatch" style="background-color: #059669;"></span>
-                  <span class="swatch" style="background-color: #dc2626;"></span>
-                </div>
-              </div>
             </div>
-          </div>
-          <!-- End Product 1 -->
+            <!-- End Product 1 -->
 
-          <!-- Product 2 -->
-          <div class="col-lg-3 col-md-6">
-            <div class="product-item">
-              <div class="product-image">
-                <div class="product-badge sale-badge">25% Off</div>
-                <img src="Views/template/images/product/product-4.webp" alt="Product Image" class="img-fluid" loading="lazy">
-                <div class="product-actions">
-                  <button class="action-btn wishlist-btn">
-                    <i class="bi bi-heart"></i>
-                  </button>
-                  <button class="action-btn compare-btn">
-                    <i class="bi bi-arrow-left-right"></i>
-                  </button>
-                  <button class="action-btn quickview-btn">
-                    <i class="bi bi-zoom-in"></i>
-                  </button>
+            <!-- Product 2 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="product-item">
+                    <div class="product-image">
+                        <div class="product-badge sale-badge">25% Off</div>
+                        <img src="Views/template/images/product/product-4.webp" alt="Libro destacado" class="img-fluid" loading="lazy">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                            <button class="action-btn compare-btn">
+                                <i class="bi bi-arrow-left-right"></i>
+                            </button>
+                            <button class="action-btn quickview-btn">
+                                <i class="bi bi-zoom-in"></i>
+                            </button>
+                        </div>
+                        <button class="cart-btn">Añadir al Carrito</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Top Lecturas</div>
+                        <h4 class="product-name"><a href="product-details.php">Historias que Inspiran</a></h4>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span class="rating-count">(38)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="old-price">$15.99</span>
+                            <span class="current-price">$11.99</span>
+                        </div>
+                    </div>
                 </div>
-                <button class="cart-btn">Add to Cart</button>
-              </div>
-              <div class="product-info">
-                <div class="product-category">Best Sellers</div>
-                <h4 class="product-name"><a href="product-details.php">Sed do eiusmod tempor incididunt</a></h4>
-                <div class="product-rating">
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                  </div>
-                  <span class="rating-count">(38)</span>
-                </div>
-                <div class="product-price">
-                  <span class="old-price">$240.00</span>
-                  <span class="current-price">$180.00</span>
-                </div>
-                <div class="color-swatches">
-                  <span class="swatch active" style="background-color: #1f2937;"></span>
-                  <span class="swatch" style="background-color: #f59e0b;"></span>
-                  <span class="swatch" style="background-color: #8b5cf6;"></span>
-                </div>
-              </div>
             </div>
-          </div>
-          <!-- End Product 2 -->
+            <!-- End Product 2 -->
 
-          <!-- Product 3 -->
-          <div class="col-lg-3 col-md-6">
-            <div class="product-item">
-              <div class="product-image">
-                <img src="Views/template/images/product/product-7.webp" alt="Product Image" class="img-fluid" loading="lazy">
-                <div class="product-actions">
-                  <button class="action-btn wishlist-btn">
-                    <i class="bi bi-heart"></i>
-                  </button>
-                  <button class="action-btn compare-btn">
-                    <i class="bi bi-arrow-left-right"></i>
-                  </button>
-                  <button class="action-btn quickview-btn">
-                    <i class="bi bi-zoom-in"></i>
-                  </button>
+            <!-- Product 3 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="Views/template/images/product/product-7.webp" alt="Libro destacado" class="img-fluid" loading="lazy">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                            <button class="action-btn compare-btn">
+                                <i class="bi bi-arrow-left-right"></i>
+                            </button>
+                            <button class="action-btn quickview-btn">
+                                <i class="bi bi-zoom-in"></i>
+                            </button>
+                        </div>
+                        <button class="cart-btn">Añadir al Carrito</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Novedades</div>
+                        <h4 class="product-name"><a href="product-details.php">Crónicas del Futuro Cercano</a></h4>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                            </div>
+                            <span class="rating-count">(12)</span>
+                        </div>
+                        <div class="product-price">$9.50</div>
+                    </div>
                 </div>
-                <button class="cart-btn">Add to Cart</button>
-              </div>
-              <div class="product-info">
-                <div class="product-category">New Arrivals</div>
-                <h4 class="product-name"><a href="product-details.php">Lorem ipsum dolor sit amet consectetur</a></h4>
-                <div class="product-rating">
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                  </div>
-                  <span class="rating-count">(12)</span>
-                </div>
-                <div class="product-price">$95.00</div>
-                <div class="color-swatches">
-                  <span class="swatch active" style="background-color: #ef4444;"></span>
-                  <span class="swatch" style="background-color: #06b6d4;"></span>
-                  <span class="swatch" style="background-color: #10b981;"></span>
-                </div>
-              </div>
             </div>
-          </div>
-          <!-- End Product 3 -->
+            <!-- End Product 3 -->
 
-          <!-- Product 4 -->
-          <div class="col-lg-3 col-md-6">
-            <div class="product-item">
-              <div class="product-image">
-                <div class="product-badge trending-badge">Trending</div>
-                <img src="Views/template/images/product/product-10.webp" alt="Product Image" class="img-fluid" loading="lazy">
-                <div class="product-actions">
-                  <button class="action-btn wishlist-btn active">
-                    <i class="bi bi-heart-fill"></i>
-                  </button>
-                  <button class="action-btn compare-btn">
-                    <i class="bi bi-arrow-left-right"></i>
-                  </button>
-                  <button class="action-btn quickview-btn">
-                    <i class="bi bi-zoom-in"></i>
-                  </button>
+            <!-- Product 4 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="product-item">
+                    <div class="product-image">
+                        <div class="product-badge trending-badge">Tendencia</div>
+                        <img src="Views/template/images/product/product-10.webp" alt="Libro destacado" class="img-fluid" loading="lazy">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist-btn active">
+                                <i class="bi bi-heart-fill"></i>
+                            </button>
+                            <button class="action-btn compare-btn">
+                                <i class="bi bi-arrow-left-right"></i>
+                            </button>
+                            <button class="action-btn quickview-btn">
+                                <i class="bi bi-zoom-in"></i>
+                            </button>
+                        </div>
+                        <button class="cart-btn">Añadir al Carrito</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Serie de Autor</div>
+                        <h4 class="product-name"><a href="product-details.php">La Sombra del Lector</a></h4>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <span class="rating-count">(56)</span>
+                        </div>
+                        <div class="product-price">$13.99</div>
+                    </div>
                 </div>
-                <button class="cart-btn">Add to Cart</button>
-              </div>
-              <div class="product-info">
-                <div class="product-category">Designer Series</div>
-                <h4 class="product-name"><a href="product-details.php">Ut enim ad minim veniam quis</a></h4>
-                <div class="product-rating">
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <span class="rating-count">(56)</span>
-                </div>
-                <div class="product-price">$165.00</div>
-                <div class="color-swatches">
-                  <span class="swatch" style="background-color: #64748b;"></span>
-                  <span class="swatch active" style="background-color: #7c3aed;"></span>
-                  <span class="swatch" style="background-color: #f59e0b;"></span>
-                </div>
-              </div>
             </div>
-          </div>
-          <!-- End Product 4 -->
+            <!-- End Product 4 -->
 
         </div>
 
-      </div>
+    </div>
 
-    </section><!-- /Best Sellers Section -->
+</section><!-- /Best Sellers Section -->
 
-    <!-- Cards Section -->
-    <section id="cards" class="cards section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
+<!-- Cards Section -->
+<section id="cards" class="cards section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
-          <div class="col-lg-4 col-md-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="200">
-            <div class="product-category">
-              <h3 class="category-title">
-                <i class="bi bi-fire"></i> Trending Now
-              </h3>
-              <div class="product-list">
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="Views/template/images/product/product-1.webp" alt="Premium Leather Tote" class="img-fluid">
-                    <div class="product-badges">
-                      <span class="badge-new">New</span>
-                    </div>
-                  </div>
-                  <div class="product-info">
-                    <h4 class="product-name">Premium Leather Tote</h4>
-                    <div class="product-rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-half"></i>
-                      <span>(24)</span>
-                    </div>
-                    <div class="product-price">
-                      <span class="current-price">$87.50</span>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="Views/template/images/product/product-3.webp" alt="Statement Earrings" class="img-fluid">
-                  </div>
-                  <div class="product-info">
-                    <h4 class="product-name">Statement Earrings</h4>
-                    <div class="product-rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <span>(41)</span>
-                    </div>
-                    <div class="product-price">
-                      <span class="current-price">$39.99</span>
-                    </div>
-                  </div>
-                </div>
+            <!-- Trending Now -->
+            <div class="col-lg-4 col-md-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-category">
+                    <h3 class="category-title">
+                        <i class="bi bi-fire"></i> Tendencias
+                    </h3>
+                    <div class="product-list">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="Views/template/images/product/product-1.webp" alt="Libro en tendencia" class="img-fluid">
+                                <div class="product-badges">
+                                    <span class="badge-new">Nuevo</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h4 class="product-name">El Código de los Sueños</h4>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                    <span>(24)</span>
+                                </div>
+                                <div class="product-price"><span class="current-price">$10.50</span></div>
+                            </div>
+                        </div>
 
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="Views/template/images/product/product-5.webp" alt="Organic Cotton Shirt" class="img-fluid">
-                  </div>
-                  <div class="product-info">
-                    <h4 class="product-name">Organic Cotton Shirt</h4>
-                    <div class="product-rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star"></i>
-                      <span>(18)</span>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="Views/template/images/product/product-3.webp" alt="Libro en tendencia" class="img-fluid">
+                            </div>
+                            <div class="product-info">
+                                <h4 class="product-name">Microcuentos del Viento</h4>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    <span>(41)</span>
+                                </div>
+                                <div class="product-price"><span class="current-price">$8.99</span></div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="Views/template/images/product/product-5.webp" alt="Libro en tendencia" class="img-fluid">
+                            </div>
+                            <div class="product-info">
+                                <h4 class="product-name">Guía del Lector Moderno</h4>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                                    <span>(18)</span>
+                                </div>
+                                <div class="product-price"><span class="current-price">$7.50</span></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-price">
-                      <span class="current-price">$45.00</span>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="300">
-            <div class="product-category">
-              <h3 class="category-title">
-                <i class="bi bi-award"></i> Best Sellers
-              </h3>
-              <div class="product-list">
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="Views/template/images/product/product-2.webp" alt="Slim Fit Denim" class="img-fluid">
-                    <div class="product-badges">
-                      <span class="badge-sale">-15%</span>
-                    </div>
-                  </div>
-                  <div class="product-info">
-                    <h4 class="product-name">Slim Fit Denim</h4>
-                    <div class="product-rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <span>(87)</span>
-                    </div>
-                    <div class="product-price">
-                      <span class="current-price">$68.00</span>
-                      <span class="old-price">$80.00</span>
-                    </div>
-                  </div>
-                </div>
+            <!-- Best Sellers -->
+            <div class="col-lg-4 col-md-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-category">
+                    <h3 class="category-title">
+                        <i class="bi bi-award"></i> Más Vendidos
+                    </h3>
+                    <div class="product-list">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="Views/template/images/product/product-2.webp" alt="Libro más vendido" class="img-fluid">
+                                <div class="product-badges">
+                                    <span class="badge-sale">-15%</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h4 class="product-name">El Último Capítulo</h4>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    <span>(87)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">$9.99</span>
+                                    <span class="old-price">$11.50</span>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="Views/template/images/product/product-6.webp" alt="Designer Handbag" class="img-fluid">
-                  </div>
-                  <div class="product-info">
-                    <h4 class="product-name">Designer Handbag</h4>
-                    <div class="product-rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-half"></i>
-                      <span>(56)</span>
-                    </div>
-                    <div class="product-price">
-                      <span class="current-price">$129.99</span>
-                    </div>
-                  </div>
-                </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="Views/template/images/product/product-6.webp" alt="Libro más vendido" class="img-fluid">
+                            </div>
+                            <div class="product-info">
+                                <h4 class="product-name">Lecturas para el Alma</h4>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                    <span>(56)</span>
+                                </div>
+                                <div class="product-price"><span class="current-price">$10.50</span></div>
+                            </div>
+                        </div>
 
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="Views/template/images/product/product-8.webp" alt="Leather Crossbody" class="img-fluid">
-                    <div class="product-badges">
-                      <span class="badge-hot">Hot</span>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="Views/template/images/product/product-8.webp" alt="Libro más vendido" class="img-fluid">
+                                <div class="product-badges">
+                                    <span class="badge-hot">Top</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h4 class="product-name">Historias que Dejan Huella</h4>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    <span>(112)</span>
+                                </div>
+                                <div class="product-price"><span class="current-price">$11.25</span></div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="product-info">
-                    <h4 class="product-name">Leather Crossbody</h4>
-                    <div class="product-rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <span>(112)</span>
-                    </div>
-                    <div class="product-price">
-                      <span class="current-price">$95.50</span>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="400">
-            <div class="product-category">
-              <h3 class="category-title">
-                <i class="bi bi-star"></i> Featured Items
-              </h3>
-              <div class="product-list">
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="Views/template/images/product/product-7.webp" alt="Pleated Midi Skirt" class="img-fluid">
-                  </div>
-                  <div class="product-info">
-                    <h4 class="product-name">Pleated Midi Skirt</h4>
-                    <div class="product-rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star"></i>
-                      <span>(32)</span>
-                    </div>
-                    <div class="product-price">
-                      <span class="current-price">$75.00</span>
-                    </div>
-                  </div>
-                </div>
+            <!-- Featured -->
+            <div class="col-lg-4 col-md-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="400">
+                <div class="product-category">
+                    <h3 class="category-title">
+                        <i class="bi bi-star"></i> Destacados
+                    </h3>
+                    <div class="product-list">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="Views/template/images/product/product-7.webp" alt="Libro destacado" class="img-fluid">
+                            </div>
+                            <div class="product-info">
+                                <h4 class="product-name">Poemas para un Nuevo Día</h4>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                                    <span>(32)</span>
+                                </div>
+                                <div class="product-price"><span class="current-price">$8.99</span></div>
+                            </div>
+                        </div>
 
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="Views/template/images/product/product-4.webp" alt="Geometric Earrings" class="img-fluid">
-                    <div class="product-badges">
-                      <span class="badge-limited">Limited</span>
-                    </div>
-                  </div>
-                  <div class="product-info">
-                    <h4 class="product-name">Geometric Earrings</h4>
-                    <div class="product-rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-half"></i>
-                      <span>(47)</span>
-                    </div>
-                    <div class="product-price">
-                      <span class="current-price">$42.99</span>
-                    </div>
-                  </div>
-                </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="Views/template/images/product/product-4.webp" alt="Libro destacado" class="img-fluid">
+                                <div class="product-badges">
+                                    <span class="badge-limited">Exclusivo</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h4 class="product-name">Narrativas Breves del Mundo</h4>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                    <span>(47)</span>
+                                </div>
+                                <div class="product-price"><span class="current-price">$9.50</span></div>
+                            </div>
+                        </div>
 
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="Views/template/images/product/product-9.webp" alt="Structured Satchel" class="img-fluid">
-                  </div>
-                  <div class="product-info">
-                    <h4 class="product-name">Structured Satchel</h4>
-                    <div class="product-rating">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <span>(64)</span>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="Views/template/images/product/product-9.webp" alt="Libro destacado" class="img-fluid">
+                            </div>
+                            <div class="product-info">
+                                <h4 class="product-name">Entre Líneas y Sombras</h4>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    <span>(64)</span>
+                                </div>
+                                <div class="product-price"><span class="current-price">$10.99</span></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-price">
-                      <span class="current-price">$89.99</span>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
+
         </div>
-
-      </div>
-
-    </section><!-- /Cards Section -->
-
-    <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="main-content text-center" data-aos="zoom-in" data-aos-delay="200">
-              <div class="offer-badge" data-aos="fade-down" data-aos-delay="250">
-                <span class="limited-time">Limited Time</span>
-                <span class="offer-text">50% OFF</span>
-              </div>
-
-              <h2 data-aos="fade-up" data-aos-delay="300">Exclusive Flash Sale</h2>
-
-              <p class="subtitle" data-aos="fade-up" data-aos-delay="350">Don't miss out on our biggest sale of the year. Premium quality products at unbeatable prices for the next 48 hours only.</p>
-
-              <div class="countdown-wrapper" data-aos="fade-up" data-aos-delay="400">
-                <div class="countdown d-flex justify-content-center" data-count="2025/12/31">
-                  <div>
-                    <h3 class="count-days"></h3>
-                    <h4>Days</h4>
-                  </div>
-                  <div>
-                    <h3 class="count-hours"></h3>
-                    <h4>Hours</h4>
-                  </div>
-                  <div>
-                    <h3 class="count-minutes"></h3>
-                    <h4>Minutes</h4>
-                  </div>
-                  <div>
-                    <h3 class="count-seconds"></h3>
-                    <h4>Seconds</h4>
-                  </div>
-                </div>
-              </div>
-
-              <div class="action-buttons" data-aos="fade-up" data-aos-delay="450">
-                <a href="#" class="btn-shop-now">Shop Now</a>
-                <a href="#" class="btn-view-deals">View All Deals</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row featured-products-row" data-aos="fade-up" data-aos-delay="500">
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="product-showcase">
-              <div class="product-image">
-                <img src="Views/template/images/product/product-5.webp" alt="Featured Product" class="img-fluid">
-                <div class="discount-badge">-45%</div>
-              </div>
-              <div class="product-details">
-                <h6>Premium Wireless Headphones</h6>
-                <div class="price-section">
-                  <span class="original-price">$129</span>
-                  <span class="sale-price">$71</span>
-                </div>
-                <div class="rating-stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <span class="rating-count">(324)</span>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Product Showcase -->
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="150">
-            <div class="product-showcase">
-              <div class="product-image">
-                <img src="Views/template/images/product/product-7.webp" alt="Featured Product" class="img-fluid">
-                <div class="discount-badge">-60%</div>
-              </div>
-              <div class="product-details">
-                <h6>Smart Fitness Tracker</h6>
-                <div class="price-section">
-                  <span class="original-price">$89</span>
-                  <span class="sale-price">$36</span>
-                </div>
-                <div class="rating-stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-half"></i>
-                  <span class="rating-count">(198)</span>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Product Showcase -->
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="product-showcase">
-              <div class="product-image">
-                <img src="Views/template/images/product/product-11.webp" alt="Featured Product" class="img-fluid">
-                <div class="discount-badge">-35%</div>
-              </div>
-              <div class="product-details">
-                <h6>Luxury Travel Backpack</h6>
-                <div class="price-section">
-                  <span class="original-price">$159</span>
-                  <span class="sale-price">$103</span>
-                </div>
-                <div class="rating-stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <span class="rating-count">(267)</span>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Product Showcase -->
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="250">
-            <div class="product-showcase">
-              <div class="product-image">
-                <img src="Views/template/images/product/product-1.webp" alt="Featured Product" class="img-fluid">
-                <div class="discount-badge">-55%</div>
-              </div>
-              <div class="product-details">
-                <h6>Artisan Coffee Mug Set</h6>
-                <div class="price-section">
-                  <span class="original-price">$75</span>
-                  <span class="sale-price">$34</span>
-                </div>
-                <div class="rating-stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star"></i>
-                  <span class="rating-count">(142)</span>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Product Showcase -->
-        </div>
-
-      </div>
-
-    </section><!-- /Call To Action Section -->
+    </div>
+</section><!-- /Cards Section -->
 
 <?php
 include_once DIRECTORIO_LAYOUTS . "footer.php";

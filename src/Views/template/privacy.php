@@ -5,193 +5,193 @@ include_once DIRECTORIO_LAYOUTS . "header.php";
 
     <!-- Page Title -->
     <div class="page-title light-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Privacy</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="/inicio">Home</a></li>
-            <li class="current">Privacy</li>
-          </ol>
-        </nav>
-      </div>
+        <div class="container d-lg-flex justify-content-between align-items-center">
+            <h1 class="mb-2 mb-lg-0">Privacidad</h1>
+            <nav class="breadcrumbs">
+                <ol>
+                    <li><a href="/inicio">Inicio</a></li>
+                    <li class="current">Privacidad</li>
+                </ol>
+            </nav>
+        </div>
     </div><!-- End Page Title -->
 
     <!-- Privacy Section -->
     <section id="privacy" class="privacy section">
 
-      <div class="container" data-aos="fade-up">
-        <!-- Header -->
-        <div class="privacy-header" data-aos="fade-up">
-          <div class="header-content">
-            <span class="update-badge">Last Updated: February 27, 2025</span>
-            <h2>Privacy Policy</h2>
-            <p>We respect your privacy and are committed to protecting your personal data. This privacy policy explains how we handle your information.</p>
-            <div class="privacy-badges">
-              <div class="badge-item">
-                <i class="bi bi-shield-check"></i>
-                <span>Data Protection</span>
-              </div>
-              <div class="badge-item">
-                <i class="bi bi-lock"></i>
-                <span>Secure Storage</span>
-              </div>
-              <div class="badge-item">
-                <i class="bi bi-person-lock"></i>
-                <span>Privacy First</span>
-              </div>
+        <div class="container" data-aos="fade-up">
+            <!-- Header -->
+            <div class="privacy-header" data-aos="fade-up">
+                <div class="header-content">
+                    <span class="update-badge">Última Actualización: 27 de Febrero de 2025</span>
+                    <h2>Política de Privacidad</h2>
+                    <p>Respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Esta política de privacidad explica cómo gestionamos tu información.</p>
+                    <div class="privacy-badges">
+                        <div class="badge-item">
+                            <i class="bi bi-shield-check"></i>
+                            <span>Protección de Datos</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="bi bi-lock"></i>
+                            <span>Almacenamiento Seguro</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="bi bi-person-lock"></i>
+                            <span>Privacidad Primero</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <!-- Information Collection -->
+            <div class="info-section" data-aos="fade-up">
+                <div class="section-grid">
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="bi bi-collection"></i>
+                            <h3>Información que Recopilamos</h3>
+                        </div>
+                        <div class="card-content">
+                            <ul class="info-list">
+                                <li>Nombre e información de contacto</li>
+                                <li>Credenciales de cuenta</li>
+                                <li>Datos de pago</li>
+                                <li>Información del dispositivo</li>
+                                <li>Datos de uso y preferencias de lectura</li>
+                                <li>Historial de compras y descargas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="bi bi-graph-up"></i>
+                            <h3>Cómo Usamos los Datos</h3>
+                        </div>
+                        <div class="card-content">
+                            <ul class="info-list">
+                                <li>Proporcionar y mejorar servicios</li>
+                                <li>Procesar transacciones de eBooks</li>
+                                <li>Enviar actualizaciones y notificaciones</li>
+                                <li>Personalizar recomendaciones de libros</li>
+                                <li>Analizar el uso del servicio</li>
+                                <li>Garantizar la seguridad</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="bi bi-share"></i>
+                            <h3>Compartir Información</h3>
+                        </div>
+                        <div class="card-content">
+                            <ul class="info-list">
+                                <li>Proveedores de servicios</li>
+                                <li>Socios comerciales (editoriales)</li>
+                                <li>Requisitos legales</li>
+                                <li>Con consentimiento del usuario</li>
+                                <li>Transacciones comerciales</li>
+                                <li>Socios de análisis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Measures -->
+            <div class="security-section" data-aos="fade-up">
+                <div class="section-header">
+                    <h3>Medidas de Seguridad de Datos</h3>
+                    <p>Implementamos medidas de seguridad apropiadas para proteger tus datos</p>
+                </div>
+                <div class="measures-grid">
+                    <div class="measure-item">
+                        <i class="bi bi-shield-lock"></i>
+                        <h4>Encriptación</h4>
+                        <p>Todos los datos están encriptados durante la transmisión y almacenamiento usando protocolos estándar de la industria</p>
+                    </div>
+                    <div class="measure-item">
+                        <i class="bi bi-fingerprint"></i>
+                        <h4>Control de Acceso</h4>
+                        <p>Controles de acceso estrictos y medidas de autenticación protegen tu información</p>
+                    </div>
+                    <div class="measure-item">
+                        <i class="bi bi-eye-slash"></i>
+                        <h4>Privacidad de Datos</h4>
+                        <p>Evaluaciones regulares de privacidad y prácticas de minimización de datos</p>
+                    </div>
+                    <div class="measure-item">
+                        <i class="bi bi-patch-check"></i>
+                        <h4>Cumplimiento RGPD</h4>
+                        <p>Adhesión al Reglamento General de Protección de Datos y normativas internacionales</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Rights -->
+            <div class="rights-section" data-aos="fade-up">
+                <div class="rights-content">
+                    <h3>Tus Derechos de Privacidad</h3>
+                    <p>Tienes varios derechos con respecto a tus datos personales:</p>
+                    <div class="rights-grid">
+                        <div class="right-item">
+                            <i class="bi bi-eye"></i>
+                            <h4>Derecho de Acceso</h4>
+                            <p>Puedes solicitar una copia de tus datos personales</p>
+                        </div>
+                        <div class="right-item">
+                            <i class="bi bi-pencil-square"></i>
+                            <h4>Derecho de Rectificación</h4>
+                            <p>Puedes actualizar o corregir tu información</p>
+                        </div>
+                        <div class="right-item">
+                            <i class="bi bi-trash"></i>
+                            <h4>Derecho al Olvido</h4>
+                            <p>Solicitar la eliminación de tus datos personales</p>
+                        </div>
+                        <div class="right-item">
+                            <i class="bi bi-download"></i>
+                            <h4>Derecho a la Portabilidad</h4>
+                            <p>Transferir tus datos a otro servicio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="additional-info" data-aos="fade-up">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>Política de Cookies</h4>
+                        <p>Utilizamos cookies para mejorar tu experiencia de navegación. Puedes controlar las preferencias de cookies a través de la configuración de tu navegador.</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Privacidad de Menores</h4>
+                        <p>Nuestros servicios no están destinados a menores de 14 años. No recopilamos conscientemente datos de menores sin consentimiento parental.</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Actualizaciones de Política</h4>
+                        <p>Podemos actualizar esta política periódicamente. Te notificaremos de cualquier cambio importante.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="privacy-contact" data-aos="fade-up">
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <i class="bi bi-envelope-open"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h4>¿Preguntas sobre Privacidad?</h4>
+                        <p>Si tienes alguna pregunta sobre esta Política de Privacidad, por favor contacta con nuestro Delegado de Protección de Datos</p>
+                        <a href="/contact" class="contact-button">Contactar DPD</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-        <!-- Information Collection -->
-        <div class="info-section" data-aos="fade-up">
-          <div class="section-grid">
-            <div class="info-card">
-              <div class="card-header">
-                <i class="bi bi-collection"></i>
-                <h3>Information We Collect</h3>
-              </div>
-              <div class="card-content">
-                <ul class="info-list">
-                  <li>Name and contact information</li>
-                  <li>Account credentials</li>
-                  <li>Payment details</li>
-                  <li>Device information</li>
-                  <li>Usage data and preferences</li>
-                  <li>Communication records</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="info-card">
-              <div class="card-header">
-                <i class="bi bi-graph-up"></i>
-                <h3>How We Use Data</h3>
-              </div>
-              <div class="card-content">
-                <ul class="info-list">
-                  <li>Provide and improve services</li>
-                  <li>Process transactions</li>
-                  <li>Send updates and notifications</li>
-                  <li>Personalize user experience</li>
-                  <li>Analyze service usage</li>
-                  <li>Ensure security</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="info-card">
-              <div class="card-header">
-                <i class="bi bi-share"></i>
-                <h3>Information Sharing</h3>
-              </div>
-              <div class="card-content">
-                <ul class="info-list">
-                  <li>Service providers</li>
-                  <li>Business partners</li>
-                  <li>Legal requirements</li>
-                  <li>With user consent</li>
-                  <li>Business transactions</li>
-                  <li>Analytics partners</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Security Measures -->
-        <div class="security-section" data-aos="fade-up">
-          <div class="section-header">
-            <h3>Data Security Measures</h3>
-            <p>We implement appropriate security measures to protect your data</p>
-          </div>
-          <div class="measures-grid">
-            <div class="measure-item">
-              <i class="bi bi-shield-lock"></i>
-              <h4>Encryption</h4>
-              <p>All data is encrypted during transmission and storage using industry-standard protocols</p>
-            </div>
-            <div class="measure-item">
-              <i class="bi bi-fingerprint"></i>
-              <h4>Access Control</h4>
-              <p>Strict access controls and authentication measures protect your information</p>
-            </div>
-            <div class="measure-item">
-              <i class="bi bi-eye-slash"></i>
-              <h4>Data Privacy</h4>
-              <p>Regular privacy assessments and data minimization practices</p>
-            </div>
-            <div class="measure-item">
-              <i class="bi bi-patch-check"></i>
-              <h4>Compliance</h4>
-              <p>Adherence to international data protection regulations</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- User Rights -->
-        <div class="rights-section" data-aos="fade-up">
-          <div class="rights-content">
-            <h3>Your Privacy Rights</h3>
-            <p>You have several rights regarding your personal data:</p>
-            <div class="rights-grid">
-              <div class="right-item">
-                <i class="bi bi-eye"></i>
-                <h4>Right to Access</h4>
-                <p>You can request a copy of your personal data</p>
-              </div>
-              <div class="right-item">
-                <i class="bi bi-pencil-square"></i>
-                <h4>Right to Rectification</h4>
-                <p>You can update or correct your information</p>
-              </div>
-              <div class="right-item">
-                <i class="bi bi-trash"></i>
-                <h4>Right to Erasure</h4>
-                <p>Request deletion of your personal data</p>
-              </div>
-              <div class="right-item">
-                <i class="bi bi-download"></i>
-                <h4>Right to Data Portability</h4>
-                <p>Transfer your data to another service</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Additional Information -->
-        <div class="additional-info" data-aos="fade-up">
-          <div class="info-grid">
-            <div class="info-item">
-              <h4>Cookies Policy</h4>
-              <p>We use cookies to enhance your browsing experience. You can control cookie preferences through your browser settings.</p>
-            </div>
-            <div class="info-item">
-              <h4>Children's Privacy</h4>
-              <p>Our services are not intended for children under 13. We do not knowingly collect data from children.</p>
-            </div>
-            <div class="info-item">
-              <h4>Policy Updates</h4>
-              <p>We may update this policy periodically. We will notify you of any material changes.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact Section -->
-        <div class="privacy-contact" data-aos="fade-up">
-          <div class="contact-box">
-            <div class="contact-icon">
-              <i class="bi bi-envelope-open"></i>
-            </div>
-            <div class="contact-content">
-              <h4>Privacy Questions?</h4>
-              <p>If you have any questions about this Privacy Policy, please contact our Data Protection Officer</p>
-              <a href="/contact" class="contact-button">Contact DPO</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
 
     </section><!-- /Privacy Section -->
 

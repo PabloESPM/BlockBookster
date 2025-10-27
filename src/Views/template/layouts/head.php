@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>404 - NiceShop Bootstrap Template</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <title>404 - BlockBookster | Librería digital</title>
+    <meta name="description" content="blockBookster es tu librería digital favorita. Descubre, compra y disfruta miles de libros electrónicos al instante.">
+    <meta name="keywords" content="libros digitales, ebooks, lectura online, librería, blockBookster, iBooks, tienda de libros, descargar libros">
 
     <!-- Favicons -->
     <link href="Views/template/images/favicon.png" rel="icon">
@@ -29,12 +29,14 @@
     <link href="Views/template/css/main.css" rel="stylesheet">
 
     <!-- =======================================================
-    * Template Name: NiceShop
-    * Template URL: https://bootstrapmade.com/niceshop-bootstrap-ecommerce-template/
-    * Updated: Aug 26 2025 with Bootstrap v5.3.7
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
+    * Proyecto: BlockBookster
+    * Descripción: Librería digital basada en Bootstrap 5
+    * Inspirado en: NiceShop Template
+    * Actualizado: Oct 2025 con Bootstrap v5.3.7
+    * Autor original: BootstrapMade.com
+    * Adaptación: BlockBookster Team
     ======================================================== -->
 </head>
 
 <body class="page-404">
+
