@@ -1,12 +1,16 @@
 <?php
 include_once "vendor/autoload.php";
 include_once "env.php";
+include_once "Auxiliar/funciones.php";
 
+//Directiva para inserta o utilizar la clase RouteCollector
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
 use Phroute\Phroute\RouteCollector;
 
+//instancia una variable de la clase RouteCollector
 $router = new RouteCollector();
 
+//Definir las rutas de mi aplicación
 $router->get('/', function (){
     include_once DIRECTORIO_TEMPLATE . "inicio.php";
 });
@@ -122,42 +126,7 @@ $router->post('/boocks', function() {
     var_dump($_POST);
     var_dump($_FILES);
 
-    // Verificar que se haya enviado el título y el archivo
-    if(empty($_POST['titulo']) || empty($_FILES['portada']['name'])) {
-        die('Error: Faltan datos requeridos');
-    }
-
-    // Limpiar el título para usarlo como nombre de carpeta
-    $tituloLibro = $_POST['titulo'];
-    // Eliminar caracteres no permitidos en nombres de carpeta
-    $nombreCarpeta = preg_replace('/[^a-zA-Z0-9\s\-_]/', '', $tituloLibro);
-    // Reemplazar espacios por guiones bajos
-    $nombreCarpeta = str_replace(' ', '_', $nombreCarpeta);
-
-    $carpetas = scandir(DIRECTORIO_IMAGES); // Ver si el directorio uploaded está creado dentro de images
-
-    // Si no existe la carpeta uploaded, crearla
-    if(!array_search('uploaded', $carpetas)) {
-        mkdir(DIRECTORIO_IMAGES . "/uploaded");
-    }
-
-    // Ruta completa de la carpeta del libro
-    $rutaCarpetaLibro = DIRECTORIO_IMAGES . "/uploaded/" . $nombreCarpeta;
-
-    // Verificar si la carpeta del libro ya existe
-    if(!is_dir($rutaCarpetaLibro)) {
-        // Si no existe, crearla
-        mkdir($rutaCarpetaLibro);
-    }
-
-    // Mover el archivo a la carpeta del libro
-    $rutaDestino = $rutaCarpetaLibro . "/" . $_FILES['portada']['name'];
-
-    if(move_uploaded_file($_FILES['portada']['tmp_name'], $rutaDestino)) {
-        echo "Imagen subida correctamente a: " . $rutaDestino;
-    } else {
-        echo "Error al subir la imagen";
-    }
+    \App\Class\Auxiliar::gestionarImagen($_POST, $_FILES);
 });
 
 
