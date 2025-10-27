@@ -10,6 +10,11 @@ use Phroute\Phroute\RouteCollector;
 //instancia una variable de la clase RouteCollector
 $router = new RouteCollector();
 
+
+$router->get('/create-database', function () {
+    \App\Model\DB::createDataBase("BlockBookster");
+});
+
 //Definir las rutas de mi aplicación
 $router->get('/', function (){
     include_once DIRECTORIO_TEMPLATE . "inicio.php";
@@ -128,14 +133,8 @@ $router->post('/boocks', function() {
 
     \App\Class\Auxiliar::gestionarImagen($_POST, $_FILES);
 });
-
-
-$router->delete('/boocks/{id}', function($id) {
-
-});
-$router->put('/boocks/{id}', function($id) {
-
-});
+$router->delete('/boocks/{id}', function($id) {});
+$router->put('/boocks/{id}', function($id) {});
 $router->get('/boocks', function() {});
 $router->get('/boocks/{id}', function($id) {});
 
