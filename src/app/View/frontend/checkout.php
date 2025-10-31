@@ -209,7 +209,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                         <div class="order-items">
                             <div class="order-item">
                                 <div class="order-item-image">
-                                    <img src="app/View/frontend/img/product/product-1.webp" alt="Libro" class="img-fluid">
+                                    <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-1.webp" alt="Libro" class="img-fluid">
                                 </div>
                                 <div class="order-item-details">
                                     <h4>El misterio del manuscrito</h4>
@@ -223,7 +223,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
 
                             <div class="order-item">
                                 <div class="order-item-image">
-                                    <img src="app/View/frontend/img/product/product-2.webp" alt="Libro" class="img-fluid">
+                                    <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-2.webp" alt="Libro" class="img-fluid">
                                 </div>
                                 <div class="order-item-details">
                                     <h4>La biblioteca infinita</h4>

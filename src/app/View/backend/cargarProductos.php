@@ -8,7 +8,7 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
 ?>
 
     <!-- Formulario de carga de libro -->
-    <form method="POST" action="/books" enctype="multipart/form-data">
+    <form method="POST" action="/book" enctype="multipart/form-data">
 
         <div class="row g-3">
 

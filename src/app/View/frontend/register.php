@@ -1,11 +1,10 @@
 <?php
 include_once DIRECTORIO_FRONTEND_LAYOUTS . "head.php";
 include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
-include_once DIRECTORIO_AUX . "funciones.php";
 
 $password = '';
 
-$password = generarContrasenaAleatoria();
+$password = \App\Class\Auxiliar::generarContrasenaAleatoria();
 ?>
 
 <!-- Page Title -->

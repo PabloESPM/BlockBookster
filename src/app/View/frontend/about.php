@@ -76,7 +76,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
         <div class="row mt-5">
             <div class="col-lg-12" data-aos="zoom-in" data-aos-delay="200">
                 <div class="video-box">
-                    <img src="app/View/frontend/img/about/about-wide-1.webp" class="img-fluid" alt="Video Promocional">
+                    <img src="<?=DIRECTORIO_FRONTEND_IMG?>/about/about-wide-1.webp" class="img-fluid" alt="Video Promocional">
                     <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
                 </div>
             </div>
@@ -146,7 +146,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                     <p>BlockBookster ha renovado mi pasión por la lectura con recomendaciones increíbles y un servicio impecable.</p>
                     <div class="client-info">
                         <div class="client-image">
-                            <img src="app/View/frontend/img/person/person-f-7.webp" alt="Cliente">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG?>/person/person-f-7.webp" alt="Cliente">
                         </div>
                         <div class="client-details">
                             <h3>Lucía Fernández</h3>
@@ -164,7 +164,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                     <p>Excelente selección de libros y un equipo que realmente entiende lo que los lectores buscamos.</p>
                     <div class="client-info">
                         <div class="client-image">
-                            <img src="app/View/frontend/img/person/person-m-7.webp" alt="Cliente">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG?>/person/person-m-7.webp" alt="Cliente">
                         </div>
                         <div class="client-details">
                             <h3>Carlos Ramírez</h3>
@@ -182,7 +182,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                     <p>Un lugar donde cada lector encuentra su próxima gran historia. ¡Altamente recomendado!</p>
                     <div class="client-info">
                         <div class="client-image">
-                            <img src="app/View/frontend/img/person/person-f-8.webp" alt="Cliente">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG?>/person/person-f-8.webp" alt="Cliente">
                         </div>
                         <div class="client-details">
                             <h3>Elena Soto</h3>

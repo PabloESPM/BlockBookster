@@ -1,7 +1,7 @@
 <?php
 include_once "vendor/autoload.php";
 include_once "env.php";
-include_once "Auxiliar/funciones.php";
+
 
 //Directiva para inserta o utilizar la clase RouteCollector
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
@@ -159,13 +159,7 @@ $router->get('admin/books/{$id}/edit', function($id) {
     include_once DIRECTORIO_BACKEND . 'cargarProductos.php';
 });
 
-// Rutas de trabajo con libros
-$router->post('/books', function() {
-    var_dump($_POST);
-    var_dump($_FILES);
 
-    \App\Class\Auxiliar::gestionarImagen($_POST, $_FILES);
-});
 
 # NB. You can cache the return value from $router->getData() so you don't have to create the routes each request - massive speed gains
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());

@@ -36,7 +36,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                     <!-- User Info -->
                     <div class="user-info" data-aos="fade-right">
                         <div class="user-avatar">
-                            <img src="app/View/frontend/img/person/person-f-1.webp" alt="Profile" loading="lazy">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG?>/person/person-f-1.webp" alt="Profile" loading="lazy">
                             <span class="status-badge"><i class="bi bi-shield-check"></i></span>
                         </div>
                         <h4>Sara Martínez</h4>
@@ -144,9 +144,9 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                     </div>
                                     <div class="order-content">
                                         <div class="product-grid">
-                                            <img src="app/View/frontend/img/product/product-1.webp" alt="Product" loading="lazy">
-                                            <img src="app/View/frontend/img/product-2.webp" alt="Product" loading="lazy">
-                                            <img src="app/View/frontend/img/product-3.webp" alt="Product" loading="lazy">
+                                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-1.webp" alt="Product" loading="lazy">
+                                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-2.webp" alt="Product" loading="lazy">
+                                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-3.webp" alt="Product" loading="lazy">
                                         </div>
                                         <div class="order-info">
                                             <div class="info-row">
@@ -247,7 +247,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                                 <h5>Libros (3)</h5>
                                                 <div class="order-items">
                                                     <div class="item">
-                                                        <img src="app/View/frontend/img/product/product-1.webp" alt="Product" loading="lazy">
+                                                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-1.webp" alt="Product" loading="lazy">
                                                         <div class="item-info">
                                                             <h6>La Sombra del Viento</h6>
                                                             <div class="item-meta">
@@ -259,7 +259,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                                     </div>
 
                                                     <div class="item">
-                                                        <img src="app/View/frontend/img/product/product-2.webp" alt="Product" loading="lazy">
+                                                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-2.webp" alt="Product" loading="lazy">
                                                         <div class="item-info">
                                                             <h6>Cien Años de Soledad</h6>
                                                             <div class="item-meta">
@@ -271,7 +271,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                                     </div>
 
                                                     <div class="item">
-                                                        <img src="app/View/frontend/img/product/product-3.webp" alt="Product" loading="lazy">
+                                                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-3.webp" alt="Product" loading="lazy">
                                                         <div class="item-info">
                                                             <h6>El Código Da Vinci</h6>
                                                             <div class="item-meta">
@@ -328,8 +328,8 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                     </div>
                                     <div class="order-content">
                                         <div class="product-grid">
-                                            <img src="app/View/frontend/img/product/product-4.webp" alt="Product" loading="lazy">
-                                            <img src="app/View/frontend/img/product/product-5.webp" alt="Product" loading="lazy">
+                                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-4.webp" alt="Product" loading="lazy">
+                                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-5.webp" alt="Product" loading="lazy">
                                         </div>
                                         <div class="order-info">
                                             <div class="info-row">
@@ -434,7 +434,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                                 <h5>Libros (2)</h5>
                                                 <div class="order-items">
                                                     <div class="item">
-                                                        <img src="app/View/frontend/img/product/product-4.webp" alt="Product" loading="lazy">
+                                                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-4.webp" alt="Product" loading="lazy">
                                                         <div class="item-info">
                                                             <h6>El Nombre del Viento</h6>
                                                             <div class="item-meta">
@@ -446,7 +446,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                                     </div>
 
                                                     <div class="item">
-                                                        <img src="app/View/frontend/img/product/product-5.webp" alt="Product" loading="lazy">
+                                                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-5.webp" alt="Product" loading="lazy">
                                                         <div class="item-info">
                                                             <h6>Los Pilares de la Tierra</h6>
                                                             <div class="item-meta">
@@ -503,7 +503,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                     </div>
                                     <div class="order-content">
                                         <div class="product-grid">
-                                            <img src="app/View/frontend/img/product/product-6.webp" alt="Product" loading="lazy">
+                                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-6.webp" alt="Product" loading="lazy">
                                         </div>
                                         <div class="order-info">
                                             <div class="info-row">
@@ -537,9 +537,9 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                     </div>
                                     <div class="order-content">
                                         <div class="product-grid">
-                                            <img src="app/View/frontend/img/product/product-7.webp" alt="Product" loading="lazy">
-                                            <img src="app/View/frontend/img/product/product-8.webp" alt="Product" loading="lazy">
-                                            <img src="app/View/frontend/img/product/product-9.webp" alt="Product" loading="lazy">
+                                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-7.webp" alt="Product" loading="lazy">
+                                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-8.webp" alt="Product" loading="lazy">
+                                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-9.webp" alt="Product" loading="lazy">
                                             <span class="more-items">+2</span>
                                         </div>
                                         <div class="order-info">
@@ -595,7 +595,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                 <!-- Wishlist Item 1 -->
                                 <div class="wishlist-card" data-aos="fade-up" data-aos-delay="100">
                                     <div class="wishlist-image">
-                                        <img src="app/View/frontend/img/product/product-1.webp" alt="Product" loading="lazy">
+                                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-1.webp" alt="Product" loading="lazy">
                                         <button class="btn-remove" type="button" aria-label="Eliminar de la lista">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -624,7 +624,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                 <!-- Wishlist Item 2 -->
                                 <div class="wishlist-card" data-aos="fade-up" data-aos-delay="200">
                                     <div class="wishlist-image">
-                                        <img src="app/View/frontend/img/product/product-2.webp" alt="Product" loading="lazy">
+                                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-2.webp" alt="Product" loading="lazy">
                                         <button class="btn-remove" type="button" aria-label="Eliminar de la lista">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -651,7 +651,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                 <!-- Wishlist Item 3 -->
                                 <div class="wishlist-card" data-aos="fade-up" data-aos-delay="300">
                                     <div class="wishlist-image">
-                                        <img src="app/View/frontend/img/product/product-3.webp" alt="Product" loading="lazy">
+                                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-3.webp" alt="Product" loading="lazy">
                                         <button class="btn-remove" type="button" aria-label="Eliminar de la lista">
                                             <i class="bi bi-trash"></i>
                                         </button>
@@ -770,7 +770,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                 <!-- Review Card 1 -->
                                 <div class="review-card" data-aos="fade-up" data-aos-delay="100">
                                     <div class="review-header">
-                                        <img src="app/View/frontend/img/product/product-1.webp" alt="Product" class="product-image" loading="lazy">
+                                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-1.webp" alt="Product" class="product-image" loading="lazy">
                                         <div class="review-meta">
                                             <h4>La Sombra del Viento</h4>
                                             <div class="rating">
@@ -796,7 +796,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                 <!-- Review Card 2 -->
                                 <div class="review-card" data-aos="fade-up" data-aos-delay="200">
                                     <div class="review-header">
-                                        <img src="app/View/frontend/img/product/product-2.webp" alt="Product" class="product-image" loading="lazy">
+                                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-2.webp" alt="Product" class="product-image" loading="lazy">
                                         <div class="review-meta">
                                             <h4>Cien Años de Soledad</h4>
                                             <div class="rating">

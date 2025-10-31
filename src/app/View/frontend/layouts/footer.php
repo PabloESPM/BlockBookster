@@ -136,16 +136,16 @@
 <div id="preloader"></div>
 
 <!-- Vendor JS Files -->
-<script src="app/View/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="app/View/frontend/vendor/php-email-form/validate.js"></script>
-<script src="app/View/frontend/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="app/View/frontend/vendor/aos/aos.js"></script>
-<script src="app/View/frontend/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="app/View/frontend/vendor/drift-zoom/Drift.min.js"></script>
-<script src="app/View/frontend/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="<?=DIRECTORIO_FRONTEND_VENDOR?>/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?=DIRECTORIO_FRONTEND_VENDOR?>/php-email-form/validate.js"></script>
+<script src="<?=DIRECTORIO_FRONTEND_VENDOR?>/swiper/swiper-bundle.min.js"></script>
+<script src="<?=DIRECTORIO_FRONTEND_VENDOR?>/aos/aos.js"></script>
+<script src="<?=DIRECTORIO_FRONTEND_VENDOR?>/glightbox/js/glightbox.min.js"></script>
+<script src="<?=DIRECTORIO_FRONTEND_VENDOR?>/drift-zoom/Drift.min.js"></script>
+<script src="<?=DIRECTORIO_FRONTEND_VENDOR?>/purecounter/purecounter_vanilla.js"></script>
 
 <!-- Main JS File -->
-<script src="app/View/frontend/js/main.js"></script>
+<script src="<?=DIRECTORIO_FRONTEND_JS?>main.js"></script>
 
 </body>
 </html>

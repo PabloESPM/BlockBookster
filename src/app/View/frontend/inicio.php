@@ -34,7 +34,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
         <div class="hero-visuals">
             <div class="product-showcase" data-aos="fade-left" data-aos-delay="200">
                 <div class="product-card featured">
-                    <img src="app/View/frontend/img/product/product-2.webp" alt="Featured Book" class="img-fluid">
+                    <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-2.webp" alt="Featured Book" class="img-fluid">
                     <div class="product-badge">Más vendido</div>
                     <div class="product-info">
                         <h4>El código del narrador</h4>
@@ -47,11 +47,11 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
 
                 <div class="product-grid">
                     <div class="product-mini" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="app/view/frontend/img/product/product-3.webp" alt="Book" class="img-fluid">
+                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-3.webp" alt="Book" class="img-fluid">
                         <span class="mini-price">$6.99</span>
                     </div>
                     <div class="product-mini" data-aos="zoom-in" data-aos-delay="500">
-                        <img src="app/view/frontend/img/product/product-5.webp" alt="Book" class="img-fluid">
+                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-5.webp" alt="Book" class="img-fluid">
                         <span class="mini-price">$9.50</span>
                     </div>
                 </div>
@@ -82,7 +82,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
             <div class="col-lg-6">
                 <div class="category-featured" data-aos="fade-right" data-aos-delay="200">
                     <div class="category-image">
-                        <img src="app/view/frontend/img/product/product-f-2.webp" alt="New Releases" class="img-fluid">
+                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-f-2.webp" alt="New Releases" class="img-fluid">
                     </div>
                     <div class="category-content">
                         <span class="category-tag">Lo más leído</span>
@@ -99,7 +99,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                     <div class="col-xl-6">
                         <div class="category-card cat-men" data-aos="fade-up" data-aos-delay="300">
                             <div class="category-image">
-                                <img src="app/view/frontend/img/product/product-m-5.webp" alt="Fiction" class="img-fluid">
+                                <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-m-5.webp" alt="Fiction" class="img-fluid">
                             </div>
                             <div class="category-content">
                                 <h4>Ficción</h4>
@@ -112,7 +112,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                     <div class="col-xl-6">
                         <div class="category-card cat-kids" data-aos="fade-up" data-aos-delay="400">
                             <div class="category-image">
-                                <img src="app/view/frontend/img/product/product-8.webp" alt="Children's Books" class="img-fluid">
+                                <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-8.webp" alt="Children's Books" class="img-fluid">
                             </div>
                             <div class="category-content">
                                 <h4>Infantil y juvenil</h4>
@@ -125,7 +125,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                     <div class="col-xl-6">
                         <div class="category-card cat-cosmetics" data-aos="fade-up" data-aos-delay="500">
                             <div class="category-image">
-                                <img src="app/view/frontend/img/product/product-3.webp" alt="Non-Fiction" class="img-fluid">
+                                <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-3.webp" alt="Non-Fiction" class="img-fluid">
                             </div>
                             <div class="category-content">
                                 <h4>No ficción</h4>
@@ -138,7 +138,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                     <div class="col-xl-6">
                         <div class="category-card cat-accessories" data-aos="fade-up" data-aos-delay="600">
                             <div class="category-image">
-                                <img src="app/view/frontend/img/product/product-12.webp" alt="Academic" class="img-fluid">
+                                <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-12.webp" alt="Academic" class="img-fluid">
                             </div>
                             <div class="category-content">
                                 <h4>Académicos</h4>
@@ -174,7 +174,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                 <div class="product-item">
                     <div class="product-image">
                         <div class="product-badge">Exclusivo</div>
-                        <img src="app/view/frontend/img/product/product-1.webp" alt="Libro destacado" class="img-fluid" loading="lazy">
+                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-1.webp" alt="Libro destacado" class="img-fluid" loading="lazy">
                         <div class="product-actions">
                             <button class="action-btn wishlist-btn">
                                 <i class="bi bi-heart"></i>
@@ -212,7 +212,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                 <div class="product-item">
                     <div class="product-image">
                         <div class="product-badge sale-badge">25% Off</div>
-                        <img src="app/view/frontend/img/product/product-4.webp" alt="Libro destacado" class="img-fluid" loading="lazy">
+                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-4.webp" alt="Libro destacado" class="img-fluid" loading="lazy">
                         <div class="product-actions">
                             <button class="action-btn wishlist-btn">
                                 <i class="bi bi-heart"></i>
@@ -252,7 +252,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
             <div class="col-lg-3 col-md-6">
                 <div class="product-item">
                     <div class="product-image">
-                        <img src="app/view/frontend/img/product/product-7.webp" alt="Libro destacado" class="img-fluid" loading="lazy">
+                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-7.webp" alt="Libro destacado" class="img-fluid" loading="lazy">
                         <div class="product-actions">
                             <button class="action-btn wishlist-btn">
                                 <i class="bi bi-heart"></i>
@@ -290,7 +290,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                 <div class="product-item">
                     <div class="product-image">
                         <div class="product-badge trending-badge">Tendencia</div>
-                        <img src="app/view/frontend/img/product/product-10.webp" alt="Libro destacado" class="img-fluid" loading="lazy">
+                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-10.webp" alt="Libro destacado" class="img-fluid" loading="lazy">
                         <div class="product-actions">
                             <button class="action-btn wishlist-btn active">
                                 <i class="bi bi-heart-fill"></i>
@@ -343,7 +343,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                     <div class="product-list">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="app/view/frontend/img/product/product-1.webp" alt="Libro en tendencia" class="img-fluid">
+                                <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-1.webp" alt="Libro en tendencia" class="img-fluid">
                                 <div class="product-badges">
                                     <span class="badge-new">Nuevo</span>
                                 </div>
@@ -360,7 +360,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="app/view/frontend/img/product/product-3.webp" alt="Libro en tendencia" class="img-fluid">
+                                <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-3.webp" alt="Libro en tendencia" class="img-fluid">
                             </div>
                             <div class="product-info">
                                 <h4 class="product-name">Microcuentos del Viento</h4>
@@ -374,7 +374,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="app/view/frontend/img/product/product-5.webp" alt="Libro en tendencia" class="img-fluid">
+                                <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-5.webp" alt="Libro en tendencia" class="img-fluid">
                             </div>
                             <div class="product-info">
                                 <h4 class="product-name">Guía del Lector Moderno</h4>
@@ -398,7 +398,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                     <div class="product-list">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="app/view/frontend/img/product/product-2.webp" alt="Libro más vendido" class="img-fluid">
+                                <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-2.webp" alt="Libro más vendido" class="img-fluid">
                                 <div class="product-badges">
                                     <span class="badge-sale">-15%</span>
                                 </div>
@@ -418,7 +418,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="app/view/frontend/img/product/product-6.webp" alt="Libro más vendido" class="img-fluid">
+                                <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-6.webp" alt="Libro más vendido" class="img-fluid">
                             </div>
                             <div class="product-info">
                                 <h4 class="product-name">Lecturas para el Alma</h4>
@@ -432,7 +432,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="app/view/frontend/img/product/product-8.webp" alt="Libro más vendido" class="img-fluid">
+                                <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-8.webp" alt="Libro más vendido" class="img-fluid">
                                 <div class="product-badges">
                                     <span class="badge-hot">Top</span>
                                 </div>
@@ -459,7 +459,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                     <div class="product-list">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="app/view/frontend/img/product/product-7.webp" alt="Libro destacado" class="img-fluid">
+                                <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-7.webp" alt="Libro destacado" class="img-fluid">
                             </div>
                             <div class="product-info">
                                 <h4 class="product-name">Poemas para un Nuevo Día</h4>
@@ -473,7 +473,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="app/view/frontend/img/product/product-4.webp" alt="Libro destacado" class="img-fluid">
+                                <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-4.webp" alt="Libro destacado" class="img-fluid">
                                 <div class="product-badges">
                                     <span class="badge-limited">Exclusivo</span>
                                 </div>
@@ -490,7 +490,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
 
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="app/view/frontend/img/product/product-9.webp" alt="Libro destacado" class="img-fluid">
+                                <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-9.webp" alt="Libro destacado" class="img-fluid">
                             </div>
                             <div class="product-info">
                                 <h4 class="product-name">Entre Líneas y Sombras</h4>

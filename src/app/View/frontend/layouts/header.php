@@ -241,7 +241,7 @@
                                         </div>
                                         <div class="featured-section">
                                             <div class="featured-image">
-                                                <img src="app/View/frontend/img/product/product-f-1.webp" alt="Colección de novelas de fantasía">
+                                                <img src="<?=DIRECTORIO_FRONTEND_IMG?>/product/product-f-1.webp" alt="Colección de novelas de fantasía">
                                                 <div class="featured-content">
                                                     <h3>Colección<br>de Fantasía<br>2025</h3>
                                                     <a href="#" class="btn-shop">Explorar</a>
@@ -278,7 +278,7 @@
                                         </div>
                                         <div class="featured-section">
                                             <div class="featured-image">
-                                                <img src="app/View/frontend/img/product/product-m-4.webp" alt="Colección de ensayo y divulgación">
+                                                <img src="<?=DIRECTORIO_FRONTEND_IMG?>/product/product-m-4.webp" alt="Colección de ensayo y divulgación">
                                                 <div class="featured-content">
                                                     <h3>Lecturas<br>que inspiran<br>y enseñan</h3>
                                                     <a href="#" class="btn-shop">Ver más</a>
@@ -315,7 +315,7 @@
                                         </div>
                                         <div class="featured-section">
                                             <div class="featured-image">
-                                                <img src="app/View/frontend/img/product/product-9.webp" alt="Novedades infantiles">
+                                                <img src="<?=DIRECTORIO_FRONTEND_IMG?>/product/product-9.webp" alt="Novedades infantiles">
                                                 <div class="featured-content">
                                                     <h3>Nuevas<br>aventuras<br>para niños</h3>
                                                     <a href="#" class="btn-shop">Descubrir</a>

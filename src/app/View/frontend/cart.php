@@ -47,7 +47,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                 <div class="col-lg-6 col-12 mt-3 mt-lg-0 mb-lg-0 mb-3">
                                     <div class="product-info d-flex align-items-center">
                                         <div class="product-image">
-                                            <img src="app/View/frontend/img/product/product-1.webp" alt="Product" class="img-fluid" loading="lazy">
+                                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-1.webp" alt="Product" class="img-fluid" loading="lazy">
                                         </div>
                                         <div class="product-details">
                                             <h6 class="product-title">El Arte de la Guerra Digital</h6>
@@ -91,7 +91,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                 <div class="col-lg-6 col-12 mt-3 mt-lg-0 mb-lg-0 mb-3">
                                     <div class="product-info d-flex align-items-center">
                                         <div class="product-image">
-                                            <img src="app/View/frontend/img/product/product-3.webp" alt="Product" class="img-fluid" loading="lazy">
+                                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-3.webp" alt="Product" class="img-fluid" loading="lazy">
                                         </div>
                                         <div class="product-details">
                                             <h6 class="product-title">Misterio en la Biblioteca</h6>
@@ -136,7 +136,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                 <div class="col-lg-6 col-12 mt-3 mt-lg-0 mb-lg-0 mb-3">
                                     <div class="product-info d-flex align-items-center">
                                         <div class="product-image">
-                                            <img src="app/View/frontend/img/product/product-5.webp" alt="Product" class="img-fluid" loading="lazy">
+                                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-5.webp" alt="Product" class="img-fluid" loading="lazy">
                                         </div>
                                         <div class="product-details">
                                             <h6 class="product-title">Cocina Mediterránea Moderna</h6>
