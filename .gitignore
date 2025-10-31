@@ -3,5 +3,8 @@
 /.docker/mariadb/
 /src/composer.lock/
 /src/app/View/frontend/vendor/
+/src/app/View/frontend/img/
 /src/app/View/frontend/img/product/
 /*.zip
+
+
