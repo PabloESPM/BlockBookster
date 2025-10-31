@@ -2,3 +2,4 @@
 /src/vendor/
 /.docker/mariadb/
 /src/composer.lock/
+/src/app/View/frontend/vendor/
