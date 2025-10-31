@@ -17,15 +17,15 @@ class Auxiliar
         // Reemplazar espacios por guiones bajos
         $nombreCarpeta = str_replace(' ', '_', $nombreCarpeta);
 
-        $carpetas = scandir(DIRECTORIO_IMAGES); // Ver si el directorio uploaded está creado
+        $carpetas = scandir(DIRECTORIO_BACKEND_LAYOUTS); // Ver si el directorio uploaded está creado
 
         // Si no existe la carpeta uploaded, crearla
         if(!array_search('uploaded', $carpetas)) {
-            mkdir(DIRECTORIO_IMAGES . "/uploaded");
+            mkdir(DIRECTORIO_BACKEND_IMG . "/uploaded");
         }
 
         // Ruta completa de la carpeta del libro
-        $rutaCarpetaLibro = DIRECTORIO_IMAGES . "/uploaded/" . $nombreCarpeta;
+        $rutaCarpetaLibro = DIRECTORIO_BACKEND_LAYOUTS . "/uploaded/" . $nombreCarpeta;
 
         // Verificar si la carpeta del libro ya existe
         if(!is_dir($rutaCarpetaLibro)) {

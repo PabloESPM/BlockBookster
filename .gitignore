@@ -1,6 +1,4 @@
 /.idea/
 /src/vendor/
 /.docker/mariadb/
-/src/Views/template/vendor/
-/src/Views/template/images/
 /src/composer.lock/

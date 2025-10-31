@@ -6,6 +6,8 @@ include_once "Auxiliar/funciones.php";
 //Directiva para inserta o utilizar la clase RouteCollector
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
 use Phroute\Phroute\RouteCollector;
+use App\Class\User;
+use App\Controller\UserController;
 
 //instancia una variable de la clase RouteCollector
 $router = new RouteCollector();
@@ -16,98 +18,129 @@ $router->get('/create-database', function () {
 });
 
 //Definir las rutas de mi aplicación
+
+////Rutas Para Paginas Dinamicas
+///API REST CRUD
+
+///Login
+$router->post('/user/login', [UserController::class, 'verify']);
+
+//Usuario
+$router->get('/user',[\App\Controller\UserController::class,'index']);
+$router->get('/user/{id}',[\App\Controller\UserController::class,'show']);
+$router->post('/user',[\App\Controller\UserController::class,'store']);
+$router->put('/user/{id}',[\App\Controller\UserController::class,'update']);
+$router->delete('/user/{id}',[\App\Controller\UserController::class,'destroy']);
+
+//Libros
+$router->get('/book',[\App\Controller\BookController::class,'index']);
+$router->get('/book/{id}',[\App\Controller\BookController::class,'show']);
+$router->post('/book',[\App\Controller\BookController::class,'store']);
+$router->put('/book/{id}',[\App\Controller\BookController::class,'update']);
+$router->delete('/book/{id}',[\App\Controller\BookController::class,'destroy']);
+
+
+//Autores
+$router->get('/author',[\App\Controller\UserController::class,'index']);
+$router->get('/author/{id}',[\App\Controller\UserController::class,'show']);
+$router->post('/author',[\App\Controller\UserController::class,'store']);
+$router->put('/author/{id}',[\App\Controller\UserController::class,'update']);
+$router->delete('/author/{id}',[\App\Controller\UserController::class,'destroy']);
+
+
+
 $router->get('/', function (){
-    include_once DIRECTORIO_TEMPLATE . "inicio.php";
+    include_once DIRECTORIO_FRONTEND . "inicio.php";
 });
 
 $router->get('/inicio', function() {
-    include_once DIRECTORIO_TEMPLATE . 'inicio.php';
+    include_once DIRECTORIO_FRONTEND . 'inicio.php';
 });
 
 $router->get('/about', function() {
-    include_once DIRECTORIO_TEMPLATE . 'about.php';
+    include_once DIRECTORIO_FRONTEND . 'about.php';
 });
 
 $router->get('/account', function() {
-    include_once DIRECTORIO_TEMPLATE . 'account.php';
+    include_once DIRECTORIO_FRONTEND . 'account.php';
 });
 
 $router->get('/cart', function() {
-    include_once DIRECTORIO_TEMPLATE . 'cart.php';
+    include_once DIRECTORIO_FRONTEND . 'cart.php';
 });
 
 $router->get('/category', function() {
-    include_once DIRECTORIO_TEMPLATE . 'category.php';
+    include_once DIRECTORIO_FRONTEND . 'category.php';
 });
 
 $router->get('/checkout', function() {
-    include_once DIRECTORIO_TEMPLATE . 'checkout.php';
+    include_once DIRECTORIO_FRONTEND . 'checkout.php';
 });
 
 $router->get('/contact', function() {
-    include_once DIRECTORIO_TEMPLATE . 'contact.php';
+    include_once DIRECTORIO_FRONTEND . 'contact.php';
 });
 
 $router->get('/faq', function() {
-    include_once DIRECTORIO_TEMPLATE . 'faq.php';
+    include_once DIRECTORIO_FRONTEND . 'faq.php';
 });
 
 $router->get('/login', function() {
-    include_once DIRECTORIO_TEMPLATE . 'login.php';
+    include_once DIRECTORIO_FRONTEND . 'login.php';
 });
 
 $router->get('/orderConfirmation', function() {
-    include_once DIRECTORIO_TEMPLATE . 'order-confirmation.php';
+    include_once DIRECTORIO_FRONTEND. 'order-confirmation.php';
 });
 
 $router->get('/paymentMethods', function() {
-    include_once DIRECTORIO_TEMPLATE . 'payment-methods.php';
+    include_once DIRECTORIO_FRONTEND . 'payment-methods.php';
 });
 
 $router->get('/privacy', function() {
-    include_once DIRECTORIO_TEMPLATE . 'privacy.php';
+    include_once DIRECTORIO_FRONTEND . 'privacy.php';
 });
 
 $router->get('/productDetails', function() {
-    include_once DIRECTORIO_TEMPLATE . 'product-details.php';
+    include_once DIRECTORIO_FRONTEND . 'product-details.php';
 });
 
 $router->get('/register', function() {
-    include_once DIRECTORIO_TEMPLATE . 'register.php';
+    include_once DIRECTORIO_FRONTEND . 'register.php';
 });
 
 $router->get('/returnPolicy', function() {
-    include_once DIRECTORIO_TEMPLATE . 'return-policy.php';
+    include_once DIRECTORIO_FRONTEND . 'return-policy.php';
 });
 
 $router->get('/searchResults', function() {
-    include_once DIRECTORIO_TEMPLATE . 'search-results.php';
+    include_once DIRECTORIO_FRONTEND . 'search-results.php';
 });
 
 $router->get('/shipingInfo', function() {
-    include_once DIRECTORIO_TEMPLATE . 'shiping-info.php';
+    include_once DIRECTORIO_FRONTEND . 'shiping-info.php';
 });
 
 $router->get('/starterPage', function() {
-    include_once DIRECTORIO_TEMPLATE . 'starter-page.php';
+    include_once DIRECTORIO_FRONTEND . 'starter-page.php';
 });
 
 $router->get('/support', function() {
-    include_once DIRECTORIO_TEMPLATE . 'support.php';
+    include_once DIRECTORIO_FRONTEND . 'support.php';
 });
 
 $router->get('/tos', function() {
-    include_once DIRECTORIO_TEMPLATE . 'tos.php';
+    include_once DIRECTORIO_FRONTEND . 'tos.php';
 });
 
 # ADMINISTRACION
 
 $router->get('adminInicio', function() {
-    include_once DIRECTORIO_ADMIN . 'admininicio.php';
+    include_once DIRECTORIO_BACKEND . 'admininicio.php';
 });
 
 $router->get('cargarProducto', function() {
-    include_once DIRECTORIO_ADMIN . 'cargarProductos.php';
+    include_once DIRECTORIO_BACKEND . 'cargarProductos.php';
 });
 
 # FUNCIONES
@@ -118,26 +151,21 @@ $router->get('funciones', function() {
 
 
 # Crear libros
-$router->get('/admin/boocks/create', function (){
-    include_once DIRECTORIO_ADMIN . 'cargarProductos.php';
+$router->get('/admin/books/create', function (){
+    include_once DIRECTORIO_BACKEND . 'cargarProductos.php';
 });
 
-$router->get('admin/boocks/{$id}/edit', function($id) {
-    include_once DIRECTORIO_ADMIN . 'cargarProductos.php';
+$router->get('admin/books/{$id}/edit', function($id) {
+    include_once DIRECTORIO_BACKEND . 'cargarProductos.php';
 });
 
 // Rutas de trabajo con libros
-$router->post('/boocks', function() {
+$router->post('/books', function() {
     var_dump($_POST);
     var_dump($_FILES);
 
     \App\Class\Auxiliar::gestionarImagen($_POST, $_FILES);
 });
-$router->delete('/boocks/{id}', function($id) {});
-$router->put('/boocks/{id}', function($id) {});
-$router->get('/boocks', function() {});
-$router->get('/boocks/{id}', function($id) {});
-
 
 # NB. You can cache the return value from $router->getData() so you don't have to create the routes each request - massive speed gains
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
@@ -145,7 +173,7 @@ $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 try{
     $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 }catch (HttpRouteNotFoundException $e){
-    return include_once "Views/template/layouts/404.php";
+    return include_once DIRECTORIO_VIEWS . '404.php';
 }
 
 // Print out the value returned from the dispatched function

@@ -24,3 +24,6 @@
 ## Estructura carpetas
 - src/template/images (fotos)
 - src/template/vendor (vendor de bootstrap)
+
+## PREUGUNTAS
+- esto no funciona <link href="<?=DIRECTORIO_FRONTEND_CSS?>main.css" rel="stylesheet">
