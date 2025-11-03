@@ -74,8 +74,8 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                 <div class="col-6 col-lg-3">
                     <div class="product-card" data-aos="zoom-in">
                         <div class="product-image">
-                            <img src="app/View/frontend/img/product/product-f-1.webp" class="main-image img-fluid" alt="Product">
-                            <img src="app/View/frontend/img/product/product-f-2.webp" class="hover-image img-fluid" alt="Product Variant">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-f-1.webp" class="main-image img-fluid" alt="Product">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-f-2.webp" class="hover-image img-fluid" alt="Product Variant">
                             <div class="product-overlay">
                                 <div class="product-actions">
                                     <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Vista Rápida">
@@ -105,8 +105,8 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                 <div class="col-6 col-lg-3">
                     <div class="product-card" data-aos="zoom-in" data-aos-delay="100">
                         <div class="product-image">
-                            <img src="app/View/frontend/img/product/product-m-1.webp" class="main-image img-fluid" alt="Product">
-                            <img src="app/View/frontend/img/product/product-m-2.webp" class="hover-image img-fluid" alt="Product Variant">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-m-1.webp" class="main-image img-fluid" alt="Product">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-m-2.webp" class="hover-image img-fluid" alt="Product Variant">
                             <div class="product-overlay">
                                 <div class="product-actions">
                                     <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Vista Rápida">
@@ -137,8 +137,8 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                 <div class="col-6 col-lg-3">
                     <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
                         <div class="product-image">
-                            <img src="app/View/frontend/img/product/product-f-3.webp" class="main-image img-fluid" alt="Product">
-                            <img src="app/View/frontend/img/product/product-f-4.webp" class="hover-image img-fluid" alt="Product Variant">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-f-3.webp" class="main-image img-fluid" alt="Product">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-f-4.webp" class="hover-image img-fluid" alt="Product Variant">
                             <div class="product-overlay">
                                 <div class="product-actions">
                                     <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Vista Rápida">
@@ -172,8 +172,8 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                 <div class="col-6 col-lg-3">
                     <div class="product-card" data-aos="zoom-in" data-aos-delay="300">
                         <div class="product-image">
-                            <img src="app/View/frontend/img/product/product-m-3.webp" class="main-image img-fluid" alt="Product">
-                            <img src="app/View/frontend/img/product/product-m-4.webp" class="hover-image img-fluid" alt="Product Variant">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-m-3.webp" class="main-image img-fluid" alt="Product">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-m-4.webp" class="hover-image img-fluid" alt="Product Variant">
                             <div class="product-overlay">
                                 <div class="product-actions">
                                     <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Vista Rápida">
@@ -203,8 +203,8 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                 <div class="col-6 col-lg-3">
                     <div class="product-card" data-aos="zoom-in" data-aos-delay="400">
                         <div class="product-image">
-                            <img src="app/View/frontend/img/product/product-f-5.webp" class="main-image img-fluid" alt="Product">
-                            <img src="app/View/frontend/img/product/product-f-6.webp" class="hover-image img-fluid" alt="Product Variant">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-f-5.webp" class="main-image img-fluid" alt="Product">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-f-6.webp" class="hover-image img-fluid" alt="Product Variant">
                             <div class="product-overlay">
                                 <div class="product-actions">
                                     <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Vista Rápida">
@@ -234,8 +234,8 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                 <div class="col-6 col-lg-3">
                     <div class="product-card" data-aos="zoom-in" data-aos-delay="500">
                         <div class="product-image">
-                            <img src="app/View/frontend/img/product/product-m-5.webp" class="main-image img-fluid" alt="Product">
-                            <img src="app/View/frontend/img/product/product-m-6.webp" class="hover-image img-fluid" alt="Product Variant">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-m-5.webp" class="main-image img-fluid" alt="Product">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-m-6.webp" class="hover-image img-fluid" alt="Product Variant">
                             <div class="product-overlay">
                                 <div class="product-actions">
                                     <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Vista Rápida">
@@ -269,8 +269,8 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                 <div class="col-6 col-lg-3">
                     <div class="product-card" data-aos="zoom-in" data-aos-delay="600">
                         <div class="product-image">
-                            <img src="app/View/frontend/img/product/product-f-7.webp" class="main-image img-fluid" alt="Product">
-                            <img src="app/View/frontend/img/product/product-f-8.webp" class="hover-image img-fluid" alt="Product Variant">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-f-7.webp" class="main-image img-fluid" alt="Product">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-f-8.webp" class="hover-image img-fluid" alt="Product Variant">
                             <div class="product-overlay">
                                 <div class="product-actions">
                                     <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Vista Rápida">
@@ -300,8 +300,8 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                 <div class="col-6 col-lg-3">
                     <div class="product-card" data-aos="zoom-in" data-aos-delay="700">
                         <div class="product-image">
-                            <img src="app/View/frontend/img/product/product-m-7.webp" class="main-image img-fluid" alt="Product">
-                            <img src="app/View/frontend/img/product/product-m-8.webp" class="hover-image img-fluid" alt="Product Variant">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-m-7.webp" class="main-image img-fluid" alt="Product">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-m-8.webp" class="hover-image img-fluid" alt="Product Variant">
                             <div class="product-overlay">
                                 <div class="product-actions">
                                     <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Vista Rápida">

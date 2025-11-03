@@ -192,7 +192,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                         <div class="card-body">
                             <div class="item">
                                 <div class="item-image">
-                                    <img src="app/View/frontend/img/product/product-7.webp" alt="Product" loading="lazy">
+                                    <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-7.webp" alt="Product" loading="lazy">
                                 </div>
                                 <div class="item-details">
                                     <h4>La Sombra del Viento</h4>
@@ -225,7 +225,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
 
                             <div class="item">
                                 <div class="item-image">
-                                    <img src="app/View/frontend/img/product/product-8.webp" alt="Product" loading="lazy">
+                                    <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-8.webp" alt="Product" loading="lazy">
                                 </div>
                                 <div class="item-details">
                                     <h4>El Código Da Vinci</h4>
@@ -267,7 +267,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                             <div class="col-6 col-md-4">
                                 <div class="product-card">
                                     <div class="product-image">
-                                        <img src="Vapp/View/frontend/img/product/product-11.webp" alt="Product" loading="lazy">
+                                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-11.webp" alt="Product" loading="lazy">
                                     </div>
                                     <h5>El Juego del Ángel</h5>
                                     <div class="product-price">11,99€</div>
@@ -280,7 +280,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                             <div class="col-6 col-md-4">
                                 <div class="product-card">
                                     <div class="product-image">
-                                        <img src="app/View/frontend/img/product/product-10.webp" alt="Product" loading="lazy">
+                                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-10.webp" alt="Product" loading="lazy">
                                     </div>
                                     <h5>1984</h5>
                                     <div class="product-price">8,99€</div>
@@ -293,7 +293,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                             <div class="col-6 col-md-4 d-none d-md-block">
                                 <div class="product-card">
                                     <div class="product-image">
-                                        <img src="app/View/frontend/img/product/product-8.webp" alt="Product" loading="lazy">
+                                        <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-8.webp" alt="Product" loading="lazy">
                                     </div>
                                     <h5>El Alquimista</h5>
                                     <div class="product-price">10,99€</div>

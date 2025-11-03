@@ -25,7 +25,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                 <div class="product-gallery">
                     <div class="main-showcase">
                         <div class="image-zoom-container">
-                            <img src="app/View/frontend/img/product/product-details-6.webp" alt="Portada del libro" class="img-fluid main-product-image drift-zoom" id="main-product-image" data-zoom="assets/img/product/product-details-6.webp">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-details-6.webp" alt="Portada del libro" class="img-fluid main-product-image drift-zoom" id="main-product-image" data-zoom="assets/img/product/product-details-6.webp">
 
                             <div class="image-navigation">
                                 <button class="nav-arrow prev-image image-nav-btn prev-image" type="button">
@@ -40,13 +40,13 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
 
                     <div class="thumbnail-grid">
                         <div class="thumbnail-wrapper thumbnail-item active" data-image="Views/template/images/product/product-details-6.webp">
-                            <img src="app/View/frontend/img/product/product-details-6.webp" alt="Vista 1" class="img-fluid">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-details-6.webp" alt="Vista 1" class="img-fluid">
                         </div>
                         <div class="thumbnail-wrapper thumbnail-item" data-image="Views/template/images/product/product-details-7.webp">
-                            <img src="app/View/frontend/img/product/product-details-7.webp" alt="Vista 2" class="img-fluid">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-details-7.webp" alt="Vista 2" class="img-fluid">
                         </div>
                         <div class="thumbnail-wrapper thumbnail-item" data-image="Views/template/images/product/product-details-8.webp">
-                            <img src="app/View/frontend/img/product/product-details-8.webp" alt="Vista 3" class="img-fluid">
+                            <img src="<?=DIRECTORIO_FRONTEND_IMG_PRODUCT?>product-details-8.webp" alt="Vista 3" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -234,7 +234,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                 <div class="customer-reviews-list">
                                     <div class="review-card">
                                         <div class="reviewer-profile">
-                                            <img src="app/View/frontend/img/person/person-f-3.webp" alt="Lector" class="profile-pic">
+                                            <img src="<?=DIRECTORIO_FRONTEND_IMG?>person/person-f-3.webp" alt="Lector" class="profile-pic">
                                             <div class="profile-details">
                                                 <div class="customer-name">Sara López</div>
                                                 <div class="review-meta">
@@ -251,7 +251,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
 
                                     <div class="review-card">
                                         <div class="reviewer-profile">
-                                            <img src="app/View/frontend/img/person/person-m-5.webp" alt="Lector" class="profile-pic">
+                                            <img src="<?=DIRECTORIO_FRONTEND_IMG?>person/person-m-5.webp" alt="Lector" class="profile-pic">
                                             <div class="profile-details">
                                                 <div class="customer-name">David Ramos</div>
                                                 <div class="review-meta">
