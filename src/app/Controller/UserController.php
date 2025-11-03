@@ -10,7 +10,7 @@ use Ramsey\Uuid\Uuid;
 class UserController implements ControllerInterface
 {
     public function index(){
-        //Recuperar usuarios BD
+        //Recuperar usuarios BD.sql
         $usuarios=UserModel::getAllUsers();
 
         //Llamar a la vista que represente a estos usuarios

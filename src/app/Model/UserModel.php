@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use PDO;
 use Ramsey\Uuid\Uuid;
 
 class UserModel
@@ -22,5 +23,32 @@ class UserModel
         return $usuarios = [$usuario1, $usuario2];
 
     }
+    public static function saveUser (User $user):bool{
+        $conexion = new PDO("mysql:host=mariadb;dbname=blockbookster1", "miguela", "aleugim");
+        $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }catch(\PDOException $error){
+        echo $error;
+        return false;
+    }
+    $sql = "INSERT INTO user value (:uuid, :username, :password, :email, :telephone, :edad, :type)";
+    $sentenciaPreparada = $conexion->prepare($sql);
+
+    $sentenciaPreparada->bindValue('uuid', $user->getUuid());
+    $sentenciaPreparada->bindValue('username', $user->getUsername());
+    $sentenciaPreparada->bindValue('password', $user->getPassword());
+    $sentenciaPreparada->bindValue('email', $user->getEmail());
+    $sentenciaPreparada->bindValue('telephone', $user->getTelephone());
+    $sentenciaPreparada->bindValue('edad', $user->getEdad());
+    $sentenciaPreparada->bindValue('type', $user->getType()->name);
+
+    $sentenciaPreparada->execute();
+
+    if($sentenciaPreparada->rowCount() > 0){
+        return true;
+    }else{
+        return false;
+    }
+
+    return true;
 
 }

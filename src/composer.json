@@ -12,7 +12,8 @@
     "nesbot/carbon": "^3.10",
     "phroute/phroute": "^2.2",
     "respect/validation": "^2.4",
-    "ext-sqlite3": "*"
+    "ext-sqlite3": "*",
+    "ext-pdo": "*"
   },
   "license": "MIT",
   "authors": [
