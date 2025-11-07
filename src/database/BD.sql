@@ -5,9 +5,10 @@ create table user(
     username varchar(30),
     password varchar(255),
     email varchar(255),
-    telefono varchar(11),
+    telephone varchar(11),
+    country enum('sp','us','uk','ca','au','de','fr','jp','other'),
     edad integer,
-    type enum ('NORMAL','ANUNCIOS','ADMIN')
+    type enum ('NORMAL','WORKER','ADMIN')
 
 );
 alter table user add constraint pk_user primary key (uuid);

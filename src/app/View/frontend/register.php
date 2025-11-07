@@ -81,6 +81,7 @@ $password = \App\Class\Auxiliar::generarContrasenaAleatoria();
                                     <div class="form-floating mb-4">
                                         <select class="form-select" id="country" name="country" required="">
                                             <option value="" selected="" disabled="">Selecciona tu país</option>
+                                            <option value="sp">España</option>
                                             <option value="us">Estados Unidos</option>
                                             <option value="ca">Canadá</option>
                                             <option value="uk">Reino Unido</option>

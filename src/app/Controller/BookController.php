@@ -20,7 +20,13 @@ class BookController implements ControllerInterface
     public function store()
     {
         // TODO: Implement store() method.
-        \App\Class\Auxiliar::gestionarImagen($_POST, $_FILES);
+        $rutaDestinoImg=\App\Class\Auxiliar::gestionarImagen($_POST, $_FILES);
+
+        //Guardar la información del libro en la base de datos
+
+
+        //Si todo has salido correcto entonces se redirige a mostrar todos los libros
+        header('Location:/book/'.$_POST['id']);
     }
 
     public function update($id)

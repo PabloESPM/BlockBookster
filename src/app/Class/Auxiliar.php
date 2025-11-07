@@ -17,15 +17,15 @@ class Auxiliar
         // Reemplazar espacios por guiones bajos
         $nombreCarpeta = str_replace(' ', '_', $nombreCarpeta);
 
-        $carpetas = scandir(DIRECTORIO_BACKEND_LAYOUTS); // Ver si el directorio uploaded está creado
+        $carpetas = scandir('app/View/backend/img'); // Ver si el directorio uploaded está creado
 
         // Si no existe la carpeta uploaded, crearla
         if(!array_search('uploaded', $carpetas)) {
-            mkdir(DIRECTORIO_BACKEND_IMG . "/uploaded");
+            mkdir("app/View/backend/img/uploaded");
         }
 
         // Ruta completa de la carpeta del libro
-        $rutaCarpetaLibro = DIRECTORIO_BACKEND_LAYOUTS . "/uploaded/" . $nombreCarpeta;
+        $rutaCarpetaLibro = "app/View/backend/img/uploaded/" . $nombreCarpeta;
 
         // Verificar si la carpeta del libro ya existe
         if(!is_dir($rutaCarpetaLibro)) {
@@ -46,8 +46,8 @@ class Auxiliar
 
     public static function generarContrasenaAleatoria(): string
     {
-        $conjunto = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
-        $longitudConjunto = 88;
+        $conjunto = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()+-=[]{}|<>?';
+        $longitudConjunto = strlen($conjunto);
 
         $contrasena = '';
         for ($i = 0; $i < 16; $i++) {

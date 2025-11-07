@@ -7,6 +7,7 @@ include_once "env.php";
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
 use Phroute\Phroute\RouteCollector;
 use App\Class\User;
+use App\Class\Auxiliar;
 use App\Controller\UserController;
 
 //instancia una variable de la clase RouteCollector
