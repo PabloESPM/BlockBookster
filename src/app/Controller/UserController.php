@@ -23,7 +23,7 @@ class UserController implements ControllerInterface
 
         //Mostrar datos de usuario con una vista
 
-        include_once DIRECTORIO_BACKEND . "mostrarUsuario.php";
+        include_once DIRECTORIO_BACKEND . "perfilUsuario.php";
 
     }
     public function create(){
