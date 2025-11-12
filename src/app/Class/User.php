@@ -147,28 +147,20 @@ class User
         return $usuario;
     }
 
-    public static function validateUserRegister(array $userData):array|User{
+    public static function validateUserRegister(array $userData):?array{
         try{
             v::key('username', v::stringType()->length(3,32))
                 ->key('email', v::email())
                 ->key('password', v::stringType()->length(8,32))
                 ->key('telephone', v::stringType()->length(9,32))
-                ->key('country', v::stringType()->length(3,32))
                 ->key('country', v::in(['sp', 'us', 'ca', 'uk', 'au', 'de', 'fr', 'jp', 'other']))
                 ->key('birthdate', v::date('Y-m-d'))
-                ->key('type', v::in(UserType::REGULAR))
                 ->assert($userData);
 
         }catch(NestedValidationException $errores){
             return $errores->getMessages();
         }
-        return User::fromArray($userData);
+        return null;
 
     }
-
-
-
-
-
-
 }

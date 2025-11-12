@@ -34,7 +34,14 @@ class UserController implements ControllerInterface
         var_dump($_POST);
 
         //Tenemos que validar estos datos
-        $usuario=User::validateUserRegister($_POST);
+        $error=User::validateUserRegister($_POST);
+
+        if ($error){
+            //Hay errores en la validacion
+            var_dump($error);
+        }else{
+            $usuario=User::fromArray($_POST);
+        }
 
         //Guardalos en la base de datos
         //UserModel::saveUser($usuario);
@@ -61,7 +68,16 @@ class UserController implements ControllerInterface
 
     }
     public function destroy($id){
-        return "se esta intentando borrar este usuario $id";
+
+        //Borrar el usuario en la base de datos
+
+        http_response_code(401);
+        return json_encode([
+            "error" => false,
+            "mensaje" => "Se ha eliminado el usuario",
+            "data" => $id,
+            "code"=> 401
+        ]);
 
     }
     public function verify()

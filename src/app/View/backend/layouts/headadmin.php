@@ -9,7 +9,7 @@
     <title><?=$title?></title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
     <!-- Bootstrap core CSS -->
-    <link href="app/View/backend/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/app/View/backend/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -29,6 +29,6 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="app/View/backend/css/dashboard.css" rel="stylesheet">
+    <link href="/app/View/backend/css/dashboard.css" rel="stylesheet">
 </head>
 <body>

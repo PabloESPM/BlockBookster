@@ -3,7 +3,7 @@ $title = "Perfil de Usuario - Block Bookster";
 include_once DIRECTORIO_BACKEND_LAYOUTS . "headadmin.php";
 include_once DIRECTORIO_BACKEND_LAYOUTS . "headeradmin.php";
 include_once DIRECTORIO_BACKEND_LAYOUTS . "navadmin.php";
-$tituloSeccion = "Perfil de Usuario " . $usuario->getUsername();
+$tituloSeccion = "Perfil de Usuario de " . $usuario->getUsername();
 include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
 
 // Datos de ejemplo - Reemplazar con datos reales de la base de datos
@@ -33,6 +33,7 @@ $estadisticas = $estadisticas ?? [
     </nav>
 
     <!-- Header del perfil -->
+    <form action="" method="">
     <div class="row mb-4">
         <div class="col-12">
             <div class="card border-0 shadow-sm">
@@ -65,10 +66,10 @@ $estadisticas = $estadisticas ?? [
                                 <a href="/listaUsuarios" class="btn btn-outline-secondary">
                                     <i class="bi bi-arrow-left me-2"></i>Volver
                                 </a>
-                                <button class="btn btn-outline-secondary" type="button" onclick="irAModificarUsuario()">
+                                <button class="btn btn-outline-secondary" type="button" onclick="window.location.replace('http://localhost:8080/user/<?= $usuario->getId() ?>/edit');">
                                     <i class="bi bi-pencil me-2"></i>Editar Perfil
                                 </button>
-                                <button class="btn btn-primary btn-danger" type="button">
+                                <button class="btn btn-primary btn-danger" type="button" id="botonBorrado" onclick="peticionDelete()">
                                     <i class="bi bi-pencil me-2"></i>Eliminar Perfil
                                 </button>
                             </div>
@@ -126,6 +127,7 @@ $estadisticas = $estadisticas ?? [
             </div>
         </div>
     </div>
+    </form>
 
     <!-- Tabs de contenido -->
     <ul class="nav nav-tabs mb-4" id="perfilTabs" role="tablist">
@@ -431,6 +433,37 @@ $estadisticas = $estadisticas ?? [
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación para eliminar -->
+    <div class="modal fade" id="confirmacionEliminarModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0 bg-danger text-white">
+                    <h5 class="modal-title" id="deleteModalLabel">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        Eliminar Usuario
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-2">¿Estás seguro de que deseas eliminar al usuario <strong><?= $usuario->getUsername() ?></strong>?</p>
+                    <div class="alert alert-danger mb-0">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        <strong>Esta acción no se puede deshacer.</strong> Se eliminarán todos los datos asociados al usuario.
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <form action="/admin/usuarios/<?= $usuario->getId() ?>/delete" method="POST" style="display:inline;">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger" onclick="peticionDelete()">
+                            <i class="bi bi-trash me-2"></i>Eliminar Permanentemente
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
