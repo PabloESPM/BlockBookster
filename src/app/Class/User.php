@@ -5,6 +5,8 @@ use \DateTime;
 use App\Enum\UserType;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
+use Respect\Validation\Exceptions\NestedValidationException;
+use Respect\Validation\Validator as v;
 
 class User
 {
@@ -23,12 +25,12 @@ class User
     {
         $this->id = $id;
         $this->username = $username;
-        $this->type=UserType::REGULAR;
+        $this->type=UserType::REGULAR; //Por defecto el usuario sera regular
         $this->list = new FavList();
     }
 
     //Geter y seter
-    public function getId(): Uuid
+    public function getId(): UuidInterface
     {
         return $this->id;
     }
@@ -129,7 +131,39 @@ class User
 
     //Funcion estatica
     public static function fromArray(array $userDate): User{
-        return new User();
+        $usuario =new User(
+            Uuid::uuid4(),
+            $userDate['username']
+        );
+        $usuario->setPassword($userDate['password']);
+        $usuario->setEmail($userDate['email']);
+        $usuario->setTelephone($userDate['telephone']);
+        $usuario->setCountry($userDate['country']);
+        $usuario->setBirthdate(DateTime::createFromFormat('Y-m-d',$userDate['birthdate']));
+        $usuario->setType(UserType::REGULAR); // Quiero que sea de tipo regular siempre al darse de alta
+
+
+
+        return $usuario;
+    }
+
+    public static function validateUserRegister(array $userData):array|User{
+        try{
+            v::key('username', v::stringType()->length(3,32))
+                ->key('email', v::email())
+                ->key('password', v::stringType()->length(8,32))
+                ->key('telephone', v::stringType()->length(9,32))
+                ->key('country', v::stringType()->length(3,32))
+                ->key('country', v::in(['sp', 'us', 'ca', 'uk', 'au', 'de', 'fr', 'jp', 'other']))
+                ->key('birthdate', v::date('Y-m-d'))
+                ->key('type', v::in(UserType::REGULAR))
+                ->assert($userData);
+
+        }catch(NestedValidationException $errores){
+            return $errores->getMessages();
+        }
+        return User::fromArray($userData);
+
     }
 
 

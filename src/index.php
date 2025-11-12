@@ -24,11 +24,15 @@ $router->get('/create-database', function () {
 ///API REST CRUD
 
 ///Login
-$router->post('/user/login', [UserController::class, 'verify']);
+$router->post('/user/login', [\App\Controller\UserController::class, 'verify']);
+$router->get('/listaUsuarios', [\App\Controller\UserController::class, 'index']);
+
 
 //Usuario
+$router->get('user/create',[\App\Controller\UserController::class,'create']);
 $router->get('/user',[\App\Controller\UserController::class,'index']);
 $router->get('/user/{id}',[\App\Controller\UserController::class,'show']);
+$router->get('/user/{id}/edit',[\App\Controller\UserController::class,'edit']);
 $router->post('/user',[\App\Controller\UserController::class,'store']);
 $router->put('/user/{id}',[\App\Controller\UserController::class,'update']);
 $router->delete('/user/{id}',[\App\Controller\UserController::class,'destroy']);
@@ -39,7 +43,6 @@ $router->get('/book/{id}',[\App\Controller\BookController::class,'show']);
 $router->post('/book',[\App\Controller\BookController::class,'store']);
 $router->put('/book/{id}',[\App\Controller\BookController::class,'update']);
 $router->delete('/book/{id}',[\App\Controller\BookController::class,'destroy']);
-
 
 //Autores
 $router->get('/author',[\App\Controller\UserController::class,'index']);

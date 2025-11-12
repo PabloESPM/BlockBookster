@@ -18,22 +18,50 @@ class UserController implements ControllerInterface
 
     }
     public function show($id){
-        return "Los datos del usuario";
+        //Recuperar los datos del usuario
+        $usuario=UserModel::getUserById($id);
+
+        //Mostrar datos de usuario con una vista
+
+        include_once DIRECTORIO_BACKEND . "mostrarUsuario.php";
 
     }
+    public function create(){
+        include_once DIRECTORIO_FRONTEND . "register.php";
+    }
     public function store(){
+        // Datos que recibo en la peticion POST
         var_dump($_POST);
 
-        $usuario = new User(Uuid::uuid4(),$_POST['username']);
-        $usuario->setPassword($_POST['password'])->setEmail($_POST['email'])->setBirthdate(new \DateTime($_POST['birthdate']))->setTelephone($_POST['telephone']);
+        //Tenemos que validar estos datos
+        $usuario=User::validateUserRegister($_POST);
 
-        var_dump($usuario);
+        //Guardalos en la base de datos
+        //UserModel::saveUser($usuario);
+
+
+
+        //$usuario = new User(Uuid::uuid4(),$_POST['username']);
+        //$usuario->setPassword($_POST['password'])->setEmail($_POST['email'])->setBirthdate(new \DateTime($_POST['birthdate']))->setTelephone($_POST['telephone']);
+
+        //var_dump($usuario);
+
+    }
+    public function edit($id)
+    {
+        //buscar en la base de datos el usuario con id el valor de $id
+        $usuario=UserModel::getUserById($id);
+
+        //Presentariamos la lista de edicion de los datos de usuario
+
+        include_once DIRECTORIO_BACKEND . "editarUsuario.php";
 
     }
     public function update($id){
 
     }
     public function destroy($id){
+        return "se esta intentando borrar este usuario $id";
 
     }
     public function verify()

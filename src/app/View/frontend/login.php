@@ -29,7 +29,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                             <p>Inicia sesión para continuar explorando tus lecturas en blockBookster.</p>
                         </div>
 
-                        <form class="auth-form-content" action="/users/login" method="post">
+                        <form class="auth-form-content" action="/user/login" method="post">
                             <div class="input-group mb-3">
                                 <span class="input-icon">
                                   <i class="bi bi-envelope"></i>
