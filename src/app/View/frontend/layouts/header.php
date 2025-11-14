@@ -156,7 +156,7 @@
                     <li><a href="/category">Categorías</a></li>
                     <li><a href="/productDetails">Detalles del libro</a></li>
                     <li><a href="/checkout">Finalizar compra</a></li>
-                    <li><a href="/adminInicio">Administración</a></li>
+                    <!--<li><a href="/adminInicio">Administración</a></li>-->
 
                     <!-- Productos Mega Menu adaptado -->
                     <li class="products-megamenu-2"><a href="#"><span>Colecciones</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>

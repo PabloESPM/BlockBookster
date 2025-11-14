@@ -55,6 +55,19 @@ class UserModel
         return $usuario1;
 
     }
+
+    public static function getUserByEmail(string $email):?User{
+        $usuario1 = new User(Uuid::uuid4(), "Pablo");
+        $usuario1->setPassword(password_hash("olbap", PASSWORD_DEFAULT));
+        $usuario1->setEmail("pablo@gmail.com");
+        $usuario1->setTelephone("611996455");
+        $usuario1->setType(UserType::ADMIN);
+        $usuario1->setBirthdate(\DateTime::createFromFormat('Y-m-d','1989-06-07')); // fecha de nacimiento ejemplo
+        $usuario1->setCountry('España'); // opcional, si quieres mostrar país
+
+        return $usuario1;
+
+    }
     public static function saveUser(User $user):bool{
         return true;
     }

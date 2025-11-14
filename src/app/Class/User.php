@@ -173,7 +173,7 @@ class User
         }catch(NestedValidationException $errores){
             return $errores->getMessages();
         }
-        return User::createfromArray($userData);
+        return null;
     }
     public static function validateUserUpdate(array $userData):array|User{
         try{

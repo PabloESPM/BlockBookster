@@ -157,7 +157,13 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
                                    class="btn btn-outline-info"
                                    title="Ver perfil"
                                    data-bs-toggle="tooltip">
-                                    <i class="bi bi-eye-fill"></i>
+                                    <i class="bi bi-eye-fill">🔍</i>
+                                </a>
+                                <a href="/user/<?= $usuario->getId() ?>"
+                                   class="btn btn-outline-warning"
+                                   title="Editar perfil"
+                                   data-bs-toggle="tooltip">
+                                    <i class="bi bi-eye-fill">✏️</i>
                                 </a>
 
                                 <!-- Botón Eliminar Usuario -->
@@ -167,7 +173,7 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
                                         data-user-name="<?= htmlspecialchars($usuario->getUsername()) ?>"
                                         title="Eliminar usuario"
                                         data-bs-toggle="tooltip">
-                                    <i class="bi bi-trash-fill"></i>
+                                    <i class="bi bi-trash-fill">🗑</i>
                                 </button>
                             </div>
                         </td>

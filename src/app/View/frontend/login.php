@@ -34,7 +34,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                 <span class="input-icon">
                                   <i class="bi bi-envelope"></i>
                                 </span>
-                                <input type="email" class="form-control" id="inputUserName" name="userName" placeholder="Correo electrónico" required="" autocomplete="email">
+                                <input type="email" class="form-control" id="inputUserName" name="email" placeholder="Correo electrónico" required="" autocomplete="email">
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-icon">
@@ -42,7 +42,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                 </span>
                                     <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Contraseña" required="" autocomplete="current-password">
                                 <span class="password-toggle">
-                                    <i class="bi bi-eye"></i>
+                                    <ipablo class="bi bi-eye"></ipablo>
                                 </span>
                             </div>
                             <div class="form-options mb-4">

@@ -6,7 +6,7 @@
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav ms-3">
         <div class="nav-item text-nowrap d-flex align-items-center">
-            <p class="text-white mb-0 me-3">Bienvenido, <strong><?php if (isset($_SESSION['user'])){$_SESSION['user']->getUsername();}else{echo 'desconocido';}?></strong></p>
+            <p class="text-white mb-0 me-3">Bienvenido, <strong><?php if (isset($_SESSION['user'])){echo $_SESSION['user']->getUsername();}else{echo 'desconocido';}?></strong></p>
             <a class="nav-link px-3" href="/logout">
                 <button class="btn btn-danger btn-sm" type="button">Cerrar Sesión</button>
             </a>

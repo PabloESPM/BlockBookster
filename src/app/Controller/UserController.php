@@ -19,14 +19,9 @@ class UserController implements ControllerInterface
             //Llamar a la vista que represente a estos usuarios
             include_once DIRECTORIO_BACKEND . "listaUsuarios.php";
         }else{
-            $error = "No tienen permiso para aceder a esta pagina";
-            include_once DIRECTORIO_VIEWS . "404.php"; // hacer pagina de redireccion de permisoso para entrar en la pagina t13 min 53 direccion user en navegador
+            $error = "No tienen permiso para acceder a esta pagina";
+            include_once DIRECTORIO_BACKEND . "permisoDenegado.php";
         }
-
-
-
-
-
 
     }
     public function show($id){
@@ -34,7 +29,6 @@ class UserController implements ControllerInterface
         $usuario=UserModel::getUserById($id);
 
         //Mostrar datos de usuario con una vista
-
         include_once DIRECTORIO_BACKEND . "perfilUsuario.php";
 
     }
@@ -54,12 +48,11 @@ class UserController implements ControllerInterface
             var_dump($error);
         }else{
             //no se produce error y hay que almacenar usuario
-            $usuario=User::fromArray($_POST);
+            $usuario=User::createfromArray($_POST);
         }
 
         //Guardalos en la base de datos
         //UserModel::saveUser($usuario);
-
 
     }
     public function edit($id)
@@ -102,7 +95,7 @@ class UserController implements ControllerInterface
         //var_dump($_POST);
 
         //Busacar en la base de datos el usuario por su nombre de usuario
-        $usuario = UserModel::getUserByUsername($_POST["username"]);
+        $usuario = UserModel::getUserByEmail($_POST["email"]);
         if ($usuario!=null){
             $error="Nombre de usuario no encontrado";
         }
@@ -137,8 +130,6 @@ class UserController implements ControllerInterface
     }
     public function logout(){
         session_destroy();
+        header("Location: /");
     }
-
-
-
 }

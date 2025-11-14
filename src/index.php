@@ -151,6 +151,10 @@ $router->get('cargarProducto', function() {
     include_once DIRECTORIO_BACKEND . 'cargarProductos.php';
 });
 
+$router->get('permisoDenegado', function() {
+    DIRECTORIO_BACKEND . 'permisoDenegado.php';
+});
+
 # FUNCIONES
 
 $router->get('funciones', function() {

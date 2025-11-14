@@ -27,8 +27,6 @@
 
 ## PREUGUNTAS
 - Revisar el Type REGULAR en User en editFromArray
-- Comprobar si el registro funciona correctamente 
-- problemas en el login con el usermodel y el controller
-- usar email en lugar de nombre para el loguin?
+- revisar video 12 o 13 sobre editar usuario
 - que es el jsoSerialize y el implement en clase user
-- 
+
