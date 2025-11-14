@@ -56,6 +56,7 @@ include_once DIRECTORIO_FRONTEND_LAYOUTS . "header.php";
                                 Iniciar sesión
                                 <i class="bi bi-arrow-right"></i>
                             </button>
+                            <?php if(isset($error)){echo "<p>".$error."</p>";}?>
                             <div class="divider">
                                 <span>o</span>
                             </div>

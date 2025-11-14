@@ -12,14 +12,14 @@ $compras = $compras ?? []; // Libros comprados
 $valoraciones = $valoraciones ?? []; // Valoraciones del usuario
 $listaDeseos = $listaDeseos ?? []; // Lista de deseos
 $estadisticas = $estadisticas ?? [
-    'total_gastado' => 0,
-    'total_compras' => 0,
-    'libros_comprados' => 0,
-    'valoraciones_realizadas' => 0,
-    'lista_deseos' => 0,
-    'fecha_registro' => null,
-    'ultima_compra' => null,
-    'promedio_valoracion' => 0
+        'total_gastado' => 0,
+        'total_compras' => 0,
+        'libros_comprados' => 0,
+        'valoraciones_realizadas' => 0,
+        'lista_deseos' => 0,
+        'fecha_registro' => null,
+        'ultima_compra' => null,
+        'promedio_valoracion' => 0
 ];
 ?>
 
@@ -33,7 +33,6 @@ $estadisticas = $estadisticas ?? [
     </nav>
 
     <!-- Header del perfil -->
-    <form action="" method="">
     <div class="row mb-4">
         <div class="col-12">
             <div class="card border-0 shadow-sm">
@@ -69,8 +68,11 @@ $estadisticas = $estadisticas ?? [
                                 <button class="btn btn-outline-secondary" type="button" onclick="window.location.replace('http://localhost:8080/user/<?= $usuario->getId() ?>/edit');">
                                     <i class="bi bi-pencil me-2"></i>Editar Perfil
                                 </button>
-                                <button class="btn btn-primary btn-danger" type="button" id="botonBorrado" onclick="peticionDelete()">
-                                    <i class="bi bi-pencil me-2"></i>Eliminar Perfil
+                                <button class="btn btn-danger"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#confirmacionEliminarModal">
+                                    <i class="bi bi-trash me-2"></i>Eliminar Perfil
                                 </button>
                             </div>
                         </div>
@@ -127,7 +129,6 @@ $estadisticas = $estadisticas ?? [
             </div>
         </div>
     </div>
-    </form>
 
     <!-- Tabs de contenido -->
     <ul class="nav nav-tabs mb-4" id="perfilTabs" role="tablist">
@@ -458,12 +459,9 @@ $estadisticas = $estadisticas ?? [
                 </div>
                 <div class="modal-footer border-0">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <form action="/admin/usuarios/<?= $usuario->getId() ?>/delete" method="POST" style="display:inline;">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn btn-danger" onclick="peticionDelete()">
-                            <i class="bi bi-trash me-2"></i>Eliminar Permanentemente
-                        </button>
-                    </form>
+                    <button type="button" class="btn btn-danger" onclick="peticionDelete()">
+                        <i class="bi bi-trash me-2"></i>Eliminar Permanentemente
+                    </button>
                 </div>
             </div>
         </div>
@@ -604,9 +602,30 @@ $estadisticas = $estadisticas ?? [
             background-color: #f8f9fa;
         }
     </style>
+
     <script>
-        function irAModificarUsuario(){
-            window.location.replace("http://localhost:8080/user/<?=$usuario->getId?>/edit");
+        function peticionDelete(){
+            const requestOptions = {
+                method: "DELETE",
+                redirect: "follow"
+            };
+
+            fetch("http://localhost:8080/user/<?= $usuario->getId() ?>", requestOptions)
+                .then((response) => response.text())
+                .then((result) => {
+                    // Cerrar el modal
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('confirmacionEliminarModal'));
+                    if (modal) {
+                        modal.hide();
+                    }
+                    // Redirigir a la lista de usuarios
+                    irATodosLosUsuarios();
+                })
+                .catch((error) => console.error(error));
+        }
+
+        function irATodosLosUsuarios(){
+            window.location.replace("http://localhost:8080/listaUsuarios");
         }
     </script>
 

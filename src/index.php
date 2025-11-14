@@ -10,6 +10,9 @@ use App\Class\User;
 use App\Class\Auxiliar;
 use App\Controller\UserController;
 
+//Para les galetes
+session_start();
+
 //instancia una variable de la clase RouteCollector
 $router = new RouteCollector();
 
@@ -25,6 +28,7 @@ $router->get('/create-database', function () {
 
 ///Login
 $router->post('/user/login', [\App\Controller\UserController::class, 'verify']);
+$router->get('/logout', [\App\Controller\UserController::class, 'logout']);
 $router->get('/listaUsuarios', [\App\Controller\UserController::class, 'index']);
 
 

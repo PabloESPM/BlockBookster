@@ -308,7 +308,7 @@ $usuario = $usuario ?? null;
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                 <form action="/admin/usuarios/<?= $usuario->getId() ?>/delete" method="POST" style="display:inline;">
                     <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" class="btn btn-danger" onclick="peticionDelete()">
+                    <button type="button" class="btn btn-danger" onclick="peticionDelete()">
                         <i class="bi bi-trash me-2"></i>Eliminar Permanentemente
                     </button>
                 </form>
@@ -320,9 +320,6 @@ $usuario = $usuario ?? null;
     function iraAModificarUsuario(){
         window.location.replace("http://localhost:8080/user/<?= $usuario->getId() ?>/edit");
     }
-    function irATodosLosUsuarios(){
-        window.location.replace("http://localhost:8080/user");
-    }
     function peticionDelete(){
         const requestOptions = {
           method: "DELETE",
@@ -333,7 +330,9 @@ $usuario = $usuario ?? null;
             .then((result) => irATodosLosUsuarios())
             .catch((error) => console.error(error));
     }
-
+    function irATodosLosUsuarios(){
+        window.location.replace("http://localhost:8080/listaUsuarios");
+    }
 </script>
 <style>
     /* Avatar grande */
@@ -462,10 +461,10 @@ $usuario = $usuario ?? null;
         };
         fetch("http://localhost:8080/user/<?= $usuario->getId() ?>", requestOptions)
             .then((response) => response.text())
-            .then((result) => redireccionaratAInfoDeUsuario())
+            .then((result) => redireccionarAInfoDeUsuario())
             .catch((error) => console.error(error));
     }
-    function redireccionaratAInfoDeUsuario(){
+    function redireccionarAInfoDeUsuario(){
         window.location.replace("http://localhost:8080/user/<?= $usuario->getId() ?>")
     }
 </script>

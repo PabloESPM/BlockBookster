@@ -35,12 +35,14 @@ $password = \App\Class\Auxiliar::generarContrasenaAleatoria();
                                 <!-- Formulario -->
                                 <form action="/user" method="post">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="inputUsername" name="username" placeholder="Nombre completo" required="" autocomplete="name">
+                                        <input type="text" class="form-control" id="inputUsername" name="username" placeholder="Nombre completo" required="" autocomplete="name"
+                                        <?php if (isset($error)){echo "value='".$_POST['username']."'";}?>>
                                         <label for="inputUsername">Nombre completo</label>
                                     </div>
 
                                     <div class="form-floating mb-3">
-                                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Correo electrónico" required="" autocomplete="email">
+                                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Correo electrónico" required="" autocomplete="email"
+                                        <?php if (isset($error)){echo "value='".$_POST['email']."'";}?>>
                                         <label for="inputEmail">Correo electrónico</label>
                                     </div>
 
@@ -48,12 +50,14 @@ $password = \App\Class\Auxiliar::generarContrasenaAleatoria();
                                         <div class="col-md-6">
                                             <div class="form-floating">
                                                 <input type="tel" class="form-control" id="inputTelephone" name="telephone" placeholder="Teléfono" required="" pattern="[0-9\-]{9,17}" autocomplete="tel">
+                                                <?php if (isset($error)){echo "value='".$_POST['telephone']."'";}?>
                                                 <label for="inputTelephone">Teléfono</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="date" class="form-control" id="inputBirthdate" name="birthdate" placeholder="Fecha de nacimiento" required="" autocomplete="bday">
+                                                <input type="date" class="form-control" id="inputBirthdate" name="birthdate" placeholder="Fecha de nacimiento" required="" autocomplete="birthday"
+                                                <?php if (isset($error)){echo "value='".$_POST['birthdate']."'";}?>>
                                                 <label for="inputBirthdate">Fecha de nacimiento</label>
                                             </div>
                                         </div>
@@ -63,14 +67,16 @@ $password = \App\Class\Auxiliar::generarContrasenaAleatoria();
                                         <div class="col-md-6">
                                             <div class="form-floating">
                                                 <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Contraseña" required="" minlength="8" autocomplete="new-password"
-                                                       value="<?= htmlspecialchars($password ?? '') ?>">
+                                                       value="<?= htmlspecialchars($password ?? '') ?>"
+                                                        <?php if (isset($error)){echo "value='".$_POST['password']."'";}?>>
                                                 <label for="inputPassword">Contraseña</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
                                                 <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirmar contraseña" required="" minlength="8" autocomplete="new-password"
-                                                       value="<?= htmlspecialchars($password ?? '') ?>">
+                                                       value="<?= htmlspecialchars($password ?? '') ?>"
+                                                        <?php if (isset($error)){echo "value='".$_POST['confirmPassword']."'";}?>>
                                                 <label for="confirmPassword">Confirmar contraseña</label>
                                             </div>
                                         </div>
@@ -89,15 +95,15 @@ $password = \App\Class\Auxiliar::generarContrasenaAleatoria();
                                     <div class="form-floating mb-4">
                                         <select class="form-select" id="inputCountry" name="country" required="">
                                             <option value="" selected="" disabled="">Selecciona tu país</option>
-                                            <option value="sp">España</option>
-                                            <option value="us">Estados Unidos</option>
-                                            <option value="ca">Canadá</option>
-                                            <option value="uk">Reino Unido</option>
-                                            <option value="au">Australia</option>
-                                            <option value="de">Alemania</option>
-                                            <option value="fr">Francia</option>
-                                            <option value="jp">Japón</option>
-                                            <option value="other">Otro</option>
+                                            <option value="sp" <?php if (isset($error) && $_POST['country']=='sp'){echo "selected";}?>>España</option>
+                                            <option value="us" <?php if (isset($error) && $_POST['country']=='us'){echo "selected";}?>>Estados Unidos</option>
+                                            <option value="ca" <?php if (isset($error) && $_POST['country']=='ca'){echo "selected";}?>>Canadá</option>
+                                            <option value="uk" <?php if (isset($error) && $_POST['country']=='uk'){echo "selected";}?>>Reino Unido</option>
+                                            <option value="au" <?php if (isset($error) && $_POST['country']=='au'){echo "selected";}?>>Australia</option>
+                                            <option value="de" <?php if (isset($error) && $_POST['country']=='de'){echo "selected";}?>>Alemania</option>
+                                            <option value="fr" <?php if (isset($error) && $_POST['country']=='fr'){echo "selected";}?>>Francia</option>
+                                            <option value="jp" <?php if (isset($error) && $_POST['country']=='jp'){echo "selected";}?>>Japón</option>
+                                            <option value="other" <?php if (isset($error) && $_POST['country']=='other'){echo "selected";}?>>Otro</option>
                                         </select>
                                         <label for="inputCountry">País</label>
                                     </div>
@@ -115,6 +121,14 @@ $password = \App\Class\Auxiliar::generarContrasenaAleatoria();
                                             Deseo recibir novedades y recomendaciones de lectura de blockBookster
                                         </label>
                                     </div>
+
+                                    <?php if(isset($error)){?>
+                                            <div class="mb-3">
+                                                <div class="p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3">
+                                                    <?php foreach ($error as $fail){echo $fail. "</br>";}?>
+                                                </div>
+                                            </div>
+                                    <?php } ?>
 
                                     <div class="d-grid mb-4">
                                         <button type="submit" class="btn btn-register">Crear cuenta</button>

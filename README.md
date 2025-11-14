@@ -26,6 +26,9 @@
 - src/template/vendor (vendor de bootstrap)
 
 ## PREUGUNTAS
-- por que no me muestra ni el header ni el footer en la pagina mostrarUsuario y editarUsuario
-- en user la gestion de tpio de usuario con el validate y en el registro, el country no lo reconoce y el type tampoco
-- No me genera el objeto con los adtos y el uuid del registro
+- Revisar el Type REGULAR en User en editFromArray
+- Comprobar si el registro funciona correctamente 
+- problemas en el login con el usermodel y el controller
+- usar email en lugar de nombre para el loguin?
+- que es el jsoSerialize y el implement en clase user
+- 

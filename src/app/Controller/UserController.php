@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Class\User;
+use App\Enum\UserType;
 use App\Interface\ControllerInterface;
 use App\Model\UserModel;
 use Ramsey\Uuid\Uuid;
@@ -10,11 +11,22 @@ use Ramsey\Uuid\Uuid;
 class UserController implements ControllerInterface
 {
     public function index(){
-        //Recuperar usuarios BD.sql
-        $usuarios=UserModel::getAllUsers();
+        // Comprobat tipo de usuario
+        if(isset($_SESSION['user']) && $_SESSION['user']->isAdmin()){
+            //Recuperar usuarios BD.sql
+            $usuarios=UserModel::getAllUsers();
 
-        //Llamar a la vista que represente a estos usuarios
-        include_once DIRECTORIO_BACKEND . "listaUsuarios.php";
+            //Llamar a la vista que represente a estos usuarios
+            include_once DIRECTORIO_BACKEND . "listaUsuarios.php";
+        }else{
+            $error = "No tienen permiso para aceder a esta pagina";
+            include_once DIRECTORIO_VIEWS . "404.php"; // hacer pagina de redireccion de permisoso para entrar en la pagina t13 min 53 direccion user en navegador
+        }
+
+
+
+
+
 
     }
     public function show($id){
@@ -31,27 +43,23 @@ class UserController implements ControllerInterface
     }
     public function store(){
         // Datos que recibo en la peticion POST
-        var_dump($_POST);
+        //var_dump($_POST);
 
         //Tenemos que validar estos datos
         $error=User::validateUserRegister($_POST);
 
         if ($error){
             //Hay errores en la validacion
+            return include_once DIRECTORIO_FRONTEND . "register.php";
             var_dump($error);
         }else{
+            //no se produce error y hay que almacenar usuario
             $usuario=User::fromArray($_POST);
         }
 
         //Guardalos en la base de datos
         //UserModel::saveUser($usuario);
 
-
-
-        //$usuario = new User(Uuid::uuid4(),$_POST['username']);
-        //$usuario->setPassword($_POST['password'])->setEmail($_POST['email'])->setBirthdate(new \DateTime($_POST['birthdate']))->setTelephone($_POST['telephone']);
-
-        //var_dump($usuario);
 
     }
     public function edit($id)
@@ -65,6 +73,15 @@ class UserController implements ControllerInterface
 
     }
     public function update($id){
+        //Tomar datos de peticion tipo PUT
+        $put=json_decode(file_get_contents("php://input"),true);
+
+        $put['id']=$id;
+
+        $resultado = User::validateUserRegister($put);
+
+
+        return "Se esta intentando editar este usuario $id";
 
     }
     public function destroy($id){
@@ -82,9 +99,46 @@ class UserController implements ControllerInterface
     }
     public function verify()
     {
-        var_dump($_POST);
+        //var_dump($_POST);
+
+        //Busacar en la base de datos el usuario por su nombre de usuario
+        $usuario = UserModel::getUserByUsername($_POST["username"]);
+        if ($usuario!=null){
+            $error="Nombre de usuario no encontrado";
+        }
+
+        //Comprobar que la contraseña es la que tenemos almacenada
+        if (password_verify($_POST["password"], $usuario->getPassword())){
+            $_SESSION['user']=$usuario;
+            if ($usuario->getType()===UserType::ADMIN){ // preguntar si puede ser admin y worker o hacerlo en else y aui poner regular
+                //include_once DIRECTORIO_BACKEND . "admininicio.php";
+                header("Location: /user");
+                die();
+            }else{
+                //include_once DIRECTORIO_FRONTEND . "inicio.php";
+                header("Location: /");
+            }
+        }else{
+            $error="No se ha podido iniciar sesión. Nombre de usuario o contraseña incorrecto";
+
+        }
+        include_once DIRECTORIO_FRONTEND . "login.php";
+
+        //Redireccionar a una pantalla principal
+
+
+        //$contrasena=password_hash($_POST["password"], PASSWORD_DEFAULT);
+
+        //var_dump($contrasena);
+
+        //Comprobar contraseña
+        //var_dump (password_verify($_POST["password"], $contrasena));
 
     }
+    public function logout(){
+        session_destroy();
+    }
+
 
 
 }
