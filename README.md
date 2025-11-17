@@ -29,4 +29,6 @@
 - Revisar el Type REGULAR en User en editFromArray
 - revisar video 12 o 13 sobre editar usuario
 - que es el jsoSerialize y el implement en clase user
+- por que no usas un enum con el type ADMIN en sql
+- video 14 BD clave para el examen
 

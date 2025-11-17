@@ -40,19 +40,20 @@ class UserController implements ControllerInterface
         //var_dump($_POST);
 
         //Tenemos que validar estos datos
-        $error=User::validateUserRegister($_POST);
+        $resultado=User::validateUserRegister($_POST);
 
-        if ($error){
+        if (is_array($resultado)){
             //Hay errores en la validacion
             return include_once DIRECTORIO_FRONTEND . "register.php";
-            var_dump($error);
+
         }else{
             //no se produce error y hay que almacenar usuario
-            $usuario=User::createfromArray($_POST);
-        }
+            //Encriptar Password del usuario
+            $resultado->setPassword(password_hash($resultado->getPassword(), PASSWORD_DEFAULT));
 
-        //Guardalos en la base de datos
-        //UserModel::saveUser($usuario);
+            //Guardalos en la base de datos
+            UserModel::saveUser($resultado);
+        }
 
     }
     public function edit($id)
@@ -78,17 +79,11 @@ class UserController implements ControllerInterface
 
     }
     public function destroy($id){
-
         //Borrar el usuario en la base de datos
-
-        http_response_code(401);
-        return json_encode([
-            "error" => false,
-            "mensaje" => "Se ha eliminado el usuario",
-            "data" => $id,
-            "code"=> 401
-        ]);
-
+        UserModel::deleteUserById($id);
+    }
+    public function destroyAll(){
+        UserModel::deleteAllUsers();
     }
     public function verify()
     {

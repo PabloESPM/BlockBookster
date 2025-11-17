@@ -92,7 +92,8 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($usuarios as $usuario): ?>
+                <?php if($usuarios){
+                    foreach ($usuarios as $usuario){?>
                     <tr>
                         <!-- Avatar -->
                         <td class="ps-4">
@@ -178,7 +179,13 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
                             </div>
                         </td>
                     </tr>
-                <?php endforeach; ?>
+                <?php }}else{?>
+                    <tr>
+                        <td colspan="8" class="text-center py-3">
+                            No hay usuarios disponibles en el sistema.
+                        </td>
+                    </tr>
+                <?php }?>
                 </tbody>
             </table>
         </div>

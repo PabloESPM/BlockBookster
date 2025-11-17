@@ -1,4 +1,5 @@
 <?php
+///VARIABLES DE ENTORNO
 const DIRECTORIO_PROYECTO = __DIR__;
 const DIRECTORIO_APP = __DIR__ . "/app/";
 const DIRECTORIO_VIEWS = __DIR__ . "/app/View/";
@@ -22,3 +23,9 @@ const DIRECTORIO_BACKEND_JS = "/app/View/backend/js/";
 
 # Auxiliares
 const DIRECTORIO_AUX = __DIR__ . "/Auxiliar/";
+
+// Conexion a la Base de Datos
+const URI_SERVIDOR = "mysql:host=mariadb;dbname=blockbookster1";
+const DATABASE_USERNAME = "miguela";
+const DATABASE_PASSWORD = "aleugim";
+
