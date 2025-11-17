@@ -56,7 +56,7 @@ class UserModel
         $sentenciaPreparada->bindValue(":password",$user->getPassword());
         $sentenciaPreparada->bindValue(":email",$user->getEmail());
         $sentenciaPreparada->bindValue(":telephone",$user->getTelephone());
-        $sentenciaPreparada->bindValue(":country",$user->getCountry());
+        $sentenciaPreparada->bindValue(":country",$user->getCountry()->name);
         $sentenciaPreparada->bindValue(":birthdate",$user->getBirthdate()->format('Y-m-d'));
         $sentenciaPreparada->bindValue(":type",$user->getType()->name);
 
