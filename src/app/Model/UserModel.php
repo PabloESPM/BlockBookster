@@ -165,4 +165,31 @@ class UserModel
             return false;
         }
     }
+    public static function updateUser(User $user):bool{
+        try {
+            $conexion= new PDO("mysql:host=mariadb;dbname=blockbookster1","miguela", "aleugim");
+            $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }catch (PDOException $e){
+            return false;
+        }
+        $sql="UPDATE user SET username=:username, password=:password, email=:email, telephone=:telephone, country=:country, birthdate=STR_TO_DATE(:birthdate, '%Y-%c-%d'), type=:typer WHERE id=:id";
+        $sentenciaPreparada=$conexion->prepare($sql);
+
+        $sentenciaPreparada->bindValue(":id",$user->getId());
+        $sentenciaPreparada->bindValue(":username",$user->getUsername());
+        $sentenciaPreparada->bindValue(":password",$user->getPassword());
+        $sentenciaPreparada->bindValue(":email",$user->getEmail());
+        $sentenciaPreparada->bindValue(":telephone",$user->getTelephone());
+        $sentenciaPreparada->bindValue(":country",$user->getCountry()->name);
+        $sentenciaPreparada->bindValue(":birthdate",$user->getBirthdate()->format('Y-m-d'));
+        $sentenciaPreparada->bindValue(":type",$user->getType()->name);
+
+        $sentenciaPreparada->execute();
+
+        if($sentenciaPreparada->rowCount()>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

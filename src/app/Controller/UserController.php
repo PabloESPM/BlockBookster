@@ -11,18 +11,11 @@ use Ramsey\Uuid\Uuid;
 class UserController implements ControllerInterface
 {
     public function index(){
-        // Comprobat tipo de usuario
-        if(isset($_SESSION['user']) && $_SESSION['user']->isAdmin()){
             //Recuperar usuarios BD.sql
             $usuarios=UserModel::getAllUsers();
 
             //Llamar a la vista que represente a estos usuarios
             include_once DIRECTORIO_BACKEND . "listaUsuarios.php";
-        }else{
-            $error = "No tienen permiso para acceder a esta pagina";
-            include_once DIRECTORIO_BACKEND . "permisoDenegado.php";
-        }
-
     }
     public function show($id){
         //Recuperar los datos del usuario
@@ -36,23 +29,23 @@ class UserController implements ControllerInterface
         include_once DIRECTORIO_FRONTEND . "register.php";
     }
     public function store(){
-        // Datos que recibo en la peticion POST
-        //var_dump($_POST);
+        //o valida el usuario de vallidateusercreation o crea uno
 
         //Tenemos que validar estos datos
-        $resultado=User::validateUserRegister($_POST);
+        $errores=User::validateUserRegister($_POST);
 
-        if (is_array($resultado)){
+        if (is_array($errores)){
             //Hay errores en la validacion
             return include_once DIRECTORIO_FRONTEND . "register.php";
 
         }else{
-            //no se produce error y hay que almacenar usuario
-            //Encriptar Password del usuario
-            $resultado->setPassword(password_hash($resultado->getPassword(), PASSWORD_DEFAULT));
+            //Crear el suario
+            $usuario=User::createfromArray($_POST);
 
             //Guardalos en la base de datos
-            UserModel::saveUser($resultado);
+            UserModel::saveUser($usuario);
+            //No me queda claro para que es esto ¿Preguntar?
+            header("Location: /user");
         }
 
     }
@@ -72,11 +65,30 @@ class UserController implements ControllerInterface
 
         $put['id']=$id;
 
-        $resultado = User::validateUserRegister($put);
-
-
-        return "Se esta intentando editar este usuario $id";
-
+        $resultado = User::validateUserUpdate($put);
+        if(is_array($resultado)){
+            http_response_code(400);
+            return json_encode([
+               "error"=>true,
+               "mensaje"=>"Ha habido un error",
+               "data"=>$resultado,
+               "code"=>400
+            ]);
+        }else{
+            $oldUser=UserModel::getUserById($id);
+            //este es el que tendriamos que almacenar en la base de datos tras editar el usuario
+            $newUser=User::editfromArray($oldUser, $put);
+            //llamada al modelo
+            UserModel::updateUser($newUser);
+            http_response_code(201);
+            return json_encode([
+                "error"=>false,
+                "mensaje"=>"Datos actualizados correctamente",
+                "data"=>$newUser,
+                "code"=>201
+            ]);
+        }
+        return json_encode($resultado);
     }
     public function destroy($id){
         //Borrar el usuario en la base de datos
@@ -91,8 +103,9 @@ class UserController implements ControllerInterface
 
         //Busacar en la base de datos el usuario por su nombre de usuario
         $usuario = UserModel::getUserByEmail($_POST["email"]);
-        if ($usuario!=null){
+        if ($usuario===null){
             $error="Nombre de usuario no encontrado";
+            include_once DIRECTORIO_FRONTEND . "login.php";
         }
 
         //Comprobar que la contraseña es la que tenemos almacenada

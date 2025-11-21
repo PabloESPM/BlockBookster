@@ -20,6 +20,23 @@ $router = new RouteCollector();
 $router->get('/create-database', function () {
     \App\Model\DB::createDataBase("BlockBookster");
 });
+// Aplicacion de filtros de direccionamiento si estas identificado o si no
+$router->filter('auth', function (){
+    if (isset($_SESSION['user'])){
+        return true;
+    }else{
+        header("Location: /login.php");
+        return false;
+    }
+});
+//Filtro por tipo de usuario
+$router->filter('admin', function (){
+    if (isset($_SESSION['user']) && $_SESSION['user']->isAdmin()){
+        return true;
+    }else{
+        return include_once DIRECTORIO_BACKEND . "permisoDenegado.php";
+    }
+});
 
 //Definir las rutas de mi aplicación
 
@@ -34,8 +51,8 @@ $router->get('/listaUsuarios', [\App\Controller\UserController::class, 'index'])
 
 //Usuario
 $router->get('user/create',[\App\Controller\UserController::class,'create']);
-$router->get('/user',[\App\Controller\UserController::class,'index']);
-$router->get('/user/{id}',[\App\Controller\UserController::class,'show']);
+$router->get('/user',[\App\Controller\UserController::class,'index'], ["before"=>"admin"]);
+$router->get('/user/{id}',[\App\Controller\UserController::class,'show'], ["before"=>"auth"]);
 $router->get('/user/{id}/edit',[\App\Controller\UserController::class,'edit']);
 $router->post('/user',[\App\Controller\UserController::class,'store']);
 $router->put('/user/{id}',[\App\Controller\UserController::class,'update']);

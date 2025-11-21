@@ -31,4 +31,6 @@
 - que es el jsoSerialize y el implement en clase user
 - por que no usas un enum con el type ADMIN en sql
 - video 14 BD clave para el examen
+- Preguntar para que sirve el header en store
+- Revisar el editUser y comparar con el sullo
 

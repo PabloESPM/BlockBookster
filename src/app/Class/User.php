@@ -135,6 +135,8 @@ class User
         //comprobar que el usuario existe
         if(!key_exists('id', $userData)){
             $userData['id'] = Uuid::uuid4()->toString();
+            //Encriptar Password del usuario
+            $userData['password'] = password_hash($userData['password'], PASSWORD_DEFAULT);
         }
 
         $usuario =new User(
@@ -149,22 +151,22 @@ class User
         $usuario->setType(UserType::REGULAR); // Quiero que sea de tipo regular siempre al darse de alta
         return $usuario;
     }
-    public static function editfromArray(array $userData):User{
-        //leer de la base de datos el usuario
-        $usuario=UserModel::getUserById($userData['id']);
+    public static function editfromArray(User $usario, array $userData):User{
         $usuario->setUsername($userData['username']??$usuario->getUsername());
-        $usuario->setPassword($userData['password']??$usuario->getPassword());
+        if(isset($userData['password'])){
+            $usuario->setPassword(password_hash($userData['password'], PASSWORD_DEFAULT));
+        }
         $usuario->setEmail($userData['email']??$usuario->getEmail());
         $usuario->setTelephone($userData['telephone']??$usuario->getTelephone());
         $usuario->setCountry($userData['country']??$usuario->getCountry());
-        $usuario->setBirthdate(DateTime::createFromFormat('Y-m-d',$userData['birthdate'])??$usuario->getBirthdate());
+        $usuario->setBirthdate(DateTime::createFromFormat('Y-m-d',$userData['birthdate'])??$usuario->getBirthdate()->format('Y-m-d'));
         $usuario->setType(UserType::REGULAR); //Reviaasr si esto esta bien
 
         return $usuario;
 
     }
 
-    public static function validateUserRegister(array $userData):?array{
+    public static function validateUserRegister(array $userData):array|true{
         try{
             v::key('username', v::stringType()->length(3,32))
                 ->key('email', v::email())
@@ -177,9 +179,10 @@ class User
         }catch(NestedValidationException $errores){
             return $errores->getMessages();
         }
-        return null;
+        //El usuariao a superado el proceso de evaliucaion
+        return true;
     }
-    public static function validateUserUpdate(array $userData):array|User{
+    public static function validateUserUpdate(array $userData):array|true{
         try{
             v::key('id', v::uuid()->notEmpty())
                 ->key('username', v::stringType()->length(3,32), false)
@@ -187,13 +190,14 @@ class User
                 ->key('password', v::stringType()->length(8,32), false)
                 ->key('telephone', v::stringType()->length(9,32), false)
                 ->key('country', v::in(['sp', 'us', 'ca', 'uk', 'au', 'de', 'fr', 'jp', 'other']), false)
-                ->key('birthdate', v::date('Y-m-d'))
+                ->key('birthdate', v::date('Y-m-d'),false)
+                ->key('type', v::in(['ADMIN','WORKER','REGULAR']), false)
                 ->assert($userData);
 
         }catch(NestedValidationException $errores){
             return $errores->getMessages();
         }
-        return User::editfromArray($userData);
+        return true;
     }
     public function isAdmin():bool{
         if($this->getType() === UserType::ADMIN){

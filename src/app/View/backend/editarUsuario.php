@@ -452,7 +452,6 @@ $usuario = $usuario ?? null;
             "type", type.value,
         });
 
-
         const requestOptions = {
           method: "PUT",
           headers: myHeaders,
@@ -464,8 +463,24 @@ $usuario = $usuario ?? null;
             .then((result) => redireccionarAInfoDeUsuario())
             .catch((error) => console.error(error));
     }
-    function redireccionarAInfoDeUsuario(){
-        window.location.replace("http://localhost:8080/user/<?= $usuario->getId() ?>")
+    function redireccionarAInfoDeUsuario(resultado){
+        if ('id' in JSON.parse(resultado)){
+            window.location.replace("http://localhost:8080/user/<?= $usuario->getId() ?>")
+
+        }else{
+            const diverrores = document.getElementById('diverrores')
+            let diverror = document.createElement('div')
+            diverror.className="p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3"
+            diverrores.appendChild(diverror)
+            let error = document.createElement('p')
+            let errores = JSON.parse(resultado)
+            console.log(errores)
+            Object.keys(errores).forEach(clave=> {
+                error.textContent = ${cleve}: ${errores[clave]}
+                diverror.appendChild(error)
+            });
+        }
+
     }
 </script>
 
