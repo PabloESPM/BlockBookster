@@ -33,4 +33,8 @@
 - video 14 BD clave para el examen
 - Preguntar para que sirve el header en store
 - Revisar el editUser y comparar con el sullo
+- Country null si le quito el ->name funciona pero pero algunos los deja nulos y despues en el loguin te da problemas
+- si me doy de alta con others funciona, pero me deja el anuncio de notienes permisos al logear en lugar de llevarte a inicio
+- como cambio desde la base de datos el regular por el ADMIN
+- como guardo los datos de la base de datos en el sql
 

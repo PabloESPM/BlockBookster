@@ -47,6 +47,7 @@ $router->filter('admin', function (){
 $router->post('/user/login', [\App\Controller\UserController::class, 'verify']);
 $router->get('/logout', [\App\Controller\UserController::class, 'logout']);
 $router->get('/listaUsuarios', [\App\Controller\UserController::class, 'index']);
+$router->get('/listaProductos', [\App\Controller\BookController::class, 'index']);
 
 
 //Usuario
@@ -187,6 +188,7 @@ $router->get('/admin/books/create', function (){
 $router->get('admin/books/{$id}/edit', function($id) {
     include_once DIRECTORIO_BACKEND . 'cargarProductos.php';
 });
+
 
 
 

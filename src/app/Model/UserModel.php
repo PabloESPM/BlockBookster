@@ -21,7 +21,7 @@ class UserModel
         }
 
         //Para evitar inyeccion de sql, creamos cadena de conexion
-        $sql="SELECT * FROM users";
+        $sql="SELECT * FROM user";
 
         $sentenciaPreparada=$conexion->prepare($sql);
         //ejecuta elemento
@@ -56,7 +56,7 @@ class UserModel
         $sentenciaPreparada->bindValue(":password",$user->getPassword());
         $sentenciaPreparada->bindValue(":email",$user->getEmail());
         $sentenciaPreparada->bindValue(":telephone",$user->getTelephone());
-        $sentenciaPreparada->bindValue(":country",$user->getCountry()->name);
+        $sentenciaPreparada->bindValue(":country",$user->getCountry());
         $sentenciaPreparada->bindValue(":birthdate",$user->getBirthdate()->format('Y-m-d'));
         $sentenciaPreparada->bindValue(":type",$user->getType()->name);
 
@@ -78,7 +78,7 @@ class UserModel
         }catch (PDOException $e){
             return false;
         }
-        $sql="SELECT * FROM users WHERE id=:id";
+        $sql="SELECT * FROM user WHERE id=:id";
         $sentenciaPreparada=$conexion->prepare($sql);
         $sentenciaPreparada->bindValue(":id",$id);
         $sentenciaPreparada->execute();
@@ -97,7 +97,7 @@ class UserModel
         }catch (PDOException $e){
             return false;
         }
-        $sql="SELECT * FROM users WHERE username=:username";
+        $sql="SELECT * FROM user WHERE username=:username";
         $sentenciaPreparada=$conexion->prepare($sql);
         $sentenciaPreparada->bindValue(":username",$username);
         $sentenciaPreparada->execute();
@@ -118,7 +118,7 @@ class UserModel
         }catch (PDOException $e){
             return false;
         }
-        $sql="SELECT * FROM users WHERE email=:email";
+        $sql="SELECT * FROM user WHERE email=:email";
         $sentenciaPreparada=$conexion->prepare($sql);
         $sentenciaPreparada->bindValue(":email",$email);
         $sentenciaPreparada->execute();
@@ -138,7 +138,7 @@ class UserModel
         }catch (PDOException $e){
             return false;
         }
-        $sql="DELETE FROM users WHERE id=:id";
+        $sql="DELETE FROM user WHERE id=:id";
         $sentenciaPreparada=$conexion->prepare($sql);
         $sentenciaPreparada->bindValue(":id",$id);
         $sentenciaPreparada->execute();
@@ -180,7 +180,7 @@ class UserModel
         $sentenciaPreparada->bindValue(":password",$user->getPassword());
         $sentenciaPreparada->bindValue(":email",$user->getEmail());
         $sentenciaPreparada->bindValue(":telephone",$user->getTelephone());
-        $sentenciaPreparada->bindValue(":country",$user->getCountry()->name);
+        $sentenciaPreparada->bindValue(":country",$user->getCountry());
         $sentenciaPreparada->bindValue(":birthdate",$user->getBirthdate()->format('Y-m-d'));
         $sentenciaPreparada->bindValue(":type",$user->getType()->name);
 
