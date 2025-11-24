@@ -137,6 +137,7 @@ class User
             $userData['id'] = Uuid::uuid4()->toString();
             //Encriptar Password del usuario
             $userData['password'] = password_hash($userData['password'], PASSWORD_DEFAULT);
+            $userData['type'] = UserType::REGULAR->name;
         }
 
         $usuario =new User(
@@ -148,7 +149,7 @@ class User
         $usuario->setTelephone($userData['telephone']);
         $usuario->setCountry($userData['country']);
         $usuario->setBirthdate(DateTime::createFromFormat('Y-m-d',$userData['birthdate']));
-        $usuario->setType(UserType::REGULAR); // Quiero que sea de tipo regular siempre al darse de alta
+        $usuario->setType(UserType::createFromString($userData['type'])); // Quiero que sea de tipo regular siempre al darse de alta
         return $usuario;
     }
     public static function editfromArray(User $usario, array $userData):User{

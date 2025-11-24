@@ -3,16 +3,18 @@
 namespace App\Controller;
 
 use App\Interface\ControllerInterface;
+use App\Model\BookModel;
 
 class BookController implements ControllerInterface
 {
 
     public function index()
     {
-        // TODO: Implement index() method.
+        $libros = BookModel::getAllBooks();
+        return include_once DIRECTORIO_BACKEND . "listaProductos.php";
     }
 
-    public function show()
+    public function show($id)
     {
         // TODO: Implement show() method.
     }

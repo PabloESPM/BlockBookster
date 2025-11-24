@@ -21,20 +21,16 @@ $router->get('/create-database', function () {
     \App\Model\DB::createDataBase("BlockBookster");
 });
 // Aplicacion de filtros de direccionamiento si estas identificado o si no
-$router->filter('auth', function (){
-    if (isset($_SESSION['user'])){
-        return true;
-    }else{
+$router->filter('auth', function () {
+    if (!isset($_SESSION['user'])) {
         header("Location: /login.php");
         return false;
     }
 });
 //Filtro por tipo de usuario
 $router->filter('admin', function (){
-    if (isset($_SESSION['user']) && $_SESSION['user']->isAdmin()){
-        return true;
-    }else{
-        return include_once DIRECTORIO_BACKEND . "permisoDenegado.php";
+    if (isset($_SESSION['user']) && !$_SESSION['user']->isAdmin()) {
+        return false;
     }
 });
 

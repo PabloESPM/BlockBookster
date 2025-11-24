@@ -57,7 +57,6 @@ class UserController implements ControllerInterface
         //Presentariamos la lista de edicion de los datos de usuario
 
         include_once DIRECTORIO_BACKEND . "editarUsuario.php";
-
     }
     public function update($id){
         //Tomar datos de peticion tipo PUT
@@ -99,15 +98,12 @@ class UserController implements ControllerInterface
     }
     public function verify()
     {
-        //var_dump($_POST);
-
         //Busacar en la base de datos el usuario por su nombre de usuario
         $usuario = UserModel::getUserByEmail($_POST["email"]);
         if ($usuario===null){
             $error="Nombre de usuario no encontrado";
             include_once DIRECTORIO_FRONTEND . "login.php";
         }
-
         //Comprobar que la contraseña es la que tenemos almacenada
         if (password_verify($_POST["password"], $usuario->getPassword())){
             $_SESSION['user']=$usuario;
@@ -121,20 +117,8 @@ class UserController implements ControllerInterface
             }
         }else{
             $error="No se ha podido iniciar sesión. Nombre de usuario o contraseña incorrecto";
-
         }
         include_once DIRECTORIO_FRONTEND . "login.php";
-
-        //Redireccionar a una pantalla principal
-
-
-        //$contrasena=password_hash($_POST["password"], PASSWORD_DEFAULT);
-
-        //var_dump($contrasena);
-
-        //Comprobar contraseña
-        //var_dump (password_verify($_POST["password"], $contrasena));
-
     }
     public function logout(){
         session_destroy();

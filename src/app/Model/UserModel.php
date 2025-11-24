@@ -70,7 +70,7 @@ class UserModel
         }
     }
 
-    public static function getUserById($id):User{
+    public static function getUserById($id):?User{
         //Cadena de conexion
         try {
             $conexion=new PDO("mysql:host=mariadb;dbname=blockbookster1","miguela", "aleugim");
