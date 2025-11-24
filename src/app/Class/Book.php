@@ -20,4 +20,11 @@ class Book
     private string $publisher;
     private string $cover;
 
+    public function __construct(UuidInterface $id, string $title)
+    {
+        $this->id = $id;
+        $this->title = $title;
+    }
+
+
 }
