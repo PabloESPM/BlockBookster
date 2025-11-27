@@ -13,7 +13,7 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
         <p class="text-muted mb-0">Gestiona los libros almacenados en la plataforma</p>
     </div>
     <div class="btn-toolbar mb-2 mb-md-0">
-        <a href="/admin/book/new" class="btn btn-primary">
+        <a href="app/View/backend/cargarProductos.php" class="btn btn-primary">
             <i class="bi bi-book-half me-2"></i>Añadir Libro
         </a>
     </div>
@@ -101,18 +101,18 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
 
                             <!-- Portada -->
                             <td class="ps-4">
-                                <img src="<?= $libro->getPortada() ? '/uploads/books/' . $libro->getPortada() : '/app/View/backend/img/book-default.png' ?>"
+                                <img src="<?= $libro->getCover() ? '/uploads/books/' . $libro->getCover() : '/app/View/backend/img/book-default.png' ?>"
                                      style="width:45px;height:60px;object-fit:cover;border-radius:4px;">
                             </td>
 
                             <!-- Título -->
                             <td>
-                                <span class="fw-semibold"><?= $libro->getTitulo() ?></span>
+                                <span class="fw-semibold"><?= $libro->getTitle() ?></span>
                             </td>
 
                             <!-- Autor -->
                             <td>
-                                <span class="text-muted"><?= $libro->getAutor() ?></span>
+                                <span class="text-muted"><?= $libro->getAuthor() ?></span>
                             </td>
 
                             <!-- ISBN -->
@@ -122,12 +122,12 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
 
                             <!-- Género -->
                             <td>
-                                <span class="badge bg-light text-dark border"><?= ucfirst($libro->getGenero()) ?></span>
+                                <span class="badge bg-light text-dark border"><?= ucfirst($libro->getGenre()) ?></span>
                             </td>
 
                             <!-- Precio -->
                             <td>
-                                <strong><?= number_format($libro->getPrecio(), 2) ?> €</strong>
+                                <strong><?= number_format($libro->getPrice(), 2) ?> €</strong>
                             </td>
 
                             <!-- Estado -->
@@ -151,7 +151,7 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
                                     </a>
 
                                     <!-- Editar -->
-                                    <a href="/admin/book/edit/<?= $libro->getId() ?>"
+                                    <a href="/book/edit/<?= $libro->getId() ?>"
                                        class="btn btn-outline-warning"
                                        title="Editar libro">
                                         ✏️
@@ -161,7 +161,7 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
                                     <button type="button"
                                             class="btn btn-outline-danger btn-delete-book"
                                             data-book-id="<?= $libro->getId() ?>"
-                                            data-book-title="<?= htmlspecialchars($libro->getTitulo()) ?>"
+                                            data-book-title="<?= htmlspecialchars($libro->getTitle()) ?>"
                                             title="Eliminar libro">
                                         🗑
                                     </button>

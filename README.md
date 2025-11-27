@@ -37,4 +37,5 @@
 - si me doy de alta con others funciona, pero me deja el anuncio de notienes permisos al logear en lugar de llevarte a inicio
 - como cambio desde la base de datos el regular por el ADMIN
 - como guardo los datos de la base de datos en el sql
+- hacer el try catch $conexiones generico
 

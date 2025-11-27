@@ -56,8 +56,10 @@ $router->put('/user/{id}',[\App\Controller\UserController::class,'update']);
 $router->delete('/user/{id}',[\App\Controller\UserController::class,'destroy']);
 
 //Libros
+$router->get('book/create',[\App\Controller\BookController::class,'create']);
 $router->get('/book',[\App\Controller\BookController::class,'index']);
 $router->get('/book/{id}',[\App\Controller\BookController::class,'show']);
+$router->get('/book/{id}/edit',[\App\Controller\BookController::class,'edit']);
 $router->post('/book',[\App\Controller\BookController::class,'store']);
 $router->put('/book/{id}',[\App\Controller\BookController::class,'update']);
 $router->delete('/book/{id}',[\App\Controller\BookController::class,'destroy']);

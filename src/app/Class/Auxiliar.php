@@ -6,12 +6,12 @@ class Auxiliar
 {
     public static function gestionarImagen(array $arrayPost, array $arrayFiles):string|false{
 
-        if(empty($arrayPost['titulo']) || empty($arrayFiles['portada']['name'])) {
+        if(empty($arrayPost['title']) || empty($arrayFiles['cover']['name'])) {
             die('Error: Faltan datos requeridos');
         }
 
         // Limpiar el título para usarlo como nombre de carpeta
-        $tituloLibro = $arrayPost['titulo'];
+        $tituloLibro = $arrayPost['title'];
         // Eliminar caracteres no permitidos en nombres de carpeta
         $nombreCarpeta = preg_replace('/[^a-zA-Z0-9\s\-_]/', '', $tituloLibro);
         // Reemplazar espacios por guiones bajos
@@ -34,9 +34,9 @@ class Auxiliar
         }
 
         // Mover el archivo a la carpeta del libro
-        $rutaDestino = $rutaCarpetaLibro . "/" . $arrayFiles['portada']['name'];
+        $rutaDestino = $rutaCarpetaLibro . "/" . $arrayFiles['cover']['name'];
 
-        if(move_uploaded_file($arrayFiles['portada']['tmp_name'], $rutaDestino)) {
+        if(move_uploaded_file($arrayFiles['cover']['tmp_name'], $rutaDestino)) {
            return $rutaDestino;
         } else {
             return false;
