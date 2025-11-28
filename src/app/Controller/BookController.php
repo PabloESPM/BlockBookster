@@ -25,11 +25,17 @@ class BookController implements ControllerInterface
     }
     public function store()
     {
-        $errores=Book::validateBookRegister($_POST);
+
+        //Vamos a añadir a los datos del formulario los datos de la portada
+
+        $datosLibro = $_POST;
+        $datosLibro['cover']=Auxiliar::gestionarImagen($_POST,$_FILES);
+
+        $errores=Book::validateBookRegister($datosLibro);
         if(is_array($errores)){
             return include_once DIRECTORIO_BACKEND . "cargarProductos.php";
         }else{
-            $libro = Book::createFromArray($_POST);
+            $libro = Book::createFromArray($datosLibro);
             BookModel::saveBook($libro);
             header("Location: /book/");
         }
@@ -37,6 +43,7 @@ class BookController implements ControllerInterface
         //$rutaDestinoImg=\App\Class\Auxiliar::gestionarImagen($_POST, $_FILES);
         //Guardar la información del libro en la base de datos
         //header('Location:/book/'.$_POST['id']);
+
     }
     public function edit($id)
     {

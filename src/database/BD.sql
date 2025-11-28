@@ -22,24 +22,24 @@ DROP TABLE IF EXISTS book;
 
 CREATE TABLE book(
                      id VARCHAR(60),
-                     titulo VARCHAR(255),
-                     autor VARCHAR(255),
+                     title VARCHAR(255),
+                     author VARCHAR(255),
                      isbn VARCHAR(17),
-                     ano_publicacion YEAR,
-                     num_paginas INT,
-                     precio DECIMAL(10,2),
-                     genero ENUM('ficcion','no_ficcion','misterio','thriller','romance','fantasia','ciencia_ficcion','terror','biografia','historia','poesia','ensayo','infantil','juvenil','autoayuda'),
-                     editorial VARCHAR(255),
-                     idioma ENUM('es','in','fr','al','it','pt','ca','otros'),
-                     descripcion TEXT,
-                     portada VARCHAR(255)
+                     publicationDate YEAR,
+                     numberOfPage INT,
+                     price DECIMAL(10,2),
+                     genre ENUM('ficcion','no_ficcion','misterio','thriller','romance','fantasia','ciencia_ficcion','terror','biografia','historia','poesia','ensayo','infantil','juvenil','autoayuda'),
+                     publisher VARCHAR(255),
+                     language ENUM('es','in','fr','al','it','pt','ca','otros'),
+                     description TEXT,
+                     cover VARCHAR(255)
 );
 
 ALTER TABLE book ADD CONSTRAINT pk_book PRIMARY KEY (id);
 ALTER TABLE book ADD CONSTRAINT uk_book_isbn UNIQUE (isbn);
-ALTER TABLE book ADD CONSTRAINT chk_precio CHECK (precio >= 0);
-ALTER TABLE book ADD CONSTRAINT chk_num_paginas CHECK (num_paginas > 0);
-ALTER TABLE book ADD CONSTRAINT chk_ano_publicacion CHECK (ano_publicacion BETWEEN 1000 AND 2155);
+ALTER TABLE book ADD CONSTRAINT chk_precio CHECK (price >= 0);
+ALTER TABLE book ADD CONSTRAINT chk_numberOfPage CHECK (numberOfPage > 0);
+ALTER TABLE book ADD CONSTRAINT chk_publicationDate CHECK (publicationDate BETWEEN 1000 AND 2155);
 
 -- Lista Usuarios
 INSERT INTO blockbookster1.user (id, username, password, email, telephone, country, birthdate, type) VALUES ('0a45fe47-06f0-4fb9-a07d-c58577f68d0f', 'miguel', '$2y$10$0.HONWaiVCsgnDDfE/yyIepB7vztofQPI/Ty1jI1i06KZquMRPmd2', 'miguel@miguel.com', '444444444', 'us', '2025-11-21', 'REGULAR');

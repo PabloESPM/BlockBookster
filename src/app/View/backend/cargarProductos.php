@@ -137,6 +137,7 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
                 </div>
             </div>
 
+
             <!-- Botones de acción -->
             <div class="col-md-12 mt-4 mb-5">
                 <hr>
@@ -147,16 +148,16 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
                     <div>
                         <input type="submit" class="btn btn-primary btn-lg" value="Cargar Libro">
                     </div>
-                    <?php if(isset($error)){?>
-                        <div class="mb-3">
-                            <div class="p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3">
-                                <?php foreach ($error as $fail){echo $fail. "</br>";}?>
-                            </div>
-                        </div>
-                    <?php } ?>
                 </div>
             </div>
-
+            <?php if(isset($errores)){?>
+                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                    <div>
+                        <?php foreach ($errores as $fail){echo $fail. "</br>";}?>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
     </form>
 

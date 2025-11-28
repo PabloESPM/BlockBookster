@@ -143,33 +143,33 @@ class Book
         }
         $libro = new Book(
             Uuid::fromString($bookData['id']),
-            $bookData['titulo'],
+            $bookData['title'],
         );
-        $libro->setTitle($bookData['titulo']);
-        $libro->setAuthor($bookData['autor']);
+        $libro->setTitle($bookData['title']);
+        $libro->setAuthor($bookData['author']);
         $libro->setIsbn($bookData['isbn']);
-        $libro->setPublicationDate(DateTime::createFromFormat('Y',$bookData['ano_publicacion']));
-        $libro->setNumberOfPages($bookData['num_paginas']);
-        $libro->setPrice((float)$bookData['precio']);
-        $libro->setDescription($bookData['descripcion']);
-        $libro->setGenre($bookData['genero']);
-        $libro->setLanguage($bookData['idioma']);
-        $libro->setPublisher($bookData['editorial']);
-        $libro->setCover($bookData['portada']);
+        $libro->setPublicationDate(DateTime::createFromFormat('Y',$bookData['publicationDate']));
+        $libro->setNumberOfPages($bookData['numberOfPages']);
+        $libro->setPrice((float)$bookData['price']);
+        $libro->setDescription($bookData['description']);
+        $libro->setGenre($bookData['genre']);
+        $libro->setLanguage($bookData['language']);
+        $libro->setPublisher($bookData['publisher']);
+        $libro->setCover($bookData['cover']);
         return $libro;
     }
     public static function editFromArray(Book $title, array $bookData): Book{
-        $libro->setTitle($bookData['titulo']??$title->getTitle());
-        $libro->setAuthor($bookData['autor']??$title->getAuthor());
+        $libro->setTitle($bookData['title']??$title->getTitle());
+        $libro->setAuthor($bookData['author']??$title->getAuthor());
         $libro->setIsbn($bookData['isbn']??$title->getIsbn());
-        $libro->setPublicationDate(DateTime::createFromFormat('Y',$bookData['ano_publicacion']));
-        $libro->setNumberOfPages($bookData['num_paginas']);
-        $libro->setPrice($bookData['precio']??$title->getPrice());
-        $libro->setDescription($bookData['descripcion']??$title->getDescription());
-        $libro->setGenre($bookData['genero']??$title->getGenre());
-        $libro->setLanguage($bookData['idioma']??$title->getLanguage());
-        $libro->setPublisher($bookData['editorial']??$title->getPublisher());
-        $libro->setCover($bookData['portada']??$title->getCover());
+        $libro->setPublicationDate(DateTime::createFromFormat('Y',$bookData['publicationDate']));
+        $libro->setNumberOfPages($bookData['numberOfPages']);
+        $libro->setPrice($bookData['price']??$title->getPrice());
+        $libro->setDescription($bookData['description']??$title->getDescription());
+        $libro->setGenre($bookData['genre']??$title->getGenre());
+        $libro->setLanguage($bookData['language']??$title->getLanguage());
+        $libro->setPublisher($bookData['publisher']??$title->getPublisher());
+        $libro->setCover($bookData['cover']??$title->getCover());
         return $libro;
     }
     public static function validateBookRegister(array $bookData):array|true{

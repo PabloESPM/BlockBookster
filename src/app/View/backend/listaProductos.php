@@ -101,7 +101,7 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
 
                             <!-- Portada -->
                             <td class="ps-4">
-                                <img src="<?= $libro->getCover() ? '/uploads/books/' . $libro->getCover() : '/app/View/backend/img/book-default.png' ?>"
+                                <img src="<?= "/".$libro->getCover()?>"
                                      style="width:45px;height:60px;object-fit:cover;border-radius:4px;">
                             </td>
 

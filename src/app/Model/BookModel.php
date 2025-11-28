@@ -36,26 +36,26 @@ class BookModel
     }
     public static function saveBook(Book $book):bool{
         try{
-            $conexiones=new PDO("mysql:host=mariadb;dbname=blockbookster1","miguela","aleugim");
+            $conexion=new PDO("mysql:host=mariadb;dbname=blockbookster1","miguela","aleugim");
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch (PDOException $e){
-            return false;
+            return $e->getMessage();
         }
-        $sql="INSERT INTO book values(:id, :titulo, :autor, :isbn, STR_TO_DATE(:ano_publicacion, '%Y'), :num_paginas, :precio, :genero, :editorial, :idioma, :descripcion, :portada)";
+        $sql="INSERT INTO book values(:id, :title, :author, :isbn, :publicationDate, :numberOfPages, :price, :genre, :publisher, :languaje, :description, :cover)";
         $sentenciaPreparada=$conexion->prepare($sql);
 
         $sentenciaPreparada->bindValue(':id', $book->getId());
-        $sentenciaPreparada->bindValue(':titulo', $book->getTitle());
-        $sentenciaPreparada->bindValue(':autor', $book->getAuthor());
+        $sentenciaPreparada->bindValue(':title', $book->getTitle());
+        $sentenciaPreparada->bindValue(':author', $book->getAuthor());
         $sentenciaPreparada->bindValue(':isbn', $book->getIsbn());
-        $sentenciaPreparada->binValue(':ano_publicaion', $book->getPublicationDate()->format('Y'));
-        $sentenciaPreparada->binValue(':num_paginas', $book->getNumberOfPages());
-        $sentenciaPreparada->bindValue(':precio', $book->getPrice());
-        $sentenciaPreparada->bindValue(':genero', $book->getGenre());
-        $sentenciaPreparada->bindValue(':editorial', $book->getPublisher());
-        $sentenciaPreparada->bindValue(':idioma', $book->getLanguage());
-        $sentenciaPreparada->bindValue(':descripcion', $book->getDescription());
-        $sentenciaPreparada->bindValue(':portada', $book->getCover());
+        $sentenciaPreparada->bindValue(':publicationDate', $book->getPublicationDate()->format('Y'));
+        $sentenciaPreparada->bindValue(':numberOfPages', $book->getNumberOfPages());
+        $sentenciaPreparada->bindValue(':price', $book->getPrice());
+        $sentenciaPreparada->bindValue(':genre', $book->getGenre());
+        $sentenciaPreparada->bindValue(':publisher', $book->getPublisher());
+        $sentenciaPreparada->bindValue(':language', $book->getLanguage());
+        $sentenciaPreparada->bindValue(':description', $book->getDescription());
+        $sentenciaPreparada->bindValue(':cover', $book->getCover());
 
         //ejecutamos la sentencia
         $sentenciaPreparada->execute();
@@ -94,10 +94,10 @@ class BookModel
         }catch (PDOException $e){
             return false;
         }
-        $sql="SELECT * FROM book WHERE titulo = :titulo";
+        $sql="SELECT * FROM book WHERE title = :title";
         $sentenciaPreparada=$conexion->prepare($sql);
 
-        $sentenciaPreparada->bindValue(':titulo', $title);
+        $sentenciaPreparada->bindValue(':title', $title);
         $sentenciaPreparada->execute();
         $resultado=$sentenciaPreparada->fetch(PDO::FETCH_ASSOC);
         if($resultado){
@@ -148,21 +148,21 @@ class BookModel
         }catch (PDOException $e){
             return false;
         }
-        $sql="UPDATE book SET title=:titulo, author=:autor, isbn=:isbn, publicationDate=STR_TO_DATE(:ano_publicacion, '%Y'), numberOfPages=:num_paginas, price=:precio, genre=:genero, publisher=:editorial, language=:idioma, description=:descripcion, cover=:portada WHERE id=:id";
+        $sql="UPDATE book SET title=:title, author=:author, isbn=:isbn, publicationDate=STR_TO_DATE(:ano_publicacion, '%Y'), numberOfPages=:numberOfPages, price=:price, genre=:genre, publisher=:publisher, language=:language, description=:descripion, cover=:cover WHERE id=:id";
         $sentenciaPreparada=$conexion->prepare($sql);
 
         $sentenciaPreparada->bindValue(':id', $book->getId());
-        $sentenciaPreparada->bindValue(':titulo', $book->getTitle());
-        $sentenciaPreparada->bindValue(':autor', $book->getAuthor());
+        $sentenciaPreparada->bindValue(':title', $book->getTitle());
+        $sentenciaPreparada->bindValue(':author', $book->getAuthor());
         $sentenciaPreparada->bindValue(':isbn', $book->getIsbn());
-        $sentenciaPreparada->bindValue(':ano_publicaion', $book->getPublicationDate()->format('Y'));
-        $sentenciaPreparada->bindValue(':num_paginas', $book->getNumberOfPages());
-        $sentenciaPreparada->bindValue(':precio', $book->getPrice());
-        $sentenciaPreparada->bindValue(':genero', $book->getGenre());
-        $sentenciaPreparada->bindValue(':editorial', $book->getPublisher());
-        $sentenciaPreparada->bindValue(':idioma', $book->getLanguage());
-        $sentenciaPreparada->bindValue(':descripcion', $book->getDescription());
-        $sentenciaPreparada->bindValue(':portada', $book->getCover());
+        $sentenciaPreparada->bindValue(':publicationDate', $book->getPublicationDate()->format('Y'));
+        $sentenciaPreparada->bindValue(':numberOfPages', $book->getNumberOfPages());
+        $sentenciaPreparada->bindValue(':price', $book->getPrice());
+        $sentenciaPreparada->bindValue(':genre', $book->getGenre());
+        $sentenciaPreparada->bindValue(':publisher', $book->getPublisher());
+        $sentenciaPreparada->bindValue(':language', $book->getLanguage());
+        $sentenciaPreparada->bindValue(':description', $book->getDescription());
+        $sentenciaPreparada->bindValue(':cover', $book->getCover());
 
         $sentenciaPreparada->execute();
 
