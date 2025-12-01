@@ -44,8 +44,13 @@ class UserController implements ControllerInterface
 
             //Guardalos en la base de datos
             UserModel::saveUser($usuario);
-            //No me queda claro para que es esto ¿Preguntar?
-            header("Location: /user");
+            //Si al crear la cuenta el usuario es regular se va a la pagina de inicio y no se va a administracion
+            $_SESSION['user']=$usuario;
+            if ($usuario->getType() == UserType::REGULAR){
+                header("Location: /");
+            } else {
+                header("Location: /user");
+            }
         }
 
     }

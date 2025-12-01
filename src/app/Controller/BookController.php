@@ -43,7 +43,6 @@ class BookController implements ControllerInterface
         //$rutaDestinoImg=\App\Class\Auxiliar::gestionarImagen($_POST, $_FILES);
         //Guardar la información del libro en la base de datos
         //header('Location:/book/'.$_POST['id']);
-
     }
     public function edit($id)
     {
@@ -78,7 +77,6 @@ class BookController implements ControllerInterface
         }
         return json_encode($resultado);
     }
-
     public function destroy($id)
     {
         // TODO: Implement destroy() method.
@@ -92,6 +90,5 @@ class BookController implements ControllerInterface
     {
         //Comprobar si el libro esta creado
         $libro=BookModel::getBookByTitle($_POST["titulo"]);
-
     }
 }
