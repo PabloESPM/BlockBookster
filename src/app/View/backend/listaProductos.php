@@ -13,7 +13,7 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
         <p class="text-muted mb-0">Gestiona los libros almacenados en la plataforma</p>
     </div>
     <div class="btn-toolbar mb-2 mb-md-0">
-        <a href="app/View/backend/cargarProductos.php" class="btn btn-primary">
+        <a href="/book/create" class="btn btn-primary">
             <i class="bi bi-book-half me-2"></i>Añadir Libro
         </a>
     </div>
@@ -151,7 +151,7 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
                                     </a>
 
                                     <!-- Editar -->
-                                    <a href="/book/edit/<?= $libro->getId() ?>"
+                                    <a href="/book/<?= $libro->getId() ?>/edit"
                                        class="btn btn-outline-warning"
                                        title="Editar libro">
                                         ✏️

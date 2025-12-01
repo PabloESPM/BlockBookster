@@ -27,7 +27,7 @@ class BookModel
         if($resultado){
             $libros=[];
             foreach($resultado as $libro){
-                $libros[]=Book::createfromArray($libro);
+                $libros[]=Book::createFromArray($libro);
             }
             return $libros;
         }else{
@@ -41,7 +41,7 @@ class BookModel
         }catch (PDOException $e){
             return $e->getMessage();
         }
-        $sql="INSERT INTO book values(:id, :title, :author, :isbn, :publicationDate, :numberOfPages, :price, :genre, :publisher, :languaje, :description, :cover)";
+        $sql="INSERT INTO book values(:id, :title, :author, :isbn, :publicationDate, :numberOfPages, :price, :genre, :publisher, :language, :description, :cover)";
         $sentenciaPreparada=$conexion->prepare($sql);
 
         $sentenciaPreparada->bindValue(':id', $book->getId());
@@ -66,7 +66,7 @@ class BookModel
             return false;
         }
     }
-    public static function getBookById(Book $book):?Book{
+    public static function getBookById(string $id):?Book{
         try {
             $conexion=new PDO("mysql:host=mariadb;dbname=blockbookster1","miguela","aleugim");
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -131,7 +131,7 @@ class BookModel
         }catch (PDOException $e){
             return false;
         }
-        $sql="TRUNCATE TABLE books";
+        $sql="TRUNCATE TABLE book";
         $sentenciaPreparada=$conexion->prepare($sql);
         $sentenciaPreparada->bindValue(":id",null);
         $sentenciaPreparada->execute();
@@ -148,7 +148,7 @@ class BookModel
         }catch (PDOException $e){
             return false;
         }
-        $sql="UPDATE book SET title=:title, author=:author, isbn=:isbn, publicationDate=STR_TO_DATE(:ano_publicacion, '%Y'), numberOfPages=:numberOfPages, price=:price, genre=:genre, publisher=:publisher, language=:language, description=:descripion, cover=:cover WHERE id=:id";
+        $sql="UPDATE book SET title=:title, author=:author, isbn=:isbn, publicationDate=:publicationDate, numberOfPages=:numberOfPages, price=:price, genre=:genre, publisher=:publisher, language=:language, description=:description, cover=:cover WHERE id=:id";
         $sentenciaPreparada=$conexion->prepare($sql);
 
         $sentenciaPreparada->bindValue(':id', $book->getId());

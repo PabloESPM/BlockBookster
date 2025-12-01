@@ -193,7 +193,7 @@ $usuario = $usuario ?? null;
                         <option value="REGULAR" <?= $usuario->getType()->name === 'REGULAR' ? 'selected' : '' ?>>
                             👤 Normal
                         </option>
-                        <option value="EDITOR" <?= $usuario->getType()->name === 'EDITOR' ? 'selected' : '' ?>>
+                        <option value="EDITOR" <?= $usuario->getType()->name === 'WORKER' ? 'selected' : '' ?>>
                             💼 Worker
                         </option>
                         <option value="ADMIN" <?= $usuario->getType()->name === 'ADMIN' ? 'selected' : '' ?>>

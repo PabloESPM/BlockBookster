@@ -13,9 +13,9 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
         <p class="text-muted mb-0">Gestiona los usuarios registrados en la plataforma</p>
     </div>
     <div class="btn-toolbar mb-2 mb-md-0">
-        <button type="button" class="btn btn-primary">
+        <a href="/crearUsuario" class="btn btn-primary">
             <i class="bi bi-person-plus-fill me-2"></i>Añadir Usuario
-        </button>
+        </a>
     </div>
 </div>
 
@@ -130,25 +130,41 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
                         <!-- País -->
                         <td>
                             <div class="d-flex align-items-center">
-                                <i class="bi bi-geo-alt me-2 text-muted"></i>
-                                <span><?= $usuario->getCountry() ?? 'España' ?></span>
+                                <?php
+                                $country = $usuario->getCountry();
+
+                                // Bandera y nombre según ISO guardado en base de datos
+                                echo match ($country) {
+                                    'sp'    => "🇪🇸 <span>España</span>",
+                                    'us'    => "🇺🇸 <span>Estados Unidos</span>",
+                                    'uk'    => "🇬🇧 <span>Reino Unido</span>",
+                                    'ca'    => "🇨🇦 <span>Canadá</span>",
+                                    'au'    => "🇦🇺 <span>Australia</span>",
+                                    'de'    => "🇩🇪 <span>Alemania</span>",
+                                    'fr'    => "🇫🇷 <span>Francia</span>",
+                                    'jp'    => "🇯🇵 <span>Japón</span>",
+                                    'other' => "🌍 <span>Otros</span>",
+                                    default => "❓ <span>Desconocido</span>"
+                                };
+                                ?>
                             </div>
                         </td>
 
+
                         <!-- Rol -->
                         <td>
-                            <select class="form-select form-select-sm role-select" name="role" data-user-id="<?= $usuario->getId() ?>">
-                                <option value="REGULAR" <?= $usuario->getType()->name === 'REGULAR' ? 'selected' : '' ?>>
-                                    👤 Normal
-                                </option>
-                                <option value="EDITOR" <?= $usuario->getType()->name === 'EDITOR' ? 'selected' : '' ?>>
-                                    💼 Worker
-                                </option>
-                                <option value="ADMIN" <?= $usuario->getType()->name === 'ADMIN' ? 'selected' : '' ?>>
-                                    ⚡ Admin
-                                </option>
-                            </select>
+                            <?php
+                            $tipo = $usuario->getType()->name;
+
+                            echo match ($tipo) {
+                                'REGULAR' => "👤 Normal",
+                                'WORKER'  => "💼 Worker",
+                                'ADMIN'   => "⚡ Admin",
+                                default   => "❓ Desconocido"
+                            };
+                            ?>
                         </td>
+
 
                         <!-- Acciones -->
                         <td class="text-end pe-4">
@@ -160,7 +176,7 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
                                    data-bs-toggle="tooltip">
                                     🔍
                                 </a>
-                                <a href="/user/<?= $usuario->getId() ?>"
+                                <a href="/user/<?= $usuario->getId() ?>/edit"
                                    class="btn btn-outline-warning"
                                    title="Editar perfil"
                                    data-bs-toggle="tooltip">

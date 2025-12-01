@@ -167,6 +167,9 @@ $router->get('cargarProducto', function() {
     include_once DIRECTORIO_BACKEND . 'cargarProductos.php';
 });
 
+$router->get('crearUsuario', function(){
+    include_once DIRECTORIO_BACKEND . 'crearUsuario.php';
+});
 $router->get('permisoDenegado', function() {
     DIRECTORIO_BACKEND . 'permisoDenegado.php';
 });

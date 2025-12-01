@@ -4,7 +4,7 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "headadmin.php";
 include_once DIRECTORIO_BACKEND_LAYOUTS . "headeradmin.php";
 include_once DIRECTORIO_BACKEND_LAYOUTS . "navadmin.php";
 
-$tituloSeccion = "Información del Libro: " . $libro->getTitulo();
+$tituloSeccion = "Información del Libro: " . $libro->getTitle();
 include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
 
 // Datos del libro
@@ -22,8 +22,8 @@ $estadisticas = $estadisticas ?? [
 <nav aria-label="breadcrumb" class="mb-3">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/adminInicio">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="/listaLibros">Libros</a></li>
-        <li class="breadcrumb-item active" aria-current="page"><?= htmlspecialchars($libro->getTitulo()) ?></li>
+        <li class="breadcrumb-item"><a href="/listaProductos">Libros</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><?= htmlspecialchars($libro->getTitle()) ?></li>
     </ol>
 </nav>
 
@@ -34,16 +34,16 @@ $estadisticas = $estadisticas ?? [
             <div class="card-body p-4">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img src="<?= $libro->getPortada() ?? '/img/default-book.jpg' ?>"
+                        <img src="<?= "/".$libro->getCover()?>"
                              class="rounded shadow-sm"
                              style="width: 110px; height: 160px; object-fit: cover;">
                     </div>
                     <div class="col">
-                        <h3 class="mb-1"><?= htmlspecialchars($libro->getTitulo()) ?></h3>
+                        <h3 class="mb-1"><?= htmlspecialchars($libro->getTitle()) ?></h3>
                         <p class="text-muted mb-2">
-                            <i class="bi bi-person me-2"></i><?= htmlspecialchars($libro->getAutor()) ?>
+                            <i class="bi bi-person me-2"></i><?= htmlspecialchars($libro->getAuthor()) ?>
                             <span class="mx-3">|</span>
-                            <i class="bi bi-tag me-2"></i><?= htmlspecialchars($libro->getGenero()) ?>
+                            <i class="bi bi-tag me-2"></i><?= htmlspecialchars($libro->getGenre()) ?>
                         </p>
                         <div class="d-flex gap-2">
                             <?php if ($libro->getDestacado()): ?>
@@ -66,11 +66,11 @@ $estadisticas = $estadisticas ?? [
 
                     <div class="col-auto">
                         <div class="btn-group">
-                            <a href="/listaLibros" class="btn btn-outline-secondary">
+                            <a href="/listaProductos" class="btn btn-outline-secondary">
                                 <i class="bi bi-arrow-left me-2"></i>Volver
                             </a>
                             <button class="btn btn-outline-secondary"
-                                    onclick="window.location.replace('/libro/<?= $libro->getId() ?>/edit')">
+                                    onclick="window.location.replace('/book/<?= $libro->getId() ?>/edit')">
                                 <i class="bi bi-pencil me-2"></i>Editar
                             </button>
                             <button class="btn btn-danger"
@@ -145,12 +145,12 @@ $estadisticas = $estadisticas ?? [
 
                     <div class="col-md-6 mb-3">
                         <label class="text-muted small">Título</label>
-                        <p><?= htmlspecialchars($libro->getTitulo()) ?></p>
+                        <p><?= htmlspecialchars($libro->getTitle()) ?></p>
                     </div>
 
                     <div class="col-md-6 mb-3">
                         <label class="text-muted small">Autor</label>
-                        <p><?= htmlspecialchars($libro->getAutor()) ?></p>
+                        <p><?= htmlspecialchars($libro->getAuthor()) ?></p>
                     </div>
 
                     <div class="col-md-4 mb-3">
@@ -160,27 +160,27 @@ $estadisticas = $estadisticas ?? [
 
                     <div class="col-md-4 mb-3">
                         <label class="text-muted small">Precio</label>
-                        <p><?= number_format($libro->getPrecio(), 2) ?>€</p>
+                        <p><?= number_format($libro->getPrice(), 2) ?>€</p>
                     </div>
 
                     <div class="col-md-4 mb-3">
                         <label class="text-muted small">Páginas</label>
-                        <p><?= $libro->getNumPaginas() ?></p>
+                        <p><?= $libro->getNumberOfPages() ?></p>
                     </div>
 
                     <div class="col-md-4 mb-3">
                         <label class="text-muted small">Año Publicación</label>
-                        <p><?= $libro->getAnoPublicacion() ?></p>
+                        <p><?= $libro->getPublicationDate()->format('Y') ?></p>
                     </div>
 
                     <div class="col-md-8 mb-3">
                         <label class="text-muted small">Género</label>
-                        <p><?= htmlspecialchars($libro->getGenero()) ?></p>
+                        <p><?= htmlspecialchars($libro->getGenre()) ?></p>
                     </div>
 
                     <div class="col-12 mb-3">
                         <label class="text-muted small">Descripción</label>
-                        <p><?= nl2br(htmlspecialchars($libro->getDescripcion())) ?></p>
+                        <p><?= nl2br(htmlspecialchars($libro->getDescription())) ?></p>
                     </div>
 
                 </div>
@@ -265,7 +265,7 @@ $estadisticas = $estadisticas ?? [
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <p>¿Seguro que deseas eliminar <strong><?= htmlspecialchars($libro->getTitulo()) ?></strong>?</p>
+                <p>¿Seguro que deseas eliminar <strong><?= htmlspecialchars($libro->getTitle()) ?></strong>?</p>
                 <div class="alert alert-danger">
                     Esta acción es permanente.
                 </div>

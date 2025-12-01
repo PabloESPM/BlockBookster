@@ -4,7 +4,7 @@ include_once DIRECTORIO_BACKEND_LAYOUTS . "headadmin.php";
 include_once DIRECTORIO_BACKEND_LAYOUTS . "headeradmin.php";
 include_once DIRECTORIO_BACKEND_LAYOUTS . "navadmin.php";
 
-$tituloSeccion = "Editar Libro: " . $libro->getTitulo();
+$tituloSeccion = "Editar Libro: " . $libro->getTitle();
 include_once DIRECTORIO_BACKEND_LAYOUTS . "mainadmin.php";
 
 // El libro viene del controlador
@@ -15,9 +15,9 @@ $libro = $libro ?? null;
 <nav aria-label="breadcrumb" class="mb-3">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/adminInicio">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="/listaLibros">Libros</a></li>
+        <li class="breadcrumb-item"><a href="/listaProductos">Libros</a></li>
         <li class="breadcrumb-item"><a href="/libro/<?= $libro->getId() ?>">
-                <?= $libro->getTitulo() ?>
+                <?= $libro->getTitle() ?>
             </a></li>
         <li class="breadcrumb-item active" aria-current="page">Editar</li>
     </ol>
@@ -30,7 +30,7 @@ $libro = $libro ?? null;
             <div class="card-body p-4">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img src="<?= $libro->getPortada() ?? '/img/default-book.jpg' ?>"
+                        <img src="<?= "/" . $libro->getCover()?>"
                              class="rounded shadow-sm"
                              style="width: 110px; height: 160px; object-fit: cover;">
                     </div>
@@ -38,12 +38,12 @@ $libro = $libro ?? null;
                     <div class="col">
                         <h3 class="mb-1">Editar Libro</h3>
                         <p class="text-muted mb-0">
-                            Modificando la información de <strong><?= $libro->getTitulo() ?></strong>
+                            Modificando la información de <strong><?= $libro->getTitle() ?></strong>
                         </p>
                     </div>
 
                     <div class="col-auto">
-                        <a href="/libro/<?= $libro->getId() ?>" class="btn btn-outline-secondary">
+                        <a href="/book/<?= $libro->getId()?>" class="btn btn-outline-secondary">
                             <i class="bi bi-arrow-left me-2"></i>Volver
                         </a>
                     </div>
@@ -73,13 +73,13 @@ $libro = $libro ?? null;
                         <div class="col-md-8 mb-3">
                             <label class="form-label">Título <span class="text-danger">*</span></label>
                             <input type="text" name="titulo" class="form-control"
-                                   value="<?= $libro->getTitulo() ?>" required>
+                                   value="<?= $libro->getTitle() ?>" required>
                         </div>
 
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Autor <span class="text-danger">*</span></label>
                             <input type="text" name="autor" class="form-control"
-                                   value="<?= $libro->getAutor() ?>" required>
+                                   value="<?= $libro->getAuthor() ?>" required>
                         </div>
 
                         <div class="col-md-6 mb-3">
@@ -91,37 +91,37 @@ $libro = $libro ?? null;
                         <div class="col-md-3 mb-3">
                             <label class="form-label">Precio (€)</label>
                             <input type="number" step="0.01" min="0" name="precio" class="form-control"
-                                   value="<?= $libro->getPrecio() ?>">
+                                   value="<?= $libro->getPrice() ?>">
                         </div>
 
                         <div class="col-md-3 mb-3">
                             <label class="form-label">Páginas</label>
                             <input type="number" min="1" name="num_paginas" class="form-control"
-                                   value="<?= $libro->getNumPaginas() ?>">
+                                   value="<?= $libro->getNumberOfPages() ?>">
                         </div>
 
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Año Publicación</label>
                             <input type="number" min="1000" max="2025" name="ano_publicacion"
                                    class="form-control"
-                                   value="<?= $libro->getAnoPublicacion() ?>">
+                                   value="<?= $libro->getPublicationDate()->format('Y') ?>">
                         </div>
 
                         <div class="col-md-8 mb-3">
                             <label class="form-label">Género</label>
                             <input type="text" name="genero" class="form-control"
-                                   value="<?= $libro->getGenero() ?>">
+                                   value="<?= $libro->getGenre() ?>">
                         </div>
 
                         <div class="col-12 mb-3">
                             <label class="form-label">Descripción</label>
-                            <textarea class="form-control" rows="4" name="descripcion"><?= $libro->getDescripcion() ?></textarea>
+                            <textarea class="form-control" rows="4" name="descripcion"><?= $libro->getDescription() ?></textarea>
                         </div>
 
                         <div class="col-12 mb-3">
                             <label class="form-label">URL Portada</label>
                             <input type="text" name="portada" class="form-control"
-                                   value="<?= $libro->getPortada() ?>">
+                                   value="<?= $libro->getCover() ?>">
                             <small class="text-muted">Puedes subir la portada a /img/libros/ y pegar la URL.</small>
                         </div>
 
@@ -217,7 +217,7 @@ $libro = $libro ?? null;
             </div>
 
             <div class="modal-body">
-                <p>¿Seguro que deseas eliminar el libro <strong><?= $libro->getTitulo() ?></strong>?</p>
+                <p>¿Seguro que deseas eliminar el libro <strong><?= $libro->getTitle() ?></strong>?</p>
                 <div class="alert alert-danger">
                     Esta acción es permanente.
                 </div>
@@ -236,15 +236,15 @@ $libro = $libro ?? null;
 <script>
     function peticionPUTLibro() {
         const data = {
-            titulo: document.querySelector('[name="titulo"]').value,
-            autor: document.querySelector('[name="autor"]').value,
+            titulo: document.querySelector('[name="title"]').value,
+            autor: document.querySelector('[name="author"]').value,
             isbn: document.querySelector('[name="isbn"]').value,
-            precio: document.querySelector('[name="precio"]').value,
-            num_paginas: document.querySelector('[name="num_paginas"]').value,
-            ano_publicacion: document.querySelector('[name="ano_publicacion"]').value,
-            genero: document.querySelector('[name="genero"]').value,
-            descripcion: document.querySelector('[name="descripcion"]').value,
-            portada: document.querySelector('[name="portada"]').value,
+            precio: document.querySelector('[name="price"]').value,
+            num_paginas: document.querySelector('[name="numberOfPages"]').value,
+            ano_publicacion: document.querySelector('[name="publicationDate"]').value,
+            genero: document.querySelector('[name="genre"]').value,
+            descripcion: document.querySelector('[name="description"]').value,
+            portada: document.querySelector('[name="cover"]').value,
             activo: document.querySelector('[name="activo"]').checked,
             destacado: document.querySelector('[name="destacado"]').checked
         };
@@ -255,14 +255,14 @@ $libro = $libro ?? null;
             body: JSON.stringify(data)
         })
             .then(r => r.text())
-            .then(() => window.location.replace("/libro/<?= $libro->getId() ?>"))
+            .then(() => window.location.replace("/book/<?= $libro->getId() ?>"))
             .catch(console.error);
     }
 
     function peticionDeleteLibro() {
         fetch("/libro/<?= $libro->getId() ?>", { method: "DELETE" })
             .then(r => r.text())
-            .then(() => window.location.replace("/listaLibros"))
+            .then(() => window.location.replace("/listaProductos"))
             .catch(console.error);
     }
 </script>
